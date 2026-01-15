@@ -1,26 +1,23 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+  /* Custom Fonts */
+  --font-heading: var(--font-korean);
+  --font-body: var(--font-merriweather);
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  /* Custom Colors - South Korea Tourism Style Guide */
+  --color-inkstone: #1b1b1e;
+  --color-porcelain: #f8f9fa;
+  --color-harvest: #e4b400;
+  --color-crimson: #c62631;
+  --color-celestial: #0b4f6c;
+
+  /* Custom Breakpoint */
+  --breakpoint-xs: 402px;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-body);
+  margin: 0;
+  padding: 0;
 }
