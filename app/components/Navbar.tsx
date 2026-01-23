@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import Button from "./Button";
+import { useMobileMenu } from "./MobileMenuContext";
 
 const navItems = [
   { label: "Raízes da Coreia", hasDropdown: true },
@@ -32,13 +33,15 @@ const ChevronDownIcon = () => (
 );
 
 export default function Navbar() {
+  const { isMenuOpen, openMenu } = useMobileMenu();
+
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-transparent">
       <div className="mx-auto flex items-center justify-between px-10 py-4">
         {/* Logo */}
         <Link
           href="/"
-          className="flex-shrink-0"
+          className="shrink-0"
           aria-label="Discover South Korea - Home"
         >
           <Image
@@ -79,8 +82,9 @@ export default function Navbar() {
           <button
             type="button"
             className="lg:hidden flex items-center justify-center p-2 transition-opacity hover:opacity-80 focus:outline-none focus:ring-2 focus:ring-porcelain focus:ring-offset-2 focus:ring-offset-inkstone"
-            aria-label="Toggle menu"
-            aria-expanded="false"
+            aria-label="Open menu"
+            aria-expanded={isMenuOpen}
+            onClick={openMenu}
           >
             <Image
               src="/icons/menu.svg"

@@ -21,3 +21,8 @@ body {
   margin: 0;
   padding: 0;
 }
+
+/* Utility for hiding scrollbar while maintaining scroll functionality */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
