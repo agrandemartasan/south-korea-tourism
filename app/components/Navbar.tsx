@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import Button from "./Button";
+import { ChevronDownIcon } from "./Icons";
 import { useMobileMenu } from "./MobileMenuContext";
 
 const navItems = [
@@ -12,25 +13,6 @@ const navItems = [
   { label: "Sabores da Coreia", hasDropdown: true },
   { label: "Planear", hasDropdown: false }
 ];
-
-const ChevronDownIcon = () => (
-  <svg
-    width="16"
-    height="16"
-    viewBox="0 0 16 16"
-    fill="none"
-    xmlns="http://www.w3.org/2000/svg"
-    aria-hidden="true"
-  >
-    <path
-      d="M4 6L8 10L12 6"
-      stroke="currentColor"
-      strokeWidth="1.5"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    />
-  </svg>
-);
 
 export default function Navbar() {
   const { isMenuOpen, openMenu } = useMobileMenu();

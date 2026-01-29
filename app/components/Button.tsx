@@ -7,6 +7,7 @@ interface ButtonProps {
   href: string;
   children: React.ReactNode;
   className?: string;
+  tabIndex?: number;
 }
 
 const variantStyles: Record<ButtonVariant, string> = {
@@ -23,6 +24,7 @@ export default function Button({
   href,
   children,
   className = "",
+  tabIndex = 0,
 }: ButtonProps) {
   const baseStyles =
     "inline-flex items-center justify-center rounded-full border px-8 py-3 font-body text-base font-normal transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-inkstone";
@@ -32,7 +34,7 @@ export default function Button({
       href={href}
       className={`${baseStyles} ${variantStyles[variant]} ${className}`}
       role="button"
-      tabIndex={0}
+      tabIndex={tabIndex}
     >
       {children}
     </Link>
