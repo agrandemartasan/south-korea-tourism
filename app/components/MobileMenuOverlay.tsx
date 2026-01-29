@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import Button from "./Button";
 import { FooterContent } from "./Footer";
+import { ChevronDownIcon, CloseIcon } from "./Icons";
 import { useMobileMenu } from "./MobileMenuContext";
 
 const navItems = [
@@ -13,44 +14,6 @@ const navItems = [
   { label: "Sabores da Coreia", hasDropdown: true },
   { label: "Planear", hasDropdown: false }
 ];
-
-const ChevronDownIcon = () => (
-  <svg
-    width="16"
-    height="16"
-    viewBox="0 0 16 16"
-    fill="none"
-    xmlns="http://www.w3.org/2000/svg"
-    aria-hidden="true"
-  >
-    <path
-      d="M4 6L8 10L12 6"
-      stroke="currentColor"
-      strokeWidth="1.5"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    />
-  </svg>
-);
-
-const CloseIcon = () => (
-  <svg
-    width="24"
-    height="24"
-    viewBox="0 0 24 24"
-    fill="none"
-    xmlns="http://www.w3.org/2000/svg"
-    aria-hidden="true"
-  >
-    <path
-      d="M18 6L6 18M6 6L18 18"
-      stroke="currentColor"
-      strokeWidth="1.5"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    />
-  </svg>
-);
 
 export default function MobileMenuOverlay() {
   const { isMenuOpen, closeMenu } = useMobileMenu();
