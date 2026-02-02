@@ -12,7 +12,7 @@ interface EventCardProps {
 
 function EventCard({ event }: EventCardProps) {
   return (
-    <article className="flex-shrink-0 w-[280px] sm:w-[320px] lg:w-[340px] bg-inkstone/80 rounded-lg overflow-hidden">
+    <article className="flex-shrink-0 w-[280px] sm:w-[320px] lg:w-[340px] h-full flex flex-col bg-inkstone/80 rounded-lg overflow-hidden">
       {/* Card Image - Hidden on mobile */}
       <div className="hidden lg:block relative h-48 w-full">
         <Image
@@ -25,14 +25,14 @@ function EventCard({ event }: EventCardProps) {
       </div>
 
       {/* Card Content */}
-      <div className="p-6">
+      <div className="p-6 flex flex-col flex-1">
         <p className="font-body text-sm text-porcelain uppercase tracking-wide mb-2">
           {event.location}
         </p>
         <h3 className="font-body text-xl font-semibold text-crimson mb-3">
           {event.title}
         </h3>
-        <p className="font-body text-sm text-porcelain leading-relaxed mb-4">
+        <p className="font-body text-sm text-porcelain leading-relaxed mb-4 flex-1">
           {event.description}
         </p>
         <Link
@@ -130,12 +130,12 @@ export default function EventsSection() {
         </div>
 
         {/* Cards Carousel */}
-        <div className="relative mx-4 lg:mx-12">
+        <div className="flex items-stretch gap-4 mx-4 lg:mx-8">
           {/* Left Arrow Button - Desktop only */}
           <button
             type="button"
             onClick={() => scroll("left")}
-            className="hidden lg:flex absolute left-4 top-1/2 -translate-y-1/2 z-20 items-center justify-center w-12 h-12 rounded-full bg-celestial text-porcelain hover:bg-celestial/80 cursor-pointer focus:outline-none focus:ring-2 focus:ring-porcelain focus:ring-offset-2 focus:ring-offset-inkstone"
+            className="hidden lg:flex self-center shrink-0 items-center justify-center w-12 h-12 rounded-full bg-celestial text-porcelain hover:bg-celestial/80 cursor-pointer focus:outline-none focus:ring-2 focus:ring-porcelain focus:ring-offset-2 focus:ring-offset-inkstone"
             aria-label="Ver eventos anteriores"
           >
             <ArrowLeftIcon />
@@ -144,14 +144,14 @@ export default function EventsSection() {
           {/* Scrollable Container */}
           <div
             ref={scrollContainerRef}
-            className="flex gap-6 overflow-x-auto px-6 lg:px-20 pb-4 scrollbar-hide scroll-smooth snap-x snap-mandatory"
+            className="flex gap-6 overflow-x-auto px-6 pb-4 scrollbar-hide scroll-smooth snap-x snap-mandatory min-w-0 flex-1"
             style={{
               scrollbarWidth: "none",
               msOverflowStyle: "none"
             }}
           >
             {events.map((event) => (
-              <div key={event.id} className="snap-start">
+              <div key={event.id} className="snap-start flex self-stretch">
                 <EventCard event={event} />
               </div>
             ))}
@@ -161,7 +161,7 @@ export default function EventsSection() {
           <button
             type="button"
             onClick={() => scroll("right")}
-            className="hidden lg:flex absolute right-4 top-1/2 -translate-y-1/2 z-20 items-center justify-center w-12 h-12 rounded-full bg-celestial text-porcelain hover:bg-celestial/80 cursor-pointer focus:outline-none focus:ring-2 focus:ring-porcelain focus:ring-offset-2 focus:ring-offset-inkstone"
+            className="hidden lg:flex self-center shrink-0 items-center justify-center w-12 h-12 rounded-full bg-celestial text-porcelain hover:bg-celestial/80 cursor-pointer focus:outline-none focus:ring-2 focus:ring-porcelain focus:ring-offset-2 focus:ring-offset-inkstone"
             aria-label="Ver mais eventos"
           >
             <ArrowRightIcon />
