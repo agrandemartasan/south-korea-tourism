@@ -5,14 +5,7 @@ import Link from "next/link";
 import Button from "./Button";
 import { ChevronDownIcon } from "./Icons";
 import { useMobileMenu } from "./MobileMenuContext";
-
-const navItems = [
-  { label: "Raízes da Coreia", hasDropdown: true },
-  { label: "Cultura & Tradições", hasDropdown: true },
-  { label: "Atrações", hasDropdown: true },
-  { label: "Sabores da Coreia", hasDropdown: true },
-  { label: "Planear", hasDropdown: false }
-];
+import { navItems } from "../data/navigationData";
 
 export default function Navbar() {
   const { isMenuOpen, openMenu } = useMobileMenu();
