@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ChevronRightIcon } from "./Icons";
 import { articles, Article } from "../data/inspirationData";
+import SectionHeader from "./SectionHeader";
 
 interface ArticleCardProps {
   article: Article;
@@ -52,16 +53,11 @@ export default function InspirationSection() {
   return (
     <section className="bg-inkstone">
       <div className="px-6 py-16 lg:px-24 lg:py-24">
-        {/* Header */}
-        <div className="mb-12 lg:mb-16">
-          <h2 className="font-heading text-3xl leading-tight text-harvest mb-4 lg:text-5xl">
-            Inspira a tua próxima aventura
-          </h2>
-          <p className="font-body text-base text-porcelain lg:text-lg">
-            Histórias, guias e ideias para te ajudares a planear experiências
-            inesquecíveis.
-          </p>
-        </div>
+        <SectionHeader
+          title="Inspira a tua próxima aventura"
+          description="Histórias, guias e ideias para te ajudares a planear experiências inesquecíveis."
+          centered={false}
+        />
 
         {/* Article Cards */}
         <div className="flex flex-col gap-10 lg:grid lg:grid-cols-3 lg:gap-8">

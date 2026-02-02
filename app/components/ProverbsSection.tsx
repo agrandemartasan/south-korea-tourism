@@ -1,4 +1,5 @@
 import { proverbs } from "../data/proverbsData";
+import SectionHeader from "./SectionHeader";
 
 export default function ProverbsSection() {
   return (
@@ -18,16 +19,10 @@ export default function ProverbsSection() {
 
       {/* Content */}
       <div className="relative z-10 px-6 py-16 lg:px-24 lg:py-24">
-        {/* Header */}
-        <div className="text-center mb-12 lg:mb-16">
-          <h2 className="font-heading text-3xl leading-tight text-harvest mb-4 lg:text-5xl">
-            Sabedoria que atravessa gerações
-          </h2>
-          <p className="font-body text-base text-porcelain lg:text-lg">
-            Pequenos fragmentos da cultura coreana que refletem valores,
-            respeito e tradição.
-          </p>
-        </div>
+        <SectionHeader
+          title="Sabedoria que atravessa gerações"
+          description="Pequenos fragmentos da cultura coreana que refletem valores, respeito e tradição."
+        />
 
         {/* Quotes */}
         <div className="mx-auto max-w-3xl">
