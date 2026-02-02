@@ -3,6 +3,7 @@ import HighlightsSection from "./components/HighlightsSection";
 import EventsSection from "./components/EventsSection";
 import InspirationSection from "./components/InspirationSection";
 import ProverbsSection from "./components/ProverbsSection";
+import SafetySection from "./components/SafetySection";
 
 export default function Home() {
   return (
@@ -12,6 +13,7 @@ export default function Home() {
       <EventsSection />
       <InspirationSection />
       <ProverbsSection />
+      <SafetySection />
     </main>
   );
 }
