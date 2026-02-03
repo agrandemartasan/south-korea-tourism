@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import {
   FacebookIcon,
   InstagramIcon,
@@ -87,10 +88,19 @@ export function FooterContent({ variant = "desktop" }: FooterContentProps) {
               </h4>
               <ul className={isMobile ? "space-y-2" : "space-y-3"}>
                 {explorarLinks.map((link) => (
-                  <li key={link}>
-                    <span className="font-body text-sm text-porcelain cursor-pointer">
-                      {link}
-                    </span>
+                  <li key={link.label}>
+                    {link.href ? (
+                      <Link
+                        href={link.href}
+                        className="font-body text-sm text-porcelain cursor-pointer"
+                      >
+                        {link.label}
+                      </Link>
+                    ) : (
+                      <span className="font-body text-sm text-porcelain cursor-pointer">
+                        {link.label}
+                      </span>
+                    )}
                   </li>
                 ))}
               </ul>

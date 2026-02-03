@@ -8,12 +8,17 @@ export const brandInfo = {
   email: "info@visitkorea.kr"
 };
 
-export const explorarLinks = [
-  "Cultura & Tradições",
-  "Atrações",
-  "Sabores da Coreia",
-  "Planear Viagem",
-  "Loja Cultural"
+export interface FooterLink {
+  label: string;
+  href?: string;
+}
+
+export const explorarLinks: FooterLink[] = [
+  { label: "Cultura & Tradições" },
+  { label: "Atrações" },
+  { label: "Sabores da Coreia" },
+  { label: "Planear Viagem", href: "/plan" },
+  { label: "Loja Cultural" }
 ];
 
 export const infoLinks = [

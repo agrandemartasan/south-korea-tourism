@@ -63,17 +63,29 @@ export default function MobileMenuOverlay() {
 
       {/* Mobile Navigation Items */}
       <nav className="flex flex-col items-center gap-6 pt-8">
-        {navItems.map((item) => (
-          <button
-            key={item.label}
-            type="button"
-            className="flex items-center gap-2 text-porcelain font-body text-lg cursor-pointer"
-            tabIndex={isMenuOpen ? 0 : -1}
-          >
-            {item.label}
-            {item.hasDropdown && <ChevronDownIcon />}
-          </button>
-        ))}
+        {navItems.map((item) =>
+          item.href ? (
+            <Link
+              key={item.label}
+              href={item.href}
+              className="flex items-center gap-2 text-porcelain font-body text-lg"
+              tabIndex={isMenuOpen ? 0 : -1}
+              onClick={closeMenu}
+            >
+              {item.label}
+            </Link>
+          ) : (
+            <button
+              key={item.label}
+              type="button"
+              className="flex items-center gap-2 text-porcelain font-body text-lg cursor-pointer"
+              tabIndex={isMenuOpen ? 0 : -1}
+            >
+              {item.label}
+              {item.hasDropdown && <ChevronDownIcon />}
+            </button>
+          )
+        )}
       </nav>
 
       {/* Mobile Footer Content */}
