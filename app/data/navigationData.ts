@@ -1,6 +1,7 @@
 export interface NavItem {
   label: string;
   hasDropdown: boolean;
+  href?: string;
 }
 
 export const navItems: NavItem[] = [
@@ -8,5 +9,5 @@ export const navItems: NavItem[] = [
   { label: "Cultura & Tradições", hasDropdown: true },
   { label: "Atrações", hasDropdown: true },
   { label: "Sabores da Coreia", hasDropdown: true },
-  { label: "Planear", hasDropdown: false }
+  { label: "Planear", hasDropdown: false, href: "/plan" }
 ];

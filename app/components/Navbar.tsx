@@ -31,16 +31,26 @@ export default function Navbar() {
 
         {/* Desktop Navigation Menu */}
         <div className="hidden lg:flex items-center gap-8">
-          {navItems.map((item) => (
-            <button
-              key={item.label}
-              type="button"
-              className="flex items-center gap-1 text-porcelain font-body text-base cursor-pointer"
-            >
-              {item.label}
-              {item.hasDropdown && <ChevronDownIcon />}
-            </button>
-          ))}
+          {navItems.map((item) =>
+            item.href ? (
+              <Link
+                key={item.label}
+                href={item.href}
+                className="flex items-center gap-1 text-porcelain font-body text-base"
+              >
+                {item.label}
+              </Link>
+            ) : (
+              <button
+                key={item.label}
+                type="button"
+                className="flex items-center gap-1 text-porcelain font-body text-base cursor-pointer"
+              >
+                {item.label}
+                {item.hasDropdown && <ChevronDownIcon />}
+              </button>
+            )
+          )}
         </div>
 
         {/* Buttons and Hamburger Menu */}
