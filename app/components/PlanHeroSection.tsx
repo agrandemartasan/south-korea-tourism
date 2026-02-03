@@ -32,7 +32,7 @@ export default function PlanHeroSection() {
         </p>
 
         {/* Button Group */}
-        <div className="flex flex-col gap-4 xs:flex-row">
+        <div className="flex flex-col gap-4 lg:flex-row">
           <Button variant="primary" href="#">
             Criar o meu roteiro
           </Button>
