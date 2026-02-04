@@ -1,7 +1,13 @@
 import Image from "next/image";
-import { highlights } from "../data/highlightsData";
+import { Highlight } from "../data/highlightsData";
 
-export default function HighlightsSection() {
+interface IconGridSectionProps {
+  heading: string;
+  description?: string;
+  items: Highlight[];
+}
+
+export default function IconGridSection({ heading, description, items }: IconGridSectionProps) {
   return (
     <section className="relative bg-inkstone overflow-hidden">
       {/* Background Pattern */}
@@ -20,33 +26,34 @@ export default function HighlightsSection() {
         {/* Header */}
         <div className="text-center mb-12 lg:mb-16">
           <h2 className="font-heading text-4xl leading-tight text-harvest mb-4 lg:text-5xl">
-            Explora o melhor da Coreia do Sul
+            {heading}
           </h2>
-          <p className="font-body text-lg text-porcelain">
-            Escolhe o que queres descobrir a seguir — cultura, sabores,
-            paisagens ou planeamento.
-          </p>
+          {description && (
+            <p className="font-body text-lg text-porcelain">
+              {description}
+            </p>
+          )}
         </div>
 
-        {/* Highlights Cards */}
+        {/* Icon Grid */}
         <div className="flex flex-col items-center gap-12 px-12 lg:flex-row lg:justify-between lg:items-start lg:gap-8">
-          {highlights.map((highlight) => (
+          {items.map((item) => (
             <article
-              key={highlight.title}
+              key={item.title}
               className="flex flex-col items-center text-center lg:flex-1 lg:max-w-[220px]"
             >
               <Image
-                src={highlight.icon}
+                src={item.icon}
                 alt=""
                 width={64}
                 height={64}
                 className="w-16 h-16 mb-4"
               />
-              <h3 className="font-heading text-xl text-harvest mb-2">
-                {highlight.title}
+              <h3 className="font-body text-xl font-semibold text-harvest mb-2">
+                {item.title}
               </h3>
               <p className="font-body text-base text-porcelain leading-relaxed">
-                {highlight.description}
+                {item.description}
               </p>
             </article>
           ))}
