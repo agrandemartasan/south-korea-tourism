@@ -22,12 +22,17 @@ const socialIcons: Record<SocialIconType, React.FC> = {
   youtube: YoutubeIcon
 };
 
+type FooterTheme = "dark" | "light";
+
 interface FooterContentProps {
   variant?: "desktop" | "mobile";
+  theme?: FooterTheme;
 }
 
-export function FooterContent({ variant = "desktop" }: FooterContentProps) {
+export function FooterContent({ variant = "desktop", theme = "dark" }: FooterContentProps) {
   const isMobile = variant === "mobile";
+  const textColor = theme === "dark" ? "text-porcelain" : "text-inkstone";
+  const logo = theme === "dark" ? "/media/images/logo-white.png" : "/media/images/logo-main.png";
 
   return (
     <div className={isMobile ? "px-5 pt-12 pb-8" : ""}>
@@ -43,32 +48,32 @@ export function FooterContent({ variant = "desktop" }: FooterContentProps) {
           {/* Brand Column */}
           <div>
             <Image
-              src="/media/images/logo-white.png"
+              src={logo}
               alt="Discover South Korea"
               width={200}
               height={60}
               className={isMobile ? "h-auto w-32 mb-4" : "h-auto w-40 mb-6"}
             />
             <h3
-              className={`font-body font-semibold text-porcelain ${isMobile ? "text-sm mb-1" : "text-base mb-2"}`}
+              className={`font-body font-semibold ${textColor} ${isMobile ? "text-sm mb-1" : "text-base mb-2"}`}
             >
               {brandInfo.title}
             </h3>
             <p
-              className={`font-body text-sm text-porcelain ${isMobile ? "mb-4" : "mb-6"}`}
+              className={`font-body text-sm ${textColor} ${isMobile ? "mb-4" : "mb-6"}`}
             >
               {brandInfo.description}
             </p>
-            <p className="font-body text-sm font-semibold text-porcelain mb-1">
+            <p className={`font-body text-sm font-semibold ${textColor} mb-1`}>
               {brandInfo.office}
             </p>
-            <p className="font-body text-sm text-porcelain">
+            <p className={`font-body text-sm ${textColor}`}>
               {brandInfo.address}
             </p>
-            <p className="font-body text-sm text-porcelain">
+            <p className={`font-body text-sm ${textColor}`}>
               {brandInfo.phone}
             </p>
-            <span className="font-body text-sm text-porcelain underline">
+            <span className={`font-body text-sm ${textColor} underline`}>
               {brandInfo.email}
             </span>
           </div>
@@ -92,12 +97,12 @@ export function FooterContent({ variant = "desktop" }: FooterContentProps) {
                     {link.href ? (
                       <Link
                         href={link.href}
-                        className="font-body text-sm text-porcelain cursor-pointer"
+                        className={`font-body text-sm ${textColor} cursor-pointer`}
                       >
                         {link.label}
                       </Link>
                     ) : (
-                      <span className="font-body text-sm text-porcelain cursor-pointer">
+                      <span className={`font-body text-sm ${textColor} cursor-pointer`}>
                         {link.label}
                       </span>
                     )}
@@ -116,7 +121,7 @@ export function FooterContent({ variant = "desktop" }: FooterContentProps) {
               <ul className={isMobile ? "space-y-2" : "space-y-3"}>
                 {infoLinks.map((link) => (
                   <li key={link}>
-                    <span className="font-body text-sm text-porcelain cursor-pointer">
+                    <span className={`font-body text-sm ${textColor} cursor-pointer`}>
                       {link}
                     </span>
                   </li>
@@ -136,7 +141,7 @@ export function FooterContent({ variant = "desktop" }: FooterContentProps) {
                   const Icon = socialIcons[social.icon];
                   return (
                     <li key={social.name}>
-                      <span className="flex items-center gap-3 font-body text-sm text-porcelain cursor-pointer">
+                      <span className={`flex items-center gap-3 font-body text-sm ${textColor} cursor-pointer`}>
                         <Icon />
                         {social.name}
                       </span>
@@ -169,26 +174,26 @@ export function FooterContent({ variant = "desktop" }: FooterContentProps) {
               <ul className="space-y-2 mb-4">
                 {legalLinks.map((link) => (
                   <li key={link}>
-                    <span className="font-body text-sm text-porcelain underline cursor-pointer">
+                    <span className={`font-body text-sm ${textColor} underline cursor-pointer`}>
                       {link}
                     </span>
                   </li>
                 ))}
               </ul>
-              <p className="font-body text-sm text-porcelain">
+              <p className={`font-body text-sm ${textColor}`}>
                 © 2025 Discover South Korea. Todos os direitos reservados.
               </p>
             </>
           ) : (
             <>
-              <p className="font-body text-sm text-porcelain">
+              <p className={`font-body text-sm ${textColor}`}>
                 © 2025 Discover South Korea. Todos os direitos reservados.
               </p>
               <div className="flex flex-col gap-2 lg:flex-row lg:gap-6">
                 {legalLinks.map((link) => (
                   <span
                     key={link}
-                    className="font-body text-sm text-porcelain underline cursor-pointer"
+                    className={`font-body text-sm ${textColor} underline cursor-pointer`}
                   >
                     {link}
                   </span>
@@ -202,10 +207,16 @@ export function FooterContent({ variant = "desktop" }: FooterContentProps) {
   );
 }
 
-export default function Footer() {
+interface FooterProps {
+  theme?: FooterTheme;
+}
+
+export default function Footer({ theme = "dark" }: FooterProps) {
+  const bgColor = theme === "dark" ? "bg-inkstone" : "bg-porcelain";
+
   return (
-    <footer className="hidden lg:block bg-inkstone">
-      <FooterContent variant="desktop" />
+    <footer className={`hidden lg:block ${bgColor}`}>
+      <FooterContent variant="desktop" theme={theme} />
     </footer>
   );
 }

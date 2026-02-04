@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-type ButtonVariant = "primary" | "secondary" | "accent";
+type ButtonVariant = "primary" | "secondary" | "accent" | "harvest";
 
 interface ButtonProps {
   variant: ButtonVariant;
@@ -17,6 +17,8 @@ const variantStyles: Record<ButtonVariant, string> = {
     "bg-porcelain/10 border-porcelain text-porcelain hover:bg-porcelain/25",
   accent:
     "bg-crimson/70 border-crimson text-porcelain hover:bg-crimson/90",
+  harvest:
+    "bg-harvest/70 border-harvest text-inkstone hover:bg-harvest/90",
 };
 
 export default function Button({
