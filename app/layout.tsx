@@ -2,10 +2,6 @@ import type { Metadata } from "next";
 import { Merriweather } from "next/font/google";
 import localFont from "next/font/local";
 import "./globals.css";
-import { MobileMenuProvider } from "./components/MobileMenuContext";
-import Navbar from "./components/Navbar";
-import Footer from "./components/Footer";
-import MobileMenuOverlay from "./components/MobileMenuOverlay";
 
 const korean = localFont({
   src: "../public/fonts/Korean.ttf",
@@ -35,12 +31,7 @@ export default function RootLayout({
       <body
         className={`${korean.variable} ${merriweather.variable} antialiased`}
       >
-        <MobileMenuProvider>
-          <Navbar />
-          {children}
-          <Footer />
-          <MobileMenuOverlay />
-        </MobileMenuProvider>
+        {children}
       </body>
     </html>
   );

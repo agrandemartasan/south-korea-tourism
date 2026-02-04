@@ -1,4 +1,4 @@
-import PlanHeroSection from "../components/PlanHeroSection";
+import PlanHeroSection from "../../components/PlanHeroSection";
 
 export default function PlanPage() {
   return (
