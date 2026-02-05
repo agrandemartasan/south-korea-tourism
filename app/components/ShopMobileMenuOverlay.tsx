@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import Button from "./Button";
+import ProductCard from "./ProductCard";
 import {
   CartIcon,
   ChevronDownIcon,
@@ -121,29 +122,7 @@ export default function ShopMobileMenuOverlay() {
 
         <div className="flex flex-col gap-8">
           {featuredProducts.map((product) => (
-            <div key={product.id}>
-              <div className="relative aspect-4/3 w-full overflow-hidden mb-3">
-                <Image
-                  src={product.image}
-                  alt={product.name}
-                  fill
-                  className="object-cover"
-                  sizes="(max-width: 1024px) 100vw"
-                />
-                <span className="absolute top-3 left-3 bg-harvest px-3 py-1 rounded font-body text-xs font-semibold text-inkstone">
-                  {product.category}
-                </span>
-              </div>
-              <h4 className="font-heading text-lg text-inkstone mb-1">
-                {product.name}
-              </h4>
-              <p className="font-body text-sm text-inkstone/70 mb-2">
-                {product.description}
-              </p>
-              <p className="font-body text-base font-semibold text-inkstone">
-                {product.price}
-              </p>
-            </div>
+            <ProductCard key={product.id} product={product} />
           ))}
         </div>
       </div>
