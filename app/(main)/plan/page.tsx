@@ -1,5 +1,7 @@
 import PlanHeroSection from "../../components/PlanHeroSection";
 import IconGridSection from "../../components/IconGridSection";
+import ItinerariesSection from "../../components/ItinerariesSection";
+import EtiquetteSection from "../../components/EtiquetteSection";
 import { travelKitItems } from "../../data/travelKitData";
 
 export default function PlanPage() {
@@ -10,6 +12,8 @@ export default function PlanPage() {
         heading="Kit do Viajante"
         items={travelKitItems}
       />
+      <ItinerariesSection />
+      <EtiquetteSection />
     </main>
   );
 }
