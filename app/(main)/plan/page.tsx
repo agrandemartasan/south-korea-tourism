@@ -2,6 +2,7 @@ import PlanHeroSection from "../../components/PlanHeroSection";
 import IconGridSection from "../../components/IconGridSection";
 import ItinerariesSection from "../../components/ItinerariesSection";
 import EtiquetteSection from "../../components/EtiquetteSection";
+import EssentialsSection from "../../components/EssentialsSection";
 import { travelKitItems } from "../../data/travelKitData";
 
 export default function PlanPage() {
@@ -14,6 +15,7 @@ export default function PlanPage() {
       />
       <ItinerariesSection />
       <EtiquetteSection />
+      <EssentialsSection />
     </main>
   );
 }
