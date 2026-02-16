@@ -4,6 +4,7 @@ import ItinerariesSection from "../../components/ItinerariesSection";
 import EtiquetteSection from "../../components/EtiquetteSection";
 import EssentialsSection from "../../components/EssentialsSection";
 import AlertsSection from "../../components/AlertsSection";
+import DownloadsSection from "../../components/DownloadsSection";
 import { travelKitItems } from "../../data/travelKitData";
 
 export default function PlanPage() {
@@ -18,6 +19,7 @@ export default function PlanPage() {
       <EtiquetteSection />
       <EssentialsSection />
       <AlertsSection />
+      <DownloadsSection />
     </main>
   );
 }
