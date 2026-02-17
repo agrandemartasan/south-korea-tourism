@@ -8,10 +8,10 @@ export default function ShopFeaturedSection() {
       <div className="flex gap-16">
         {/* Left Column */}
         <div className="flex-shrink-0 w-80 flex flex-col justify-center">
-          <h2 className="font-body text-3xl font-bold text-inkstone mb-4">
+          <h2 className="font-body text-heading-md font-bold text-inkstone mb-4">
             Favoritos dos Viajantes
           </h2>
-          <p className="font-body text-base text-inkstone/70 mb-6">
+          <p className="font-body text-body-md text-inkstone/70 mb-6">
             Os artigos mais procurados que captam a essência da Coreia do Sul.
           </p>
           <Button variant="outline" href="/shop" className="px-4 self-start">

@@ -281,7 +281,7 @@ export default function ShopPage() {
 
       <div className="px-6 py-8 lg:px-12 lg:py-12">
         {/* Page Title */}
-        <h1 className="font-body text-3xl font-bold text-inkstone mb-8 lg:text-4xl">
+        <h1 className="font-body text-3xl font-bold text-inkstone mb-8 lg:text-heading-md">
           Loja Cultural
         </h1>
 
@@ -289,7 +289,7 @@ export default function ShopPage() {
         <button
           type="button"
           onClick={() => setIsMobileFilterOpen(true)}
-          className="lg:hidden w-full flex items-center justify-center gap-2 border border-inkstone/30 rounded-full py-3 mb-6 font-body text-sm text-inkstone cursor-pointer hover:bg-inkstone/5 transition-colors"
+          className="lg:hidden w-full flex items-center justify-center gap-2 border border-inkstone/30 rounded-full py-3 mb-6 font-body text-body-sm text-inkstone cursor-pointer hover:bg-inkstone/5 transition-colors"
         >
           <FilterIcon />
           Filtros
@@ -326,7 +326,7 @@ export default function ShopPage() {
                 <button
                   type="button"
                   onClick={() => setShowSortDropdown(!showSortDropdown)}
-                  className="flex items-center gap-2 font-body text-sm text-inkstone cursor-pointer"
+                  className="flex items-center gap-2 font-body text-body-sm text-inkstone cursor-pointer"
                 >
                   Ordenar por
                   <ChevronDownIcon />
@@ -346,7 +346,7 @@ export default function ShopPage() {
                             setSortBy(option.id);
                             setShowSortDropdown(false);
                           }}
-                          className={`w-full text-left px-4 py-2 text-sm cursor-pointer hover:bg-inkstone/5 ${
+                          className={`w-full text-left px-4 py-2 text-body-sm cursor-pointer hover:bg-inkstone/5 ${
                             sortBy === option.id
                               ? "font-semibold text-inkstone"
                               : "text-inkstone/70"

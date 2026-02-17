@@ -58,7 +58,7 @@ function CollapsibleSection({
         className="w-full flex items-center justify-between text-left cursor-pointer"
         aria-expanded={isOpen}
       >
-        <span className="font-body text-sm font-semibold text-inkstone">
+        <span className="font-body text-body-sm font-semibold text-inkstone">
           {title}
         </span>
         <span className="text-inkstone">
@@ -135,18 +135,18 @@ export default function ShopFilters({
     <div className="font-body">
       {/* Header */}
       <div className="flex items-center justify-between mb-2">
-        <h2 className="text-lg font-semibold text-inkstone">Filtros</h2>
+        <h2 className="text-body-lg font-semibold text-inkstone">Filtros</h2>
         <button
           type="button"
           onClick={onClearAll}
-          className="text-sm text-inkstone/70 hover:text-inkstone cursor-pointer"
+          className="text-body-sm text-inkstone/70 hover:text-inkstone cursor-pointer"
         >
           Limpar tudo
         </button>
       </div>
 
       {/* Results count */}
-      <p className="text-sm text-inkstone/70 mb-6">
+      <p className="text-body-sm text-inkstone/70 mb-6">
         A mostrar {totalResults} de {totalProducts}
       </p>
 
@@ -157,7 +157,7 @@ export default function ShopFilters({
             key={cat.id}
             type="button"
             onClick={() => setSelectedCategory(cat.id)}
-            className={`block w-full text-left py-1 text-sm cursor-pointer transition-colors ${
+            className={`block w-full text-left py-1 text-body-sm cursor-pointer transition-colors ${
               selectedCategory === cat.id
                 ? "font-semibold text-inkstone"
                 : "text-inkstone/70 hover:text-inkstone"
@@ -192,7 +192,7 @@ export default function ShopFilters({
                 }
                 className="w-4 h-4 rounded border-inkstone/30 text-celestial focus:ring-celestial"
               />
-              <span className="text-sm text-inkstone">{sub.label}</span>
+              <span className="text-body-sm text-inkstone">{sub.label}</span>
             </label>
           ))}
         </div>
@@ -213,7 +213,7 @@ export default function ShopFilters({
             placeholder="Keyword"
             value={searchKeyword}
             onChange={(e) => setSearchKeyword(e.target.value)}
-            className="w-full pl-9 pr-3 py-2 border border-inkstone/30 rounded text-sm text-inkstone placeholder:text-inkstone/50 focus:outline-none focus:border-celestial"
+            className="w-full pl-9 pr-3 py-2 border border-inkstone/30 rounded text-body-sm text-inkstone placeholder:text-inkstone/50 focus:outline-none focus:border-celestial"
           />
         </div>
       </CollapsibleSection>
@@ -236,7 +236,7 @@ export default function ShopFilters({
                   setSelectedMaisVendidos
                 )
               }
-              className={`px-3 py-1.5 rounded-full text-sm border cursor-pointer transition-colors ${
+              className={`px-3 py-1.5 rounded-full text-body-sm border cursor-pointer transition-colors ${
                 selectedMaisVendidos.includes(tag.id)
                   ? "bg-inkstone/10 border-inkstone text-inkstone"
                   : "border-inkstone/30 text-inkstone hover:border-inkstone"
@@ -266,7 +266,7 @@ export default function ShopFilters({
                   setSelectedNovidades
                 )
               }
-              className={`px-3 py-1.5 rounded-full text-sm border cursor-pointer transition-colors ${
+              className={`px-3 py-1.5 rounded-full text-body-sm border cursor-pointer transition-colors ${
                 selectedNovidades.includes(tag.id)
                   ? "bg-inkstone/10 border-inkstone text-inkstone"
                   : "border-inkstone/30 text-inkstone hover:border-inkstone"
@@ -297,7 +297,7 @@ export default function ShopFilters({
                 onChange={() => setSelectedPrice(range.id)}
                 className="w-4 h-4 border-inkstone/30 text-celestial focus:ring-celestial"
               />
-              <span className="text-sm text-inkstone">{range.label}</span>
+              <span className="text-body-sm text-inkstone">{range.label}</span>
             </label>
           ))}
         </div>
@@ -327,7 +327,7 @@ export default function ShopFilters({
                 }
                 className="w-4 h-4 rounded border-inkstone/30 text-celestial focus:ring-celestial"
               />
-              <span className="text-sm text-inkstone">{region.label}</span>
+              <span className="text-body-sm text-inkstone">{region.label}</span>
             </label>
           ))}
         </div>
@@ -342,7 +342,7 @@ export default function ShopFilters({
         <select
           value={selectedMaterial}
           onChange={(e) => setSelectedMaterial(e.target.value)}
-          className="w-full px-3 py-2 border border-inkstone/30 rounded text-sm text-inkstone focus:outline-none focus:border-celestial cursor-pointer"
+          className="w-full px-3 py-2 border border-inkstone/30 rounded text-body-sm text-inkstone focus:outline-none focus:border-celestial cursor-pointer"
         >
           {materials.map((mat) => (
             <option key={mat.id} value={mat.id}>
@@ -371,7 +371,7 @@ export default function ShopFilters({
                 onChange={() => setSelectedAvailability(option.id)}
                 className="w-4 h-4 border-inkstone/30 text-celestial focus:ring-celestial"
               />
-              <span className="text-sm text-inkstone">{option.label}</span>
+              <span className="text-body-sm text-inkstone">{option.label}</span>
             </label>
           ))}
         </div>

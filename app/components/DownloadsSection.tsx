@@ -22,10 +22,10 @@ function DownloadItemRow({ item, isLast }: DownloadItemRowProps) {
         !isLast ? "border-b border-porcelain/30" : ""
       }`}
     >
-      <span className="font-body text-sm text-porcelain pr-4">{item.title}</span>
+      <span className="font-body text-body-sm text-porcelain pr-4">{item.title}</span>
       <Link
         href={item.href}
-        className="flex-shrink-0 border border-porcelain text-porcelain rounded-full px-5 py-2 font-body text-sm hover:bg-porcelain/10 transition-colors"
+        className="flex-shrink-0 border border-porcelain text-porcelain rounded-full px-5 py-2 font-body text-body-sm hover:bg-porcelain/10 transition-colors"
       >
         Download
       </Link>
@@ -61,7 +61,7 @@ function AccordionCategory({
         className="w-full flex items-center justify-between py-4 text-left cursor-pointer border-b border-celestial"
         aria-expanded={isOpen}
       >
-        <h3 className="font-body text-lg font-semibold text-harvest">
+        <h3 className="font-body text-body-lg font-semibold text-harvest">
           {category.title}
         </h3>
         <span className="text-crimson ml-4 flex-shrink-0">
@@ -106,7 +106,7 @@ export default function DownloadsSection() {
       <div className="px-6 py-16 lg:px-24 lg:py-24">
         {/* Title */}
         <div className="text-center mb-12 lg:mb-16">
-          <h2 className="font-heading text-3xl leading-tight text-harvest lg:text-5xl">
+          <h2 className="font-heading text-3xl leading-tight text-harvest lg:text-heading-lg">
             Downloads Úteis
           </h2>
         </div>

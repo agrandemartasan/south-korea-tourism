@@ -12,6 +12,32 @@
   --color-crimson: #c62631;
   --color-celestial: #0b4f6c;
 
+  /* Typography - Headings */
+  --text-heading-xl: 96px;
+  --text-heading-xl--line-height: 1.2;
+
+  --text-heading-lg: 64px;
+  --text-heading-lg--line-height: 1.2;
+
+  --text-heading-md: 32px;
+  --text-heading-md--line-height: 1.2;
+
+  --text-heading-sm: 24px;
+  --text-heading-sm--line-height: 1.4;
+
+  /* Typography - Body */
+  --text-body-xl: 24px;
+  --text-body-xl--line-height: 1.4;
+
+  --text-body-lg: 18px;
+  --text-body-lg--line-height: 1.5;
+
+  --text-body-md: 16px;
+  --text-body-md--line-height: 1.5;
+
+  --text-body-sm: 14px;
+  --text-body-sm--line-height: 1.5;
+
   /* Custom Breakpoint */
   --breakpoint-xs: 402px;
 }

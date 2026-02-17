@@ -24,14 +24,14 @@ interface AlertCardProps {
 function AlertCard({ item }: AlertCardProps) {
   return (
     <article className="border border-celestial p-6">
-      <h3 className="font-body text-lg font-semibold text-harvest mb-4">
+      <h3 className="font-body text-body-lg font-semibold text-harvest mb-4">
         {item.title}
       </h3>
       <ul className="space-y-2">
         {item.bullets.map((bullet, idx) => (
           <li
             key={idx}
-            className="font-body text-sm text-porcelain flex items-start gap-2"
+            className="font-body text-body-sm text-porcelain flex items-start gap-2"
           >
             <span className="mt-1.5">•</span>
             <span>{formatContent(bullet)}</span>

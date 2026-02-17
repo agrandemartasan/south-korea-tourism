@@ -23,24 +23,24 @@ function ArticleCard({ article }: ArticleCardProps) {
       </div>
 
       {/* Category Badge */}
-      <span className="inline-block w-fit px-3 py-1 bg-crimson text-porcelain font-body text-sm rounded mb-3">
+      <span className="inline-block w-fit px-3 py-1 bg-crimson text-porcelain font-body text-body-sm rounded mb-3">
         {article.category}
       </span>
 
       {/* Title */}
-      <h3 className="font-body text-xl font-semibold text-crimson mb-2 lg:text-2xl">
+      <h3 className="font-body text-xl font-semibold text-crimson mb-2 lg:text-heading-sm">
         {article.title}
       </h3>
 
       {/* Description */}
-      <p className="font-body text-base text-porcelain leading-relaxed mb-4">
+      <p className="font-body text-body-md text-porcelain mb-4">
         {article.description}
       </p>
 
       {/* Read More Link */}
       <Link
         href={article.href}
-        className="inline-flex items-center gap-1 font-body text-base text-porcelain hover:text-harvest transition-colors"
+        className="inline-flex items-center gap-1 font-body text-body-md text-porcelain hover:text-harvest transition-colors"
       >
         Ler mais
         <ChevronRightIcon />

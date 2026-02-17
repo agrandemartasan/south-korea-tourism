@@ -35,7 +35,7 @@ export default function ShopNavbar() {
             <button
               key={item.label}
               type="button"
-              className="flex items-center gap-1 text-inkstone font-body text-base cursor-pointer"
+              className="flex items-center gap-1 text-inkstone font-body text-body-md cursor-pointer"
             >
               {item.label}
               {item.hasDropdown && <ChevronDownIcon />}

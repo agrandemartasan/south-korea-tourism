@@ -36,7 +36,7 @@ export default function Navbar() {
               <Link
                 key={item.label}
                 href={item.href}
-                className="flex items-center gap-1 text-porcelain font-body text-base"
+                className="flex items-center gap-1 text-porcelain font-body text-body-md"
               >
                 {item.label}
               </Link>
@@ -44,7 +44,7 @@ export default function Navbar() {
               <button
                 key={item.label}
                 type="button"
-                className="flex items-center gap-1 text-porcelain font-body text-base cursor-pointer"
+                className="flex items-center gap-1 text-porcelain font-body text-body-md cursor-pointer"
               >
                 {item.label}
                 {item.hasDropdown && <ChevronDownIcon />}

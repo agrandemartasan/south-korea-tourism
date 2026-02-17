@@ -20,13 +20,13 @@ export default function ProductCard({ product }: ProductCardProps) {
           {product.category}
         </span>
       </div>
-      <h4 className="font-body text-lg font-semibold text-inkstone mb-1">
+      <h4 className="font-body text-body-lg font-semibold text-inkstone mb-1">
         {product.name}
       </h4>
-      <p className="font-body text-sm text-inkstone/70 mb-2">
+      <p className="font-body text-body-sm text-inkstone/70 mb-2">
         {product.description}
       </p>
-      <p className="font-body text-base font-semibold text-inkstone">
+      <p className="font-body text-body-md font-semibold text-inkstone">
         {product.price}
       </p>
     </div>

@@ -37,7 +37,7 @@ function AccordionItem({ item, isOpen, onToggle }: AccordionItemProps) {
         className="w-full flex items-center justify-between py-4 text-left cursor-pointer"
         aria-expanded={isOpen}
       >
-        <h3 className="font-body text-lg font-semibold text-harvest">
+        <h3 className="font-body text-body-lg font-semibold text-harvest">
           {item.title}
         </h3>
         <span className="text-crimson ml-4 flex-shrink-0">
@@ -50,7 +50,7 @@ function AccordionItem({ item, isOpen, onToggle }: AccordionItemProps) {
         <div className="pb-6">
           {/* Regular content with line breaks */}
           {item.content && (
-            <div className="font-body text-sm text-porcelain leading-relaxed">
+            <div className="font-body text-body-sm text-porcelain">
               {item.content.split("\n").map((paragraph, idx) => (
                 <p key={idx} className={idx > 0 ? "mt-3" : ""}>
                   {formatContent(paragraph)}
@@ -65,7 +65,7 @@ function AccordionItem({ item, isOpen, onToggle }: AccordionItemProps) {
               {item.bulletList.map((listItem, idx) => (
                 <li
                   key={idx}
-                  className="font-body text-sm text-porcelain flex items-start gap-2"
+                  className="font-body text-body-sm text-porcelain flex items-start gap-2"
                 >
                   <span className="mt-1.5">•</span>
                   {listItem}
@@ -87,7 +87,7 @@ function AccordionItem({ item, isOpen, onToggle }: AccordionItemProps) {
                     className="w-6 h-6 flex-shrink-0 mt-0.5"
                   />
                   <div>
-                    <h4 className="font-body text-sm font-semibold text-porcelain">
+                    <h4 className="font-body text-body-sm font-semibold text-porcelain">
                       {season.title}
                     </h4>
                     <p className="font-body text-xs text-porcelain/80">

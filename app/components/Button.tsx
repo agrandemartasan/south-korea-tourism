@@ -31,7 +31,7 @@ export default function Button({
   tabIndex = 0,
 }: ButtonProps) {
   const baseStyles =
-    "inline-flex items-center justify-center rounded-full border px-8 py-3 font-body text-base font-normal transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-inkstone";
+    "inline-flex items-center justify-center rounded-full border px-8 py-3 font-body text-body-md font-normal transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-inkstone";
 
   return (
     <Link

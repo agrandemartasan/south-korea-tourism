@@ -20,7 +20,7 @@ export default function ShopCtaSection() {
       <div className="relative z-10 flex flex-col gap-6 px-6 py-16 lg:flex-row lg:items-center lg:gap-16 lg:px-24 lg:py-24">
         {/* Title */}
         <div className="lg:flex-1">
-          <h2 className="font-heading text-3xl leading-tight text-harvest lg:text-5xl">
+          <h2 className="font-heading text-3xl leading-tight text-harvest lg:text-heading-lg">
             Leva a Coreia
             <br />
             Contigo
@@ -29,7 +29,7 @@ export default function ShopCtaSection() {
 
         {/* Description + CTA */}
         <div className="lg:flex-1">
-          <p className="font-body text-base text-porcelain leading-relaxed mb-6 lg:text-lg">
+          <p className="font-body text-body-md text-porcelain mb-6 lg:text-body-lg">
             Descobre peças autênticas, artesanato tradicional, livros,
             gastronomia e objetos inspirados na cultura coreana —
             cuidadosamente selecionados para quem ama explorar.

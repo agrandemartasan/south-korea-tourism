@@ -55,25 +55,25 @@ export function FooterContent({ variant = "desktop", theme = "dark" }: FooterCon
               className={isMobile ? "h-auto w-32 mb-4" : "h-auto w-40 mb-6"}
             />
             <h3
-              className={`font-body font-semibold ${textColor} ${isMobile ? "text-sm mb-1" : "text-base mb-2"}`}
+              className={`font-body font-semibold ${textColor} ${isMobile ? "text-sm mb-1" : "text-body-md mb-2"}`}
             >
               {brandInfo.title}
             </h3>
             <p
-              className={`font-body text-sm ${textColor} ${isMobile ? "mb-4" : "mb-6"}`}
+              className={`font-body text-body-sm ${textColor} ${isMobile ? "mb-4" : "mb-6"}`}
             >
               {brandInfo.description}
             </p>
-            <p className={`font-body text-sm font-semibold ${textColor} mb-1`}>
+            <p className={`font-body text-body-sm font-semibold ${textColor} mb-1`}>
               {brandInfo.office}
             </p>
-            <p className={`font-body text-sm ${textColor}`}>
+            <p className={`font-body text-body-sm ${textColor}`}>
               {brandInfo.address}
             </p>
-            <p className={`font-body text-sm ${textColor}`}>
+            <p className={`font-body text-body-sm ${textColor}`}>
               {brandInfo.phone}
             </p>
-            <span className={`font-body text-sm ${textColor} underline`}>
+            <span className={`font-body text-body-sm ${textColor} underline`}>
               {brandInfo.email}
             </span>
           </div>
@@ -87,7 +87,7 @@ export function FooterContent({ variant = "desktop", theme = "dark" }: FooterCon
             {/* Explorar Column */}
             <div>
               <h4
-                className={`font-body font-semibold text-crimson ${isMobile ? "text-base mb-3" : "text-lg mb-4"}`}
+                className={`font-body font-semibold text-crimson ${isMobile ? "text-body-md mb-3" : "text-body-lg mb-4"}`}
               >
                 Explorar
               </h4>
@@ -97,12 +97,12 @@ export function FooterContent({ variant = "desktop", theme = "dark" }: FooterCon
                     {link.href ? (
                       <Link
                         href={link.href}
-                        className={`font-body text-sm ${textColor} cursor-pointer`}
+                        className={`font-body text-body-sm ${textColor} cursor-pointer`}
                       >
                         {link.label}
                       </Link>
                     ) : (
-                      <span className={`font-body text-sm ${textColor} cursor-pointer`}>
+                      <span className={`font-body text-body-sm ${textColor} cursor-pointer`}>
                         {link.label}
                       </span>
                     )}
@@ -114,14 +114,14 @@ export function FooterContent({ variant = "desktop", theme = "dark" }: FooterCon
             {/* Informação útil Column */}
             <div>
               <h4
-                className={`font-body font-semibold text-crimson ${isMobile ? "text-base mb-3" : "text-lg mb-4"}`}
+                className={`font-body font-semibold text-crimson ${isMobile ? "text-body-md mb-3" : "text-body-lg mb-4"}`}
               >
                 Informação útil
               </h4>
               <ul className={isMobile ? "space-y-2" : "space-y-3"}>
                 {infoLinks.map((link) => (
                   <li key={link}>
-                    <span className={`font-body text-sm ${textColor} cursor-pointer`}>
+                    <span className={`font-body text-body-sm ${textColor} cursor-pointer`}>
                       {link}
                     </span>
                   </li>
@@ -132,7 +132,7 @@ export function FooterContent({ variant = "desktop", theme = "dark" }: FooterCon
             {/* Social Column */}
             <div>
               <h4
-                className={`font-body font-semibold text-crimson ${isMobile ? "text-base mb-3" : "text-lg mb-4"}`}
+                className={`font-body font-semibold text-crimson ${isMobile ? "text-body-md mb-3" : "text-body-lg mb-4"}`}
               >
                 Segue-nos
               </h4>
@@ -141,7 +141,7 @@ export function FooterContent({ variant = "desktop", theme = "dark" }: FooterCon
                   const Icon = socialIcons[social.icon];
                   return (
                     <li key={social.name}>
-                      <span className={`flex items-center gap-3 font-body text-sm ${textColor} cursor-pointer`}>
+                      <span className={`flex items-center gap-3 font-body text-body-sm ${textColor} cursor-pointer`}>
                         <Icon />
                         {social.name}
                       </span>
@@ -174,26 +174,26 @@ export function FooterContent({ variant = "desktop", theme = "dark" }: FooterCon
               <ul className="space-y-2 mb-4">
                 {legalLinks.map((link) => (
                   <li key={link}>
-                    <span className={`font-body text-sm ${textColor} underline cursor-pointer`}>
+                    <span className={`font-body text-body-sm ${textColor} underline cursor-pointer`}>
                       {link}
                     </span>
                   </li>
                 ))}
               </ul>
-              <p className={`font-body text-sm ${textColor}`}>
+              <p className={`font-body text-body-sm ${textColor}`}>
                 © 2025 Discover South Korea. Todos os direitos reservados.
               </p>
             </>
           ) : (
             <>
-              <p className={`font-body text-sm ${textColor}`}>
+              <p className={`font-body text-body-sm ${textColor}`}>
                 © 2025 Discover South Korea. Todos os direitos reservados.
               </p>
               <div className="flex flex-col gap-2 lg:flex-row lg:gap-6">
                 {legalLinks.map((link) => (
                   <span
                     key={link}
-                    className={`font-body text-sm ${textColor} underline cursor-pointer`}
+                    className={`font-body text-body-sm ${textColor} underline cursor-pointer`}
                   >
                     {link}
                   </span>

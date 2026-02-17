@@ -13,12 +13,12 @@ function SafetyCard({ topic }: SafetyCardProps) {
       <h3 className="font-body text-xl font-semibold text-harvest mb-3">
         {topic.title}
       </h3>
-      <p className="font-body text-base text-porcelain leading-relaxed mb-4">
+      <p className="font-body text-body-md text-porcelain mb-4">
         {topic.description}
       </p>
       <Link
         href={topic.href}
-        className="inline-flex items-center gap-1 font-body text-base text-porcelain hover:text-harvest transition-colors"
+        className="inline-flex items-center gap-1 font-body text-body-md text-porcelain hover:text-harvest transition-colors"
       >
         Ler mais
         <ChevronRightIcon />

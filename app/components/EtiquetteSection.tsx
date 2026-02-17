@@ -23,10 +23,10 @@ function EtiquetteTipItem({ tip, isLast = false }: EtiquetteTipItemProps) {
         />
       </div>
       <div className="flex-1">
-        <h3 className="font-body text-lg font-semibold text-harvest mb-1">
+        <h3 className="font-body text-body-lg font-semibold text-harvest mb-1">
           {tip.title}
         </h3>
-        <p className="font-body text-sm text-porcelain">{tip.description}</p>
+        <p className="font-body text-body-sm text-porcelain">{tip.description}</p>
       </div>
     </div>
   );
@@ -53,10 +53,10 @@ export default function EtiquetteSection() {
 
           {/* Right - Content */}
           <div className="flex-1 flex flex-col">
-            <h2 className="font-heading text-4xl leading-tight text-harvest mb-4 lg:text-5xl">
+            <h2 className="font-heading text-4xl leading-tight text-harvest mb-4 lg:text-heading-lg">
               Guia de Etiqueta e Costumes Básicos
             </h2>
-            <p className="font-body text-base text-porcelain mb-8 max-w-xl">
+            <p className="font-body text-body-md text-porcelain mb-8 max-w-xl">
               Entender a cultura coreana torna a tua viagem mais tranquila e
               respeitosa. Aprende os gestos mais importantes, cumprimentos,
               regras básicas à mesa e normas sociais.
@@ -88,7 +88,7 @@ export default function EtiquetteSection() {
           <h2 className="font-heading text-3xl leading-tight text-harvest mb-4">
             Guia de Etiqueta e Costumes Básicos
           </h2>
-          <p className="font-body text-base text-porcelain mb-8">
+          <p className="font-body text-body-md text-porcelain mb-8">
             Entender a cultura coreana torna a tua viagem mais tranquila e
             respeitosa. Aprende os gestos mais importantes, cumprimentos, regras
             básicas à mesa e normas sociais.

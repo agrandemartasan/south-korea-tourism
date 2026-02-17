@@ -26,18 +26,18 @@ function EventCard({ event }: EventCardProps) {
 
       {/* Card Content */}
       <div className="p-6 flex flex-col flex-1">
-        <p className="font-body text-sm text-porcelain uppercase tracking-wide mb-2">
+        <p className="font-body text-body-sm text-porcelain uppercase tracking-wide mb-2">
           {event.location}
         </p>
         <h3 className="font-body text-xl font-semibold text-crimson mb-3">
           {event.title}
         </h3>
-        <p className="font-body text-sm text-porcelain leading-relaxed mb-4 flex-1">
+        <p className="font-body text-body-sm text-porcelain mb-4 flex-1">
           {event.description}
         </p>
         <Link
           href={event.href}
-          className="inline-flex items-center gap-1 font-body text-sm text-porcelain hover:text-harvest transition-colors"
+          className="inline-flex items-center gap-1 font-body text-body-sm text-porcelain hover:text-harvest transition-colors"
         >
           Ver mais
           <ChevronRightIcon />
@@ -120,10 +120,10 @@ export default function EventsSection() {
       <div className="relative z-10 py-16 lg:py-24">
         {/* Header */}
         <div className="text-center px-6 mb-12">
-          <h2 className="font-heading text-3xl leading-tight text-harvest mb-4 lg:text-5xl">
+          <h2 className="font-heading text-3xl leading-tight text-harvest mb-4 lg:text-heading-lg">
             O que está a acontecer na Coreia agora
           </h2>
-          <p className="font-body text-base text-porcelain lg:text-lg">
+          <p className="font-body text-body-md text-porcelain lg:text-body-lg">
             Festas, celebrações sazonais e eventos culturais que mostram o
             espírito vivo do país.
           </p>

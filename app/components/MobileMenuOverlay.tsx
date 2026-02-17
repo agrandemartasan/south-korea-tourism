@@ -68,7 +68,7 @@ export default function MobileMenuOverlay() {
             <Link
               key={item.label}
               href={item.href}
-              className="flex items-center gap-2 text-porcelain font-body text-lg"
+              className="flex items-center gap-2 text-porcelain font-body text-body-lg"
               tabIndex={isMenuOpen ? 0 : -1}
               onClick={closeMenu}
             >
@@ -78,7 +78,7 @@ export default function MobileMenuOverlay() {
             <button
               key={item.label}
               type="button"
-              className="flex items-center gap-2 text-porcelain font-body text-lg cursor-pointer"
+              className="flex items-center gap-2 text-porcelain font-body text-body-lg cursor-pointer"
               tabIndex={isMenuOpen ? 0 : -1}
             >
               {item.label}

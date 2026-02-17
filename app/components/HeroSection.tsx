@@ -22,14 +22,14 @@ export default function HeroSection() {
       <div className="relative z-10 flex min-h-screen flex-col items-start justify-center px-10 py-32">
         {/* Heading Section */}
         <div className="space-y-6 lg:w-[70%]">
-          <h1 className="font-heading text-5xl leading-tight text-harvest xs:text-6xl">
+          <h1 className="font-heading text-5xl leading-tight text-harvest xs:text-6xl lg:text-heading-xl">
             Descobre a Coreia do Sul: onde tradição e futuro se encontram
           </h1>
         </div>
 
         {/* Subheading and Buttons Section */}
         <div className="mt-6 space-y-6 lg:ml-auto lg:mt-16 lg:w-[50%] lg:text-right">
-          <p className="font-body text-lg leading-relaxed text-porcelain xs:text-xl">
+          <p className="font-body text-body-lg text-porcelain xs:text-xl lg:text-body-xl">
             Do esplendor dos templos antigos às luzes vibrantes de Seul — vive
             uma viagem que combina história, natureza, tecnologia e cultura
             viva.

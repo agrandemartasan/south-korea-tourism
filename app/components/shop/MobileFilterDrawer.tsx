@@ -66,7 +66,7 @@ export default function MobileFilterDrawer({
       >
         {/* Header */}
         <div className="flex items-center justify-between p-4 border-b border-inkstone/10">
-          <h2 className="font-body text-lg font-semibold text-inkstone">
+          <h2 className="font-body text-body-lg font-semibold text-inkstone">
             Filtros
           </h2>
           <button

@@ -73,7 +73,7 @@ export default function ShopMobileMenuOverlay() {
           <button
             key={item.label}
             type="button"
-            className="flex items-center gap-2 text-inkstone font-body text-lg cursor-pointer"
+            className="flex items-center gap-2 text-inkstone font-body text-body-lg cursor-pointer"
             tabIndex={isMenuOpen ? 0 : -1}
           >
             {item.label}
@@ -108,12 +108,12 @@ export default function ShopMobileMenuOverlay() {
         <h3 className="font-heading text-2xl text-inkstone mb-2">
           Favoritos dos Viajantes
         </h3>
-        <p className="font-body text-sm text-inkstone/70 mb-4">
+        <p className="font-body text-body-sm text-inkstone/70 mb-4">
           Os artigos mais procurados que captam a essência da Coreia do Sul.
         </p>
         <Link
           href="/shop"
-          className="font-body text-sm font-semibold text-crimson mb-6 inline-block"
+          className="font-body text-body-sm font-semibold text-crimson mb-6 inline-block"
           tabIndex={isMenuOpen ? 0 : -1}
           onClick={closeMenu}
         >
@@ -141,19 +141,19 @@ export default function ShopMobileMenuOverlay() {
           <h3 className="font-body font-semibold text-inkstone text-sm mb-1">
             {brandInfo.title}
           </h3>
-          <p className="font-body text-sm text-inkstone mb-4">
+          <p className="font-body text-body-sm text-inkstone mb-4">
             {brandInfo.description}
           </p>
-          <p className="font-body text-sm font-semibold text-inkstone mb-1">
+          <p className="font-body text-body-sm font-semibold text-inkstone mb-1">
             {brandInfo.office}
           </p>
-          <p className="font-body text-sm text-inkstone">
+          <p className="font-body text-body-sm text-inkstone">
             {brandInfo.address}
           </p>
-          <p className="font-body text-sm text-inkstone">
+          <p className="font-body text-body-sm text-inkstone">
             {brandInfo.phone}
           </p>
-          <span className="font-body text-sm text-inkstone underline">
+          <span className="font-body text-body-sm text-inkstone underline">
             {brandInfo.email}
           </span>
         </div>
@@ -162,13 +162,13 @@ export default function ShopMobileMenuOverlay() {
         <div className="flex flex-col gap-8">
           {/* Categorias Column */}
           <div>
-            <h4 className="font-body font-semibold text-crimson text-base mb-3">
+            <h4 className="font-body font-semibold text-crimson text-body-md mb-3">
               Categorias
             </h4>
             <ul className="space-y-2">
               {shopCategoryLinks.map((link) => (
                 <li key={link}>
-                  <span className="font-body text-sm text-inkstone cursor-pointer">
+                  <span className="font-body text-body-sm text-inkstone cursor-pointer">
                     {link}
                   </span>
                 </li>
@@ -178,13 +178,13 @@ export default function ShopMobileMenuOverlay() {
 
           {/* Acesso Rápido Column */}
           <div>
-            <h4 className="font-body font-semibold text-crimson text-base mb-3">
+            <h4 className="font-body font-semibold text-crimson text-body-md mb-3">
               Acesso Rápido
             </h4>
             <ul className="space-y-2">
               {shopQuickLinks.map((link) => (
                 <li key={link}>
-                  <span className="font-body text-sm text-inkstone cursor-pointer">
+                  <span className="font-body text-body-sm text-inkstone cursor-pointer">
                     {link}
                   </span>
                 </li>
@@ -194,7 +194,7 @@ export default function ShopMobileMenuOverlay() {
 
           {/* Social Column */}
           <div>
-            <h4 className="font-body font-semibold text-crimson text-base mb-3">
+            <h4 className="font-body font-semibold text-crimson text-body-md mb-3">
               Segue-nos
             </h4>
             <ul className="space-y-2">
@@ -202,7 +202,7 @@ export default function ShopMobileMenuOverlay() {
                 const Icon = socialIcons[social.icon];
                 return (
                   <li key={social.name}>
-                    <span className="flex items-center gap-3 font-body text-sm text-inkstone cursor-pointer">
+                    <span className="flex items-center gap-3 font-body text-body-sm text-inkstone cursor-pointer">
                       <Icon />
                       {social.name}
                     </span>
@@ -219,13 +219,13 @@ export default function ShopMobileMenuOverlay() {
             <ul className="space-y-2 mb-4">
               {legalLinks.map((link) => (
                 <li key={link}>
-                  <span className="font-body text-sm text-inkstone underline cursor-pointer">
+                  <span className="font-body text-body-sm text-inkstone underline cursor-pointer">
                     {link}
                   </span>
                 </li>
               ))}
             </ul>
-            <p className="font-body text-sm text-inkstone">
+            <p className="font-body text-body-sm text-inkstone">
               © 2025 Discover South Korea. Todos os direitos reservados.
             </p>
           </div>

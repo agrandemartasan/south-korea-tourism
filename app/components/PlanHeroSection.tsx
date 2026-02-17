@@ -20,13 +20,13 @@ export default function PlanHeroSection() {
 
       {/* Content */}
       <div className="relative z-10 flex min-h-screen flex-col items-center justify-center px-6 py-32 text-center">
-        <h1 className="font-heading text-5xl leading-tight text-harvest mb-6 xs:text-6xl lg:text-7xl">
+        <h1 className="font-heading text-5xl leading-tight text-harvest mb-6 xs:text-6xl lg:text-heading-xl">
           Planeia a Tua Viagem à
           <br />
           Coreia do Sul
         </h1>
 
-        <p className="font-body text-lg leading-relaxed text-porcelain mb-8 max-w-2xl xs:text-xl">
+        <p className="font-body text-body-lg text-porcelain mb-8 max-w-2xl xs:text-xl lg:text-body-xl">
           Tudo o que precisas para preparar a tua viagem num só lugar — roteiros,
           regras de etiqueta, dicas essenciais, alertas e ferramentas práticas.
         </p>

@@ -22,10 +22,10 @@ export default function ShopProductCard({ product }: ShopProductCardProps) {
 
       {/* Product Info */}
       <div className="flex items-start justify-between gap-2 mb-2">
-        <h3 className="font-body text-sm text-inkstone leading-tight">
+        <h3 className="font-body text-body-sm text-inkstone leading-tight">
           {product.title}
         </h3>
-        <span className="font-body text-sm font-semibold text-inkstone flex-shrink-0">
+        <span className="font-body text-body-sm font-semibold text-inkstone flex-shrink-0">
           {product.priceFormatted}
         </span>
       </div>
@@ -33,7 +33,7 @@ export default function ShopProductCard({ product }: ShopProductCardProps) {
       {/* Buy Button */}
       <Link
         href="#"
-        className="inline-flex items-center justify-center border border-crimson text-crimson rounded-full px-4 py-2 font-body text-sm hover:bg-crimson/5 transition-colors mt-auto"
+        className="inline-flex items-center justify-center border border-crimson text-crimson rounded-full px-4 py-2 font-body text-body-sm hover:bg-crimson/5 transition-colors mt-auto"
       >
         Comprar já
       </Link>
