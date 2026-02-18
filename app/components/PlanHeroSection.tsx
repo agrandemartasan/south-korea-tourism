@@ -19,7 +19,7 @@ export default function PlanHeroSection() {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 flex min-h-screen flex-col items-center justify-center px-6 py-32 text-center">
+      <div className="relative z-10 flex min-h-screen flex-col items-center justify-center px-6 lg:px-[3%] py-32 text-center">
         <h1 className="font-heading text-5xl leading-tight text-harvest mb-6 xs:text-6xl lg:text-heading-xl">
           Planeia a Tua Viagem à
           <br />

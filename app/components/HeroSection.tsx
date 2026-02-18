@@ -19,7 +19,7 @@ export default function HeroSection() {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 flex min-h-screen flex-col items-start justify-center px-10 py-32">
+      <div className="relative z-10 flex min-h-screen flex-col items-start justify-center px-6 lg:px-[3%] py-32">
         {/* Heading Section */}
         <div className="space-y-6 lg:w-[70%]">
           <h1 className="font-heading text-5xl leading-tight text-harvest xs:text-6xl lg:text-heading-xl">

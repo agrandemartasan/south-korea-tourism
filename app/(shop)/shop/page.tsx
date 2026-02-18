@@ -279,7 +279,7 @@ export default function ShopPage() {
       {/* Featured Section - Desktop only */}
       <ShopFeaturedSection />
 
-      <div className="px-6 py-8 lg:px-12 lg:py-12">
+      <div className="px-6 lg:px-[3%] pt-32 pb-8 lg:py-12">
         {/* Page Title */}
         <h1 className="font-body text-3xl font-bold text-inkstone mb-8 lg:text-heading-md">
           Loja Cultural
@@ -311,7 +311,7 @@ export default function ShopPage() {
           {/* Products Section */}
           <div className="flex-1">
             {/* Filter Tags and Sort */}
-            <div className="flex flex-wrap items-center gap-3 mb-6">
+            <div className="flex flex-wrap items-center justify-center lg:justify-start gap-3 mb-6">
               {/* Active Filter Tags */}
               {filterTags.map((tag, idx) => (
                 <FilterTag
@@ -322,7 +322,7 @@ export default function ShopPage() {
               ))}
 
               {/* Sort Dropdown - Push to right */}
-              <div className="ml-auto relative">
+              <div className="w-full lg:w-auto lg:ml-auto relative flex justify-center lg:justify-end">
                 <button
                   type="button"
                   onClick={() => setShowSortDropdown(!showSortDropdown)}

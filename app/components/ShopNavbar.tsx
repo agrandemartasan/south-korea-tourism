@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import Button from "./Button";
-import { CartIcon, ChevronDownIcon } from "./Icons";
+import { CartIcon, ChevronDownIcon, MenuIcon } from "./Icons";
 import { useMobileMenu } from "./MobileMenuContext";
 import { shopNavItems } from "../data/shopNavigationData";
 
@@ -12,7 +12,7 @@ export default function ShopNavbar() {
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-transparent">
-      <div className="mx-auto flex items-center justify-between px-10 py-4">
+      <div className="flex items-center justify-between px-6 lg:px-[3%] py-4">
         {/* Logo */}
         <Link
           href="/shop"
@@ -45,38 +45,28 @@ export default function ShopNavbar() {
 
         {/* Buttons and Hamburger Menu */}
         <div className="flex items-center gap-4">
-          <Button
-            variant="harvest"
-            href="/"
-            className="hidden xs:inline-flex"
-          >
-            Discover South Korea
-          </Button>
+          <div className="hidden lg:block">
+            <Button variant="harvest" href="/">
+              Discover South Korea
+            </Button>
+          </div>
 
-          <Button
-            variant="accent"
-            href="#"
-            className="hidden xs:inline-flex gap-2"
-          >
-            <CartIcon />
-            Carrinho
-          </Button>
+          <div className="hidden lg:block">
+            <Button variant="accent" href="#" className="gap-2">
+              <CartIcon />
+              Carrinho
+            </Button>
+          </div>
 
           {/* Hamburger Menu Button */}
           <button
             type="button"
-            className="lg:hidden flex items-center justify-center p-2 transition-opacity hover:opacity-80 focus:outline-none focus:ring-2 focus:ring-inkstone focus:ring-offset-2 focus:ring-offset-porcelain"
+            className="lg:hidden flex items-center justify-center h-12 w-12 text-inkstone transition-opacity hover:opacity-80 focus:outline-none focus:ring-2 focus:ring-inkstone focus:ring-offset-2 focus:ring-offset-porcelain"
             aria-label="Open menu"
             aria-expanded={isMenuOpen}
             onClick={openMenu}
           >
-            <Image
-              src="/icons/menu.svg"
-              alt=""
-              width={48}
-              height={48}
-              className="h-12 w-12"
-            />
+            <MenuIcon />
           </button>
         </div>
       </div>

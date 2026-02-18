@@ -17,7 +17,7 @@ export default function ShopCtaSection() {
       <div className="absolute inset-0 bg-inkstone/50" aria-hidden="true" />
 
       {/* Content */}
-      <div className="relative z-10 flex flex-col gap-6 px-6 py-16 lg:flex-row lg:items-center lg:gap-16 lg:px-24 lg:py-24">
+      <div className="relative z-10 flex flex-col gap-6 px-6 lg:px-[3%] py-16 lg:flex-row lg:items-center lg:gap-16 lg:py-24">
         {/* Title */}
         <div className="lg:flex-1">
           <h2 className="font-heading text-3xl leading-tight text-harvest lg:text-heading-lg">

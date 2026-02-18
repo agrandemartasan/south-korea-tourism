@@ -103,7 +103,7 @@ export default function DownloadsSection() {
 
   return (
     <section className="bg-inkstone">
-      <div className="px-6 py-16 lg:px-24 lg:py-24">
+      <div className="px-6 lg:px-[3%] py-16 lg:py-24">
         {/* Title */}
         <div className="text-center mb-12 lg:mb-16">
           <h2 className="font-heading text-3xl leading-tight text-harvest lg:text-heading-lg">

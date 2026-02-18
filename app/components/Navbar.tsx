@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import Button from "./Button";
-import { ChevronDownIcon } from "./Icons";
+import { ChevronDownIcon, MenuIcon } from "./Icons";
 import { useMobileMenu } from "./MobileMenuContext";
 import { navItems } from "../data/navigationData";
 
@@ -12,7 +12,7 @@ export default function Navbar() {
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-transparent">
-      <div className="mx-auto flex items-center justify-between px-10 py-4">
+      <div className="flex items-center justify-between px-6 lg:px-[3%] py-4">
         {/* Logo */}
         <Link
           href="/"
@@ -66,18 +66,12 @@ export default function Navbar() {
           {/* Hamburger Menu Button */}
           <button
             type="button"
-            className="lg:hidden flex items-center justify-center p-2 transition-opacity hover:opacity-80 focus:outline-none focus:ring-2 focus:ring-porcelain focus:ring-offset-2 focus:ring-offset-inkstone"
+            className="lg:hidden flex items-center justify-center h-12 w-12 text-porcelain transition-opacity hover:opacity-80 focus:outline-none focus:ring-2 focus:ring-porcelain focus:ring-offset-2 focus:ring-offset-inkstone"
             aria-label="Open menu"
             aria-expanded={isMenuOpen}
             onClick={openMenu}
           >
-            <Image
-              src="/icons/menu.svg"
-              alt=""
-              width={48}
-              height={48}
-              className="h-12 w-12 invert"
-            />
+            <MenuIcon />
           </button>
         </div>
       </div>

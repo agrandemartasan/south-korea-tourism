@@ -138,7 +138,7 @@ export default function EssentialsSection() {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 px-6 py-16 lg:px-24 lg:py-24">
+      <div className="relative z-10 px-6 lg:px-[3%] py-16 lg:py-24">
         <SectionHeader
           title="O Essencial para a Tua Viagem"
           description="Da moeda ao clima, tudo reunido num só lugar para simplificar o teu planeamento."

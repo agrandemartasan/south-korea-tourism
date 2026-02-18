@@ -4,8 +4,8 @@ import { featuredProducts } from "../data/shopProductsData";
 
 export default function ShopFeaturedSection() {
   return (
-    <section className="hidden lg:block bg-porcelain pt-24 pb-12 px-10 border-b border-harvest">
-      <div className="flex gap-16">
+    <section className="hidden lg:block bg-porcelain pt-32 pb-12 border-b border-harvest">
+      <div className="px-6 lg:px-[3%] flex gap-16">
         {/* Left Column */}
         <div className="flex-shrink-0 w-80 flex flex-col justify-center">
           <h2 className="font-body text-heading-md font-bold text-inkstone mb-4">

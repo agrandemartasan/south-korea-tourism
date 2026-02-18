@@ -37,7 +37,7 @@ export function FooterContent({ variant = "desktop", theme = "dark" }: FooterCon
   return (
     <div className={isMobile ? "px-5 pt-12 pb-8" : ""}>
       {/* Main Content */}
-      <div className={isMobile ? "" : "px-10 py-16 lg:py-20"}>
+      <div className={isMobile ? "" : "px-6 lg:px-[3%] py-16 lg:py-20"}>
         <div
           className={
             isMobile
@@ -159,7 +159,7 @@ export function FooterContent({ variant = "desktop", theme = "dark" }: FooterCon
         className={
           isMobile
             ? "border-t border-harvest/20 pt-6"
-            : "border-t border-harvest mx-10"
+            : "border-t border-harvest px-6 lg:px-[3%]"
         }
       >
         <div

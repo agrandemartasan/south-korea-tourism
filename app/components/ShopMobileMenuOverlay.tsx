@@ -31,13 +31,13 @@ export default function ShopMobileMenuOverlay() {
 
   return (
     <div
-      className={`fixed inset-0 z-60 bg-porcelain transition-opacity duration-300 ease-in-out lg:hidden overflow-y-auto ${
+      className={`fixed inset-0 z-60 bg-porcelain transition-opacity duration-300 ease-in-out lg:hidden flex flex-col ${
         isMenuOpen ? "opacity-100 visible" : "opacity-0 invisible pointer-events-none"
       }`}
       aria-hidden={!isMenuOpen}
     >
       {/* Mobile Menu Header */}
-      <div className="flex items-center justify-between px-10 py-4">
+      <div className="flex items-center justify-between px-6 lg:px-[3%] py-4">
         {/* Logo */}
         <Link
           href="/shop"
@@ -58,7 +58,7 @@ export default function ShopMobileMenuOverlay() {
         {/* Close Button */}
         <button
           type="button"
-          className="flex items-center justify-center p-2 text-inkstone transition-opacity hover:opacity-80 focus:outline-none focus:ring-2 focus:ring-inkstone focus:ring-offset-2 focus:ring-offset-porcelain"
+          className="flex items-center justify-center h-12 w-12 text-inkstone transition-opacity hover:opacity-80 focus:outline-none focus:ring-2 focus:ring-inkstone focus:ring-offset-2 focus:ring-offset-porcelain"
           aria-label="Close menu"
           onClick={closeMenu}
           tabIndex={isMenuOpen ? 0 : -1}
@@ -67,6 +67,8 @@ export default function ShopMobileMenuOverlay() {
         </button>
       </div>
 
+      {/* Scrollable Content */}
+      <div className="flex-1 overflow-y-auto">
       {/* Mobile Navigation Items */}
       <nav className="flex flex-col items-center gap-6 pt-8">
         {shopNavItems.map((item) => (
@@ -230,6 +232,7 @@ export default function ShopMobileMenuOverlay() {
             </p>
           </div>
         </div>
+      </div>
       </div>
     </div>
   );

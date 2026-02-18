@@ -117,9 +117,9 @@ export default function EventsSection() {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 py-16 lg:py-24">
+      <div className="relative z-10 px-6 lg:px-[3%] py-16 lg:py-24">
         {/* Header */}
-        <div className="text-center px-6 mb-12">
+        <div className="text-center mb-12">
           <h2 className="font-heading text-3xl leading-tight text-harvest mb-4 lg:text-heading-lg">
             O que está a acontecer na Coreia agora
           </h2>

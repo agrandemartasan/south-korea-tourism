@@ -13,13 +13,13 @@ export default function MobileMenuOverlay() {
 
   return (
     <div
-      className={`fixed inset-0 z-60 bg-inkstone transition-opacity duration-300 ease-in-out lg:hidden overflow-y-auto ${
+      className={`fixed inset-0 z-60 bg-inkstone transition-opacity duration-300 ease-in-out lg:hidden flex flex-col ${
         isMenuOpen ? "opacity-100 visible" : "opacity-0 invisible pointer-events-none"
       }`}
       aria-hidden={!isMenuOpen}
     >
       {/* Mobile Menu Header */}
-      <div className="flex items-center justify-between px-10 py-4">
+      <div className="flex items-center justify-between px-6 lg:px-[3%] py-4">
         {/* Logo */}
         <Link
           href="/"
@@ -51,7 +51,7 @@ export default function MobileMenuOverlay() {
           {/* Close Button */}
           <button
             type="button"
-            className="flex items-center justify-center p-2 text-porcelain transition-opacity hover:opacity-80 focus:outline-none focus:ring-2 focus:ring-porcelain focus:ring-offset-2 focus:ring-offset-inkstone"
+            className="flex items-center justify-center h-12 w-12 text-porcelain transition-opacity hover:opacity-80 focus:outline-none focus:ring-2 focus:ring-porcelain focus:ring-offset-2 focus:ring-offset-inkstone"
             aria-label="Close menu"
             onClick={closeMenu}
             tabIndex={isMenuOpen ? 0 : -1}
@@ -61,35 +61,38 @@ export default function MobileMenuOverlay() {
         </div>
       </div>
 
-      {/* Mobile Navigation Items */}
-      <nav className="flex flex-col items-center gap-6 pt-8">
-        {navItems.map((item) =>
-          item.href ? (
-            <Link
-              key={item.label}
-              href={item.href}
-              className="flex items-center gap-2 text-porcelain font-body text-body-lg"
-              tabIndex={isMenuOpen ? 0 : -1}
-              onClick={closeMenu}
-            >
-              {item.label}
-            </Link>
-          ) : (
-            <button
-              key={item.label}
-              type="button"
-              className="flex items-center gap-2 text-porcelain font-body text-body-lg cursor-pointer"
-              tabIndex={isMenuOpen ? 0 : -1}
-            >
-              {item.label}
-              {item.hasDropdown && <ChevronDownIcon />}
-            </button>
-          )
-        )}
-      </nav>
+      {/* Scrollable Content */}
+      <div className="flex-1 overflow-y-auto">
+        {/* Mobile Navigation Items */}
+        <nav className="flex flex-col items-center gap-6 pt-8">
+          {navItems.map((item) =>
+            item.href ? (
+              <Link
+                key={item.label}
+                href={item.href}
+                className="flex items-center gap-2 text-porcelain font-body text-body-lg"
+                tabIndex={isMenuOpen ? 0 : -1}
+                onClick={closeMenu}
+              >
+                {item.label}
+              </Link>
+            ) : (
+              <button
+                key={item.label}
+                type="button"
+                className="flex items-center gap-2 text-porcelain font-body text-body-lg cursor-pointer"
+                tabIndex={isMenuOpen ? 0 : -1}
+              >
+                {item.label}
+                {item.hasDropdown && <ChevronDownIcon />}
+              </button>
+            )
+          )}
+        </nav>
 
-      {/* Mobile Footer Content */}
-      <FooterContent variant="mobile" />
+        {/* Mobile Footer Content */}
+        <FooterContent variant="mobile" />
+      </div>
     </div>
   );
 }

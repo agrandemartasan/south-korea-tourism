@@ -18,7 +18,7 @@ export default function ProverbsSection() {
       />
 
       {/* Content */}
-      <div className="relative z-10 px-6 py-16 lg:px-24 lg:py-24">
+      <div className="relative z-10 px-6 lg:px-[3%] py-16 lg:py-24">
         <SectionHeader
           title="Sabedoria que atravessa gerações"
           description="Pequenos fragmentos da cultura coreana que refletem valores, respeito e tradição."
