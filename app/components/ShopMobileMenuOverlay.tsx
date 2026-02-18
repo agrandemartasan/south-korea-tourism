@@ -107,7 +107,7 @@ export default function ShopMobileMenuOverlay() {
 
       {/* Featured Products */}
       <div className="px-5 pt-12">
-        <h3 className="font-heading text-2xl text-inkstone mb-2">
+        <h3 className="font-heading text-heading-md text-inkstone mb-2">
           Favoritos dos Viajantes
         </h3>
         <p className="font-body text-body-sm text-inkstone/70 mb-4">
@@ -140,7 +140,7 @@ export default function ShopMobileMenuOverlay() {
             height={60}
             className="h-auto w-32 mb-4"
           />
-          <h3 className="font-body font-semibold text-inkstone text-sm mb-1">
+          <h3 className="font-body font-semibold text-inkstone text-body-sm mb-1">
             {brandInfo.title}
           </h3>
           <p className="font-body text-body-sm text-inkstone mb-4">

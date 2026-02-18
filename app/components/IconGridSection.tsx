@@ -25,7 +25,7 @@ export default function IconGridSection({ heading, description, items }: IconGri
       <div className="relative z-10 px-6 lg:px-[3%] py-16 lg:py-24">
         {/* Header */}
         <div className="text-center mb-12 lg:mb-16">
-          <h2 className="font-heading text-4xl leading-tight text-harvest mb-4 lg:text-heading-lg">
+          <h2 className="font-heading text-heading-lg text-harvest mb-4">
             {heading}
           </h2>
           {description && (

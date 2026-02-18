@@ -37,15 +37,15 @@ function ItineraryCard({ itinerary, className = "", horizontal = false }: Itiner
 
       {/* Card Content */}
       <div className={`p-6 flex flex-col flex-1 ${horizontal ? "justify-center" : ""}`}>
-        <h3 className="font-body text-xl font-semibold text-crimson mb-3 whitespace-pre-line">
+        <h3 className="font-body text-heading-sm font-semibold text-crimson mb-3 whitespace-pre-line">
           {itinerary.title}
         </h3>
-        <p className="font-body text-body-sm text-porcelain mb-4 flex-1">
+        <p className="font-body text-body-md text-porcelain mb-4 flex-1">
           {itinerary.description}
         </p>
         <Link
           href={itinerary.exploreLink}
-          className="inline-flex items-center gap-1 font-body text-body-sm text-porcelain hover:text-harvest transition-colors"
+          className="inline-flex items-center gap-1 font-body text-body-md text-porcelain hover:text-harvest transition-colors"
         >
           Explorar
           <ChevronRightIcon />

@@ -28,7 +28,7 @@ function ArticleCard({ article }: ArticleCardProps) {
       </span>
 
       {/* Title */}
-      <h3 className="font-body text-xl font-semibold text-crimson mb-2 lg:text-heading-sm">
+      <h3 className="font-body text-heading-sm font-semibold text-crimson mb-2">
         {article.title}
       </h3>
 

@@ -55,7 +55,7 @@ export function FooterContent({ variant = "desktop", theme = "dark" }: FooterCon
               className={isMobile ? "h-auto w-32 mb-4" : "h-auto w-40 mb-6"}
             />
             <h3
-              className={`font-body font-semibold ${textColor} ${isMobile ? "text-sm mb-1" : "text-body-md mb-2"}`}
+              className={`font-body font-semibold ${textColor} ${isMobile ? "text-body-sm mb-1" : "text-body-md mb-2"}`}
             >
               {brandInfo.title}
             </h3>
@@ -87,7 +87,7 @@ export function FooterContent({ variant = "desktop", theme = "dark" }: FooterCon
             {/* Explorar Column */}
             <div>
               <h4
-                className={`font-body font-semibold text-crimson ${isMobile ? "text-body-md mb-3" : "text-body-lg mb-4"}`}
+                className={`font-body font-semibold text-crimson text-body-lg ${isMobile ? "mb-3" : "mb-4"}`}
               >
                 Explorar
               </h4>
@@ -114,7 +114,7 @@ export function FooterContent({ variant = "desktop", theme = "dark" }: FooterCon
             {/* Informação útil Column */}
             <div>
               <h4
-                className={`font-body font-semibold text-crimson ${isMobile ? "text-body-md mb-3" : "text-body-lg mb-4"}`}
+                className={`font-body font-semibold text-crimson text-body-lg ${isMobile ? "mb-3" : "mb-4"}`}
               >
                 Informação útil
               </h4>
@@ -132,7 +132,7 @@ export function FooterContent({ variant = "desktop", theme = "dark" }: FooterCon
             {/* Social Column */}
             <div>
               <h4
-                className={`font-body font-semibold text-crimson ${isMobile ? "text-body-md mb-3" : "text-body-lg mb-4"}`}
+                className={`font-body font-semibold text-crimson text-body-lg ${isMobile ? "mb-3" : "mb-4"}`}
               >
                 Segue-nos
               </h4>

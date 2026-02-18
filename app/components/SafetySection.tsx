@@ -10,7 +10,7 @@ interface SafetyCardProps {
 function SafetyCard({ topic }: SafetyCardProps) {
   return (
     <article className="bg-celestial/20 border-l-2 border-harvest rounded-lg p-6 lg:p-8">
-      <h3 className="font-body text-xl font-semibold text-harvest mb-3">
+      <h3 className="font-body text-heading-sm font-semibold text-harvest mb-3">
         {topic.title}
       </h3>
       <p className="font-body text-body-md text-porcelain mb-4">

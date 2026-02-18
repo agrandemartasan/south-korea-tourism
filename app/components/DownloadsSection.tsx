@@ -106,7 +106,7 @@ export default function DownloadsSection() {
       <div className="px-6 lg:px-[3%] py-16 lg:py-24">
         {/* Title */}
         <div className="text-center mb-12 lg:mb-16">
-          <h2 className="font-heading text-3xl leading-tight text-harvest lg:text-heading-lg">
+          <h2 className="font-heading text-heading-lg text-harvest">
             Downloads Úteis
           </h2>
         </div>

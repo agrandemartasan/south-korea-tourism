@@ -31,7 +31,7 @@ export default function ProverbsSection() {
               key={proverb.id}
               className="border-t border-harvest/20 py-8 lg:py-10"
             >
-              <blockquote className="font-body text-xl italic text-porcelain mb-2 lg:text-body-xl">
+              <blockquote className="font-body text-body-xl italic text-porcelain mb-2">
                 &ldquo;{proverb.quote}&rdquo;
               </blockquote>
               <p className="font-body text-body-sm text-porcelain">

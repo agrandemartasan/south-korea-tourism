@@ -281,7 +281,7 @@ export default function ShopPage() {
 
       <div className="px-6 lg:px-[3%] pt-32 pb-8 lg:py-12">
         {/* Page Title */}
-        <h1 className="font-body text-3xl font-bold text-inkstone mb-8 lg:text-heading-md">
+        <h1 className="font-body text-heading-md font-bold text-inkstone mb-8">
           Loja Cultural
         </h1>
 

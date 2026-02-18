@@ -15,10 +15,10 @@ export default function SectionHeader({
     <div
       className={`mb-12 lg:mb-16 ${centered ? "text-center" : ""} ${className}`}
     >
-      <h2 className="font-heading text-3xl leading-tight text-harvest mb-4 lg:text-heading-lg">
+      <h2 className="font-heading text-heading-lg text-harvest mb-4">
         {title}
       </h2>
-      <p className="font-body text-body-md text-porcelain lg:text-body-lg">
+      <p className="font-body text-body-lg text-porcelain">
         {description}
       </p>
     </div>
