@@ -39,14 +39,11 @@ export default function MobileMenuOverlay() {
 
         {/* Button and Close */}
         <div className="flex items-center gap-4">
-          <Button
-            variant="accent"
-            href="/shop"
-            className="hidden xs:inline-flex"
-            tabIndex={isMenuOpen ? 0 : -1}
-          >
-            Loja Cultural
-          </Button>
+          <div className="hidden sm:block">
+            <Button variant="accent" href="/shop" tabIndex={isMenuOpen ? 0 : -1}>
+              Loja Cultural
+            </Button>
+          </div>
 
           {/* Close Button */}
           <button
@@ -89,6 +86,17 @@ export default function MobileMenuOverlay() {
             )
           )}
         </nav>
+
+        {/* Loja Cultural button - only on small phones where it's hidden in the header */}
+        <div className="flex justify-center pt-6 sm:hidden">
+          <Button
+            variant="accent"
+            href="/shop"
+            tabIndex={isMenuOpen ? 0 : -1}
+          >
+            Loja Cultural
+          </Button>
+        </div>
 
         {/* Mobile Footer Content */}
         <FooterContent variant="mobile" />
