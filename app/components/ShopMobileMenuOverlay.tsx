@@ -31,7 +31,7 @@ export default function ShopMobileMenuOverlay() {
 
   return (
     <div
-      className={`fixed inset-0 z-60 bg-porcelain transition-opacity duration-300 ease-in-out lg:hidden flex flex-col ${
+      className={`fixed inset-0 z-60 bg-porcelain transition-opacity duration-300 ease-in-out xl:hidden flex flex-col ${
         isMenuOpen ? "opacity-100 visible" : "opacity-0 invisible pointer-events-none"
       }`}
       aria-hidden={!isMenuOpen}
