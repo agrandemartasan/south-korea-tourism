@@ -14,8 +14,13 @@ import {
 } from "../../data/shopAllProductsData";
 import {
   mainCategories,
+  subcategories,
   priceRanges,
+  regions,
+  materials,
   availabilityOptions,
+  maisVendidosTags,
+  novidadesTags,
   sortOptions,
 } from "../../data/shopFiltersData";
 
@@ -237,6 +242,79 @@ export default function ShopPage() {
           onRemove: () => handleFilterChange(setSelectedAvailability, "all"),
         });
       }
+    }
+
+    selectedSubcategories.forEach((id) => {
+      const sub = subcategories.find((s) => s.id === id);
+      if (sub) {
+        tags.push({
+          label: sub.label,
+          onRemove: () =>
+            handleFilterChange(
+              setSelectedSubcategories,
+              selectedSubcategories.filter((s) => s !== id)
+            ),
+        });
+      }
+    });
+
+    selectedMaisVendidos.forEach((id) => {
+      const tag = maisVendidosTags.find((t) => t.id === id);
+      if (tag) {
+        tags.push({
+          label: tag.label,
+          onRemove: () =>
+            handleFilterChange(
+              setSelectedMaisVendidos,
+              selectedMaisVendidos.filter((t) => t !== id)
+            ),
+        });
+      }
+    });
+
+    selectedNovidades.forEach((id) => {
+      const tag = novidadesTags.find((t) => t.id === id);
+      if (tag) {
+        tags.push({
+          label: tag.label,
+          onRemove: () =>
+            handleFilterChange(
+              setSelectedNovidades,
+              selectedNovidades.filter((t) => t !== id)
+            ),
+        });
+      }
+    });
+
+    selectedRegions.forEach((id) => {
+      const region = regions.find((r) => r.id === id);
+      if (region) {
+        tags.push({
+          label: region.label,
+          onRemove: () =>
+            handleFilterChange(
+              setSelectedRegions,
+              selectedRegions.filter((r) => r !== id)
+            ),
+        });
+      }
+    });
+
+    if (selectedMaterial !== "all") {
+      const mat = materials.find((m) => m.id === selectedMaterial);
+      if (mat) {
+        tags.push({
+          label: mat.label,
+          onRemove: () => handleFilterChange(setSelectedMaterial, "all"),
+        });
+      }
+    }
+
+    if (searchKeyword) {
+      tags.push({
+        label: `"${searchKeyword}"`,
+        onRemove: () => handleFilterChange(setSearchKeyword, ""),
+      });
     }
 
     return tags;

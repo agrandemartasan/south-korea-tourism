@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useId } from "react";
 import { ChevronDownIcon, ChevronUpIcon, SearchIcon } from "../Icons";
 import {
   mainCategories,
@@ -93,6 +93,8 @@ export default function ShopFilters({
   totalResults,
   totalProducts
 }: ShopFiltersProps) {
+  const id = useId();
+
   // Collapsible sections state
   const [openSections, setOpenSections] = useState<Set<string>>(
     new Set([
@@ -190,7 +192,7 @@ export default function ShopFilters({
                     setSelectedSubcategories
                   )
                 }
-                className="w-4 h-4 rounded border-inkstone/30 text-celestial focus:ring-celestial"
+                className="w-4 h-4 rounded border border-inkstone/30 focus:ring-celestial"
               />
               <span className="text-body-sm text-inkstone">{sub.label}</span>
             </label>
@@ -292,10 +294,10 @@ export default function ShopFilters({
             >
               <input
                 type="radio"
-                name="price"
+                name={`${id}-price`}
                 checked={selectedPrice === range.id}
                 onChange={() => setSelectedPrice(range.id)}
-                className="w-4 h-4 border-inkstone/30 text-celestial focus:ring-celestial"
+                className="w-4 h-4 rounded-full border border-inkstone/30 focus:ring-celestial"
               />
               <span className="text-body-sm text-inkstone">{range.label}</span>
             </label>
@@ -325,7 +327,7 @@ export default function ShopFilters({
                     setSelectedRegions
                   )
                 }
-                className="w-4 h-4 rounded border-inkstone/30 text-celestial focus:ring-celestial"
+                className="w-4 h-4 rounded border border-inkstone/30 focus:ring-celestial"
               />
               <span className="text-body-sm text-inkstone">{region.label}</span>
             </label>
@@ -366,10 +368,10 @@ export default function ShopFilters({
             >
               <input
                 type="radio"
-                name="availability"
+                name={`${id}-availability`}
                 checked={selectedAvailability === option.id}
                 onChange={() => setSelectedAvailability(option.id)}
-                className="w-4 h-4 border-inkstone/30 text-celestial focus:ring-celestial"
+                className="w-4 h-4 rounded-full border border-inkstone/30 focus:ring-celestial"
               />
               <span className="text-body-sm text-inkstone">{option.label}</span>
             </label>
