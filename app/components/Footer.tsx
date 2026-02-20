@@ -215,7 +215,7 @@ export default function Footer({ theme = "dark" }: FooterProps) {
   const bgColor = theme === "dark" ? "bg-inkstone" : "bg-porcelain";
 
   return (
-    <footer className={`hidden lg:block ${bgColor}`}>
+    <footer className={`hidden xl:block ${bgColor}`}>
       <FooterContent variant="desktop" theme={theme} />
     </footer>
   );

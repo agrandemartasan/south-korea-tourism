@@ -311,7 +311,7 @@ export default function ShopPage() {
           {/* Products Section */}
           <div className="flex-1">
             {/* Filter Tags and Sort */}
-            <div className="flex flex-wrap items-center justify-center lg:justify-start gap-3 mb-6">
+            <div className="flex flex-wrap items-center justify-center lg:justify-start gap-3 mb-6 min-h-9">
               {/* Active Filter Tags */}
               {filterTags.map((tag, idx) => (
                 <FilterTag
