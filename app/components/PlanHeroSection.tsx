@@ -36,7 +36,7 @@ export default function PlanHeroSection() {
           <Button variant="primary" href="#">
             Criar o meu roteiro
           </Button>
-          <Button variant="secondary" href="#">
+          <Button variant="secondary" href="#etiqueta">
             Guia rápido de etiqueta
           </Button>
         </div>

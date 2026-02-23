@@ -12,6 +12,7 @@ export default function Home() {
     <main>
       <HeroSection />
       <IconGridSection
+        id="explorar"
         heading="Explora o melhor da Coreia do Sul"
         description="Escolhe o que queres descobrir a seguir — cultura, sabores, paisagens ou planeamento."
         items={highlights}

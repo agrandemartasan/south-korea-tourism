@@ -2,6 +2,7 @@ export interface Highlight {
   icon: string;
   title: string;
   description: string;
+  href?: string;
 }
 
 export const highlights: Highlight[] = [
@@ -27,12 +28,14 @@ export const highlights: Highlight[] = [
     icon: "/icons/calendar_yellow.png",
     title: "Planear",
     description:
-      "Mapas, dicas práticas, transportes, segurança, épocas recomendadas e tudo o que precisas para começar a preparar a tua viagem."
+      "Mapas, dicas práticas, transportes, segurança, épocas recomendadas e tudo o que precisas para começar a preparar a tua viagem.",
+    href: "/plan"
   },
   {
     icon: "/icons/shopping-bag_yellow.png",
     title: "Loja Cultural",
     description:
-      "Produtos autênticos, artesanato tradicional e lembranças para levar contigo um pedaço da Coreia."
+      "Produtos autênticos, artesanato tradicional e lembranças para levar contigo um pedaço da Coreia.",
+    href: "/shop"
   }
 ];

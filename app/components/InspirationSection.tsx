@@ -23,17 +23,17 @@ function ArticleCard({ article }: ArticleCardProps) {
       </div>
 
       {/* Category Badge */}
-      <span className="inline-block w-fit px-3 py-1 bg-crimson text-porcelain font-body text-body-sm rounded mb-3">
+      <span className="inline-block w-fit px-3 py-1 bg-celestial text-porcelain font-body text-body-sm rounded mb-3">
         {article.category}
       </span>
 
       {/* Title */}
-      <h3 className="font-body text-heading-sm font-semibold text-crimson mb-2">
+      <h3 className="font-body text-heading-sm font-semibold text-crimson mb-2 lg:min-h-17">
         {article.title}
       </h3>
 
       {/* Description */}
-      <p className="font-body text-body-md text-porcelain mb-4">
+      <p className="font-body text-body-md text-porcelain mb-4 flex-1">
         {article.description}
       </p>
 

@@ -40,7 +40,7 @@ export default function HeroSection() {
             <Button variant="primary" href="/plan">
               Planear Viagem
             </Button>
-            <Button variant="secondary" href="/plan">
+            <Button variant="secondary" href="#explorar">
               Explorar Coreia
             </Button>
           </div>

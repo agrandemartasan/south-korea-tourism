@@ -1,15 +1,17 @@
 import Image from "next/image";
+import Link from "next/link";
 import { Highlight } from "../data/highlightsData";
 
 interface IconGridSectionProps {
   heading: string;
   description?: string;
   items: Highlight[];
+  id?: string;
 }
 
-export default function IconGridSection({ heading, description, items }: IconGridSectionProps) {
+export default function IconGridSection({ heading, description, items, id }: IconGridSectionProps) {
   return (
-    <section className="relative bg-inkstone overflow-hidden">
+    <section id={id} className="relative bg-inkstone overflow-hidden scroll-mt-24">
       {/* Background Pattern */}
       <div
         className="absolute inset-0 opacity-10"
@@ -37,26 +39,40 @@ export default function IconGridSection({ heading, description, items }: IconGri
 
         {/* Icon Grid */}
         <div className="flex flex-col items-center gap-12 px-12 lg:flex-row lg:justify-between lg:items-start lg:gap-8">
-          {items.map((item) => (
-            <article
-              key={item.title}
-              className="flex flex-col items-center text-center lg:flex-1 lg:max-w-[220px]"
-            >
-              <Image
-                src={item.icon}
-                alt=""
-                width={64}
-                height={64}
-                className="w-16 h-16 mb-4"
-              />
-              <h3 className="font-body text-xl font-semibold text-harvest mb-2">
-                {item.title}
-              </h3>
-              <p className="font-body text-body-md text-porcelain">
-                {item.description}
-              </p>
-            </article>
-          ))}
+          {items.map((item) => {
+            const cardClassName = "flex flex-col items-center text-center lg:flex-1 lg:max-w-[220px]";
+            const cardContent = (
+              <>
+                <Image
+                  src={item.icon}
+                  alt=""
+                  width={64}
+                  height={64}
+                  className="w-16 h-16 mb-4"
+                />
+                <h3 className="font-body text-xl font-semibold text-harvest mb-2">
+                  {item.title}
+                </h3>
+                <p className="font-body text-body-md text-porcelain">
+                  {item.description}
+                </p>
+              </>
+            );
+
+            return item.href ? (
+              <Link
+                key={item.title}
+                href={item.href}
+                className={`${cardClassName} hover:opacity-80 transition-opacity`}
+              >
+                {cardContent}
+              </Link>
+            ) : (
+              <article key={item.title} className={cardClassName}>
+                {cardContent}
+              </article>
+            );
+          })}
         </div>
       </div>
     </section>

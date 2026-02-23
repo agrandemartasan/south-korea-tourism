@@ -34,7 +34,7 @@ function EtiquetteTipItem({ tip, isLast = false }: EtiquetteTipItemProps) {
 
 export default function EtiquetteSection() {
   return (
-    <section className="bg-inkstone">
+    <section id="etiqueta" className="bg-inkstone scroll-mt-24">
       <div className="px-6 lg:px-[3%] py-12 lg:py-16">
         {/* Desktop Layout */}
         <div className="hidden lg:flex lg:gap-16">
