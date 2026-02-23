@@ -34,7 +34,7 @@ export default function ShopCtaSection() {
             gastronomia e objetos inspirados na cultura coreana —
             cuidadosamente selecionados para quem ama explorar.
           </p>
-          <Button variant="accent" href="#">
+          <Button variant="accent" href="/shop">
             Explorar Loja Cultural
           </Button>
         </div>

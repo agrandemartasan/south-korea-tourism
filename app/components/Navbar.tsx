@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import Button from "./Button";
 import { ChevronDownIcon, MenuIcon } from "./Icons";
 import { useMobileMenu } from "./MobileMenuContext";
@@ -11,6 +12,7 @@ import { navItems } from "../data/navigationData";
 export default function Navbar() {
   const { isMenuOpen, openMenu } = useMobileMenu();
   const scrolled = useScrolled();
+  const pathname = usePathname();
 
   return (
     <nav
@@ -40,7 +42,7 @@ export default function Navbar() {
               <Link
                 key={item.label}
                 href={item.href}
-                className="flex items-center gap-1 text-porcelain font-body text-body-md whitespace-nowrap"
+                className={`flex items-center gap-1 font-body text-body-md whitespace-nowrap ${pathname === item.href ? "text-harvest" : "text-porcelain"}`}
               >
                 {item.label}
               </Link>

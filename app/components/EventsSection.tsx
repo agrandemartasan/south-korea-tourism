@@ -47,40 +47,62 @@ function EventCard({ event }: EventCardProps) {
   );
 }
 
+const GAP = 24; // gap-6 = 24px
+const totalCards = events.length;
+
+function getStep(container: HTMLDivElement): number {
+  const firstChild = container.firstElementChild as HTMLElement | null;
+  if (!firstChild) return 364;
+  return firstChild.offsetWidth + GAP;
+}
+
 export default function EventsSection() {
   const scrollContainerRef = useRef<HTMLDivElement>(null);
   const [activeIndex, setActiveIndex] = useState(0);
-
-  const cardWidth = 340 + 24; // card width + gap
-  const totalCards = events.length;
+  const [dotCount, setDotCount] = useState(totalCards);
+  const dotCountRef = useRef(totalCards);
 
   const updateActiveIndex = useCallback(() => {
     const container = scrollContainerRef.current;
     if (!container) return;
+    const step = getStep(container);
+    const index = Math.round(container.scrollLeft / step);
+    setActiveIndex(Math.min(index, dotCountRef.current - 1));
+  }, []);
 
-    const { scrollLeft } = container;
-    const index = Math.round(scrollLeft / cardWidth);
-    setActiveIndex(Math.min(index, totalCards - 1));
-  }, [cardWidth, totalCards]);
+  const updateDotCount = useCallback(() => {
+    const container = scrollContainerRef.current;
+    if (!container) return;
+    const step = getStep(container);
+    if (step === 0) return;
+    const maxScroll = container.scrollWidth - container.clientWidth;
+    const count = Math.floor(maxScroll / step) + 1;
+    dotCountRef.current = count;
+    setDotCount(count);
+  }, []);
 
   useEffect(() => {
     const container = scrollContainerRef.current;
     if (!container) return;
 
     updateActiveIndex();
+    updateDotCount();
     container.addEventListener("scroll", updateActiveIndex, { passive: true });
     window.addEventListener("resize", updateActiveIndex);
+    window.addEventListener("resize", updateDotCount);
 
     return () => {
       container.removeEventListener("scroll", updateActiveIndex);
       window.removeEventListener("resize", updateActiveIndex);
+      window.removeEventListener("resize", updateDotCount);
     };
-  }, [updateActiveIndex]);
+  }, [updateActiveIndex, updateDotCount]);
 
   const scroll = (direction: "left" | "right") => {
     const container = scrollContainerRef.current;
     if (!container) return;
 
+    const step = getStep(container);
     const { scrollLeft, scrollWidth, clientWidth } = container;
     const isAtEnd = scrollLeft >= scrollWidth - clientWidth - 10;
     const isAtStart = scrollLeft <= 10;
@@ -90,7 +112,7 @@ export default function EventsSection() {
     } else if (direction === "left" && isAtStart) {
       container.scrollTo({ left: scrollWidth, behavior: "smooth" });
     } else {
-      const scrollAmount = direction === "left" ? -cardWidth : cardWidth;
+      const scrollAmount = direction === "left" ? -step : step;
       container.scrollBy({ left: scrollAmount, behavior: "smooth" });
     }
   };
@@ -98,8 +120,8 @@ export default function EventsSection() {
   const scrollToIndex = (index: number) => {
     const container = scrollContainerRef.current;
     if (!container) return;
-
-    container.scrollTo({ left: index * cardWidth, behavior: "smooth" });
+    const step = getStep(container);
+    container.scrollTo({ left: index * step, behavior: "smooth" });
   };
 
   return (
@@ -170,13 +192,13 @@ export default function EventsSection() {
 
         {/* Pagination Dots */}
         <div
-          className="flex justify-center gap-2 mt-8"
+          className="flex justify-center gap-2 mt-8 lg:hidden"
           role="tablist"
           aria-label="Navegação de eventos"
         >
-          {events.map((event, index) => (
+          {Array.from({ length: dotCount }, (_, index) => (
             <button
-              key={event.id}
+              key={index}
               type="button"
               onClick={() => scrollToIndex(index)}
               className={`w-2.5 h-2.5 rounded-full transition-colors focus:outline-none focus:ring-2 focus:ring-porcelain focus:ring-offset-2 focus:ring-offset-inkstone ${
@@ -186,7 +208,7 @@ export default function EventsSection() {
               }`}
               role="tab"
               aria-selected={index === activeIndex}
-              aria-label={`Ver ${event.title}`}
+              aria-label={`Ver evento ${index + 1}`}
             />
           ))}
         </div>

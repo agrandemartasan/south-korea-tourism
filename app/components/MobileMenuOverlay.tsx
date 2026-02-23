@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import Button from "./Button";
 import { FooterContent } from "./Footer";
 import { ChevronDownIcon, CloseIcon } from "./Icons";
@@ -10,6 +11,7 @@ import { navItems } from "../data/navigationData";
 
 export default function MobileMenuOverlay() {
   const { isMenuOpen, closeMenu } = useMobileMenu();
+  const pathname = usePathname();
 
   return (
     <div
@@ -67,7 +69,7 @@ export default function MobileMenuOverlay() {
               <Link
                 key={item.label}
                 href={item.href}
-                className="flex items-center gap-2 text-porcelain font-body text-body-lg"
+                className={`flex items-center gap-2 font-body text-body-lg ${pathname === item.href ? "text-harvest" : "text-porcelain"}`}
                 tabIndex={isMenuOpen ? 0 : -1}
                 onClick={closeMenu}
               >
