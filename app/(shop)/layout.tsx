@@ -12,7 +12,7 @@ export default function ShopLayout({
     <MobileMenuProvider>
       <ShopNavbar />
       {children}
-      <Footer theme="light" />
+      <Footer theme="light" shopColumns />
       <ShopMobileMenuOverlay />
     </MobileMenuProvider>
   );

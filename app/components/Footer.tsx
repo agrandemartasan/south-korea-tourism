@@ -14,6 +14,7 @@ import {
   legalLinks,
   SocialIconType
 } from "../data/footerData";
+import { shopCategoryLinks, shopQuickLinks } from "../data/shopFooterData";
 
 const socialIcons: Record<SocialIconType, React.FC> = {
   facebook: FacebookIcon,
@@ -27,15 +28,16 @@ type FooterTheme = "dark" | "light";
 interface FooterContentProps {
   variant?: "desktop" | "mobile";
   theme?: FooterTheme;
+  shopColumns?: boolean;
 }
 
-export function FooterContent({ variant = "desktop", theme = "dark" }: FooterContentProps) {
+export function FooterContent({ variant = "desktop", theme = "dark", shopColumns = false }: FooterContentProps) {
   const isMobile = variant === "mobile";
   const textColor = theme === "dark" ? "text-porcelain" : "text-inkstone";
   const logo = theme === "dark" ? "/media/images/logo-white.png" : "/media/images/logo-main.png";
 
   return (
-    <div className={isMobile ? "px-5 pt-12 pb-8" : ""}>
+    <div className={isMobile ? "px-8 pt-12 pb-8" : ""}>
       {/* Main Content */}
       <div className={isMobile ? "" : "px-6 lg:px-[3%] py-16 lg:py-20"}>
         <div
@@ -84,55 +86,97 @@ export function FooterContent({ variant = "desktop", theme = "dark" }: FooterCon
               isMobile ? "flex flex-col gap-8" : "grid grid-cols-3 gap-8"
             }
           >
-            {/* Explorar Column */}
-            <div>
-              <h4
-                className={`font-body font-semibold text-crimson text-body-lg ${isMobile ? "mb-3" : "mb-4"}`}
-              >
-                Explorar
-              </h4>
-              <ul className={isMobile ? "space-y-2" : "space-y-3"}>
-                {explorarLinks.map((link) => (
-                  <li key={link.label}>
-                    {link.href ? (
-                      <Link
-                        href={link.href}
-                        className={`font-body text-body-sm ${textColor} cursor-pointer`}
-                      >
-                        {link.label}
-                      </Link>
-                    ) : (
-                      <span className={`font-body text-body-sm ${textColor} cursor-pointer`}>
-                        {link.label}
-                      </span>
-                    )}
-                  </li>
-                ))}
-              </ul>
-            </div>
+            {shopColumns ? (
+              <>
+                {/* Categorias Column */}
+                <div>
+                  <h4
+                    className={`font-body font-semibold text-crimson text-body-lg ${isMobile ? "mb-3" : "mb-4"}`}
+                  >
+                    Categorias
+                  </h4>
+                  <ul className={isMobile ? "space-y-2" : "space-y-3"}>
+                    {shopCategoryLinks.map((link) => (
+                      <li key={link}>
+                        <span className={`font-body text-body-sm ${textColor} cursor-pointer`}>
+                          {link}
+                        </span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
 
-            {/* Informação útil Column */}
-            <div>
-              <h4
-                className={`font-body font-semibold text-crimson text-body-lg ${isMobile ? "mb-3" : "mb-4"}`}
-              >
-                Informação útil
-              </h4>
-              <ul className={isMobile ? "space-y-2" : "space-y-3"}>
-                {infoLinks.map((link) => (
-                  <li key={link}>
-                    <span className={`font-body text-body-sm ${textColor} cursor-pointer`}>
-                      {link}
-                    </span>
-                  </li>
-                ))}
-              </ul>
-            </div>
+                {/* Acesso Rápido Column */}
+                <div>
+                  <h4
+                    className={`font-body font-semibold text-harvest text-body-lg ${isMobile ? "mb-3" : "mb-4"}`}
+                  >
+                    Acesso Rápido
+                  </h4>
+                  <ul className={isMobile ? "space-y-2" : "space-y-3"}>
+                    {shopQuickLinks.map((link) => (
+                      <li key={link}>
+                        <span className={`font-body text-body-sm ${textColor} cursor-pointer`}>
+                          {link}
+                        </span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </>
+            ) : (
+              <>
+                {/* Explorar Column */}
+                <div>
+                  <h4
+                    className={`font-body font-semibold text-harvest text-body-lg ${isMobile ? "mb-3" : "mb-4"}`}
+                  >
+                    Explorar
+                  </h4>
+                  <ul className={isMobile ? "space-y-2" : "space-y-3"}>
+                    {explorarLinks.map((link) => (
+                      <li key={link.label}>
+                        {link.href ? (
+                          <Link
+                            href={link.href}
+                            className={`font-body text-body-sm ${textColor} cursor-pointer`}
+                          >
+                            {link.label}
+                          </Link>
+                        ) : (
+                          <span className={`font-body text-body-sm ${textColor} cursor-pointer`}>
+                            {link.label}
+                          </span>
+                        )}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                {/* Informação útil Column */}
+                <div>
+                  <h4
+                    className={`font-body font-semibold text-crimson text-body-lg ${isMobile ? "mb-3" : "mb-4"}`}
+                  >
+                    Informação útil
+                  </h4>
+                  <ul className={isMobile ? "space-y-2" : "space-y-3"}>
+                    {infoLinks.map((link) => (
+                      <li key={link}>
+                        <span className={`font-body text-body-sm ${textColor} cursor-pointer`}>
+                          {link}
+                        </span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </>
+            )}
 
             {/* Social Column */}
             <div>
               <h4
-                className={`font-body font-semibold text-crimson text-body-lg ${isMobile ? "mb-3" : "mb-4"}`}
+                className={`font-body font-semibold text-celestial text-body-lg ${isMobile ? "mb-3" : "mb-4"}`}
               >
                 Segue-nos
               </h4>
@@ -158,7 +202,7 @@ export function FooterContent({ variant = "desktop", theme = "dark" }: FooterCon
       <div
         className={
           isMobile
-            ? "border-t border-harvest/20 pt-6"
+            ? "border-t border-harvest/20 mt-8 pt-6"
             : "border-t border-harvest px-6 lg:px-[3%]"
         }
       >
@@ -209,14 +253,15 @@ export function FooterContent({ variant = "desktop", theme = "dark" }: FooterCon
 
 interface FooterProps {
   theme?: FooterTheme;
+  shopColumns?: boolean;
 }
 
-export default function Footer({ theme = "dark" }: FooterProps) {
+export default function Footer({ theme = "dark", shopColumns = false }: FooterProps) {
   const bgColor = theme === "dark" ? "bg-inkstone" : "bg-porcelain";
 
   return (
     <footer className={`hidden xl:block ${bgColor}`}>
-      <FooterContent variant="desktop" theme={theme} />
+      <FooterContent variant="desktop" theme={theme} shopColumns={shopColumns} />
     </footer>
   );
 }

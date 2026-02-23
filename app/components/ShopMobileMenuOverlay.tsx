@@ -37,7 +37,7 @@ export default function ShopMobileMenuOverlay() {
       aria-hidden={!isMenuOpen}
     >
       {/* Mobile Menu Header */}
-      <div className="flex items-center justify-between px-6 lg:px-[3%] py-4">
+      <div className="flex items-center justify-between px-8 lg:px-[3%] py-4">
         {/* Logo */}
         <Link
           href="/shop"
@@ -85,7 +85,7 @@ export default function ShopMobileMenuOverlay() {
       </nav>
 
       {/* Action Buttons */}
-      <div className="flex flex-col items-center gap-4 px-10 pt-8">
+      <div className="flex flex-col items-center gap-4 px-8 pt-8">
         <Button
           variant="harvest"
           href="/"
@@ -106,7 +106,7 @@ export default function ShopMobileMenuOverlay() {
       </div>
 
       {/* Featured Products */}
-      <div className="px-5 pt-12">
+      <div className="px-8 pt-12">
         <h3 className="font-heading text-heading-md text-inkstone mb-2">
           Favoritos dos Viajantes
         </h3>
@@ -130,7 +130,7 @@ export default function ShopMobileMenuOverlay() {
       </div>
 
       {/* Shop Mobile Footer */}
-      <div className="px-5 pt-12 pb-8">
+      <div className="px-8 pt-12 pb-8">
         {/* Brand Column */}
         <div className="mb-8">
           <Image
@@ -180,7 +180,7 @@ export default function ShopMobileMenuOverlay() {
 
           {/* Acesso Rápido Column */}
           <div>
-            <h4 className="font-body font-semibold text-crimson text-body-md mb-3">
+            <h4 className="font-body font-semibold text-harvest text-body-md mb-3">
               Acesso Rápido
             </h4>
             <ul className="space-y-2">
@@ -196,7 +196,7 @@ export default function ShopMobileMenuOverlay() {
 
           {/* Social Column */}
           <div>
-            <h4 className="font-body font-semibold text-crimson text-body-md mb-3">
+            <h4 className="font-body font-semibold text-celestial text-body-md mb-3">
               Segue-nos
             </h4>
             <ul className="space-y-2">
