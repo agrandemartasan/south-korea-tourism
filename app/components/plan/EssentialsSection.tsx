@@ -40,7 +40,7 @@ function AccordionItem({ item, isOpen, onToggle }: AccordionItemProps) {
         <h3 className="font-body text-body-lg font-semibold text-harvest">
           {item.title}
         </h3>
-        <span className="text-crimson ml-4 flex-shrink-0">
+        <span className="text-crimson ml-4 shrink-0">
           {isOpen ? <ChevronUpIcon /> : <ChevronDownIcon />}
         </span>
       </button>
@@ -84,7 +84,7 @@ function AccordionItem({ item, isOpen, onToggle }: AccordionItemProps) {
                     alt=""
                     width={24}
                     height={24}
-                    className="w-6 h-6 flex-shrink-0 mt-0.5"
+                    className="w-6 h-6 shrink-0 mt-0.5"
                   />
                   <div>
                     <h4 className="font-body text-body-sm font-semibold text-porcelain">

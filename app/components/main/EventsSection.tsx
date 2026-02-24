@@ -12,7 +12,7 @@ interface EventCardProps {
 
 function EventCard({ event }: EventCardProps) {
   return (
-    <article className="flex-shrink-0 w-[280px] sm:w-[320px] lg:w-[340px] h-full flex flex-col bg-inkstone/80 rounded-lg overflow-hidden">
+    <article className="shrink-0 w-70 sm:w-[320px] lg:w-85 h-full flex flex-col bg-inkstone/80 rounded-lg overflow-hidden">
       {/* Card Image - Hidden on mobile */}
       <div className="hidden lg:block relative h-48 w-full">
         <Image

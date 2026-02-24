@@ -25,7 +25,7 @@ function DownloadItemRow({ item, isLast }: DownloadItemRowProps) {
       <span className="font-body text-body-sm text-porcelain pr-4">{item.title}</span>
       <Link
         href={item.href}
-        className="flex-shrink-0 border border-porcelain text-porcelain rounded-full px-5 py-2 font-body text-body-sm hover:bg-porcelain/10 transition-colors"
+        className="shrink-0 border border-porcelain text-porcelain rounded-full px-5 py-2 font-body text-body-sm hover:bg-porcelain/10 transition-colors"
       >
         Download
       </Link>
@@ -64,7 +64,7 @@ function AccordionCategory({
         <h3 className="font-body text-body-lg font-semibold text-harvest">
           {category.title}
         </h3>
-        <span className="text-crimson ml-4 flex-shrink-0">
+        <span className="text-crimson ml-4 shrink-0">
           {isOpen ? <ChevronUpIcon /> : <ChevronDownIcon />}
         </span>
       </button>

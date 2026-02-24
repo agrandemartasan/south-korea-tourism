@@ -7,7 +7,7 @@ export default function ShopFeaturedSection() {
     <section className="hidden lg:block bg-porcelain pt-32 pb-12 border-b border-harvest">
       <div className="px-6 lg:px-[3%] flex gap-16">
         {/* Left Column */}
-        <div className="flex-shrink-0 w-80 flex flex-col justify-center">
+        <div className="shrink-0 w-80 flex flex-col justify-center">
           <h2 className="font-body text-heading-md font-bold text-inkstone mb-4">
             Favoritos dos Viajantes
           </h2>

@@ -25,7 +25,7 @@ export default function ShopProductCard({ product }: ShopProductCardProps) {
         <h3 className="font-body text-body-sm text-inkstone leading-tight">
           {product.title}
         </h3>
-        <span className="font-body text-body-sm font-semibold text-inkstone flex-shrink-0">
+        <span className="font-body text-body-sm font-semibold text-inkstone shrink-0">
           {product.priceFormatted}
         </span>
       </div>

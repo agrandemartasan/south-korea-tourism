@@ -13,7 +13,7 @@ function EtiquetteTipItem({ tip, isLast = false }: EtiquetteTipItemProps) {
     <div
       className={`flex gap-4 py-4 ${!isLast ? "border-b border-porcelain/30" : ""}`}
     >
-      <div className="flex-shrink-0 w-10 h-10">
+      <div className="shrink-0 w-10 h-10">
         <Image
           src={tip.icon}
           alt=""
