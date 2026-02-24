@@ -132,7 +132,7 @@ export default function EssentialsSection() {
           src="/media/images/seoul.jpg"
           alt=""
           fill
-          className="object-cover"
+          className="object-cover object-top"
         />
         <div className="absolute inset-0 bg-inkstone/70" aria-hidden="true" />
       </div>

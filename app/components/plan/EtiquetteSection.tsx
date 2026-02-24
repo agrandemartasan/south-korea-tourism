@@ -54,7 +54,8 @@ export default function EtiquetteSection() {
           {/* Right - Content */}
           <div className="flex-1 flex flex-col">
             <h2 className="font-heading text-heading-lg text-harvest mb-4">
-              Guia de Etiqueta e Costumes Básicos
+              Guia de Etiqueta
+              <span className="block">e Costumes Básicos</span>
             </h2>
             <p className="font-body text-body-md text-porcelain mb-8 max-w-xl">
               Entender a cultura coreana torna a tua viagem mais tranquila e

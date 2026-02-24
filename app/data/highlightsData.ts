@@ -10,19 +10,22 @@ export const highlights: Highlight[] = [
     icon: "/icons/mask_yellow.png",
     title: "Cultura & Tradições",
     description:
-      "Mergulha nas raízes profundas do país: rituais, etiqueta, festivais, artes e histórias que moldam a identidade coreana."
+      "Mergulha nas raízes profundas do país: rituais, etiqueta, festivais, artes e histórias que moldam a identidade coreana.",
+    href: "#"
   },
   {
     icon: "/icons/gyeongbokgung-palace_yellow.png",
     title: "Atrações",
     description:
-      "Explora lugares imperdíveis, desde aldeias históricas a arranha-céus futuristas, passando por montanhas, palácios e ilhas paradisíacas."
+      "Explora lugares imperdíveis, desde aldeias históricas a arranha-céus futuristas, passando por montanhas, palácios e ilhas paradisíacas.",
+    href: "#"
   },
   {
     icon: "/icons/noodle_yellow.png",
     title: "Sabores da Coreia",
     description:
-      "Descobre as delícias que definem a gastronomia coreana: mercados de rua, pratos tradicionais, comida moderna e sabores únicos."
+      "Descobre as delícias que definem a gastronomia coreana: mercados de rua, pratos tradicionais, comida moderna e sabores únicos.",
+    href: "#"
   },
   {
     icon: "/icons/calendar_yellow.png",

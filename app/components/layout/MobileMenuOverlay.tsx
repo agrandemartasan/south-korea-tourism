@@ -69,7 +69,7 @@ export default function MobileMenuOverlay() {
               <Link
                 key={item.label}
                 href={item.href}
-                className={`flex items-center gap-2 font-body text-body-lg ${pathname === item.href ? "text-harvest" : "text-porcelain"}`}
+                className={`flex items-center gap-2 font-body text-body-lg ${pathname === item.href ? "text-harvest underline underline-offset-4" : "text-porcelain"}`}
                 tabIndex={isMenuOpen ? 0 : -1}
                 onClick={closeMenu}
               >

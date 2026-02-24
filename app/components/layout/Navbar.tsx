@@ -42,7 +42,7 @@ export default function Navbar() {
               <Link
                 key={item.label}
                 href={item.href}
-                className={`flex items-center gap-1 font-body text-body-md whitespace-nowrap ${pathname === item.href ? "text-harvest" : "text-porcelain"}`}
+                className={`flex items-center gap-1 font-body text-body-md whitespace-nowrap ${pathname === item.href ? "text-harvest underline underline-offset-4" : "text-porcelain"}`}
               >
                 {item.label}
               </Link>

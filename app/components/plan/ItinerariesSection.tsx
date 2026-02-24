@@ -14,15 +14,15 @@ interface ItineraryCardProps {
 function ItineraryCard({ itinerary, className = "", horizontal = false }: ItineraryCardProps) {
   return (
     <article
-      className={`flex bg-inkstone/80 rounded-lg overflow-hidden ${
+      className={`flex bg-inkstone/80 rounded-lg ${
         horizontal && itinerary.image ? "flex-row" : "flex-col"
       } ${className}`}
     >
       {/* Card Image - Only if image exists */}
       {itinerary.image && (
         <div
-          className={`relative ${
-            horizontal ? "w-1/2 aspect-auto" : "aspect-square w-full"
+          className={`relative overflow-hidden ${
+            horizontal ? "w-1/2 aspect-auto rounded-l-lg" : "aspect-square w-full rounded-t-lg"
           }`}
         >
           <Image
@@ -113,7 +113,6 @@ export default function ItinerariesSection() {
         <div className="flex justify-center">
           <Button variant="primary" href="#">
             Ver mais Roteiros
-            <ChevronRightIcon />
           </Button>
         </div>
       </div>

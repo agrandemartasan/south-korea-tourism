@@ -40,7 +40,7 @@ export default function IconGridSection({ heading, description, items, id }: Ico
         {/* Icon Grid */}
         <div className="flex flex-col items-center gap-12 px-12 lg:flex-row lg:justify-between lg:items-start lg:gap-8">
           {items.map((item) => {
-            const cardClassName = "flex flex-col items-center text-center lg:flex-1 lg:max-w-[220px]";
+            const cardClassName = "flex flex-col items-center text-center lg:flex-1 lg:max-w-[220px] hover:scale-105 transition-transform duration-200";
             const cardContent = (
               <>
                 <Image
@@ -63,7 +63,7 @@ export default function IconGridSection({ heading, description, items, id }: Ico
               <Link
                 key={item.title}
                 href={item.href}
-                className={`${cardClassName} hover:opacity-80 transition-opacity`}
+                className={cardClassName}
               >
                 {cardContent}
               </Link>
