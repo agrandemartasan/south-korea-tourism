@@ -1,11 +1,11 @@
-import PlanHeroSection from "../../components/PlanHeroSection";
-import IconGridSection from "../../components/IconGridSection";
-import ItinerariesSection from "../../components/ItinerariesSection";
-import EtiquetteSection from "../../components/EtiquetteSection";
-import EssentialsSection from "../../components/EssentialsSection";
-import AlertsSection from "../../components/AlertsSection";
-import DownloadsSection from "../../components/DownloadsSection";
-import { travelKitItems } from "../../data/travelKitData";
+import PlanHeroSection from "@/components/plan/PlanHeroSection";
+import IconGridSection from "@/components/IconGridSection";
+import ItinerariesSection from "@/components/plan/ItinerariesSection";
+import EtiquetteSection from "@/components/plan/EtiquetteSection";
+import EssentialsSection from "@/components/plan/EssentialsSection";
+import AlertsSection from "@/components/plan/AlertsSection";
+import DownloadsSection from "@/components/plan/DownloadsSection";
+import { travelKitItems } from "@/data/travelKitData";
 
 export default function PlanPage() {
   return (

@@ -2,9 +2,9 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import { ChevronDownIcon, ChevronUpIcon } from "./Icons";
-import SectionHeader from "./SectionHeader";
-import { essentialItems, EssentialItem } from "../data/essentialsData";
+import { ChevronDownIcon, ChevronUpIcon } from "@/components/Icons";
+import SectionHeader from "@/components/SectionHeader";
+import { essentialItems, EssentialItem } from "@/data/essentialsData";
 
 interface AccordionItemProps {
   item: EssentialItem;

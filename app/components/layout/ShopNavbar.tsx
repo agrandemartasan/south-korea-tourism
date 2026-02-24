@@ -2,11 +2,11 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import Button from "./Button";
-import { CartIcon, ChevronDownIcon, MenuIcon } from "./Icons";
-import { useMobileMenu } from "./MobileMenuContext";
-import { useScrolled } from "../hooks/useScrolled";
-import { shopNavItems } from "../data/shopNavigationData";
+import Button from "@/components/Button";
+import { CartIcon, ChevronDownIcon, MenuIcon } from "@/components/Icons";
+import { useMobileMenu } from "@/components/layout/MobileMenuContext";
+import { useScrolled } from "@/hooks/useScrolled";
+import { shopNavItems } from "@/data/shopNavigationData";
 
 export default function ShopNavbar() {
   const { isMenuOpen, openMenu } = useMobileMenu();

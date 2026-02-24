@@ -1,7 +1,7 @@
-import { MobileMenuProvider } from "../components/MobileMenuContext";
-import ShopNavbar from "../components/ShopNavbar";
-import Footer from "../components/Footer";
-import ShopMobileMenuOverlay from "../components/ShopMobileMenuOverlay";
+import { MobileMenuProvider } from "@/components/layout/MobileMenuContext";
+import ShopNavbar from "@/components/layout/ShopNavbar";
+import Footer from "@/components/layout/Footer";
+import ShopMobileMenuOverlay from "@/components/layout/ShopMobileMenuOverlay";
 
 export default function ShopLayout({
   children,

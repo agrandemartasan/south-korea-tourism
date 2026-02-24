@@ -3,11 +3,11 @@
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import Button from "./Button";
-import { FooterContent } from "./Footer";
-import { ChevronDownIcon, CloseIcon } from "./Icons";
-import { useMobileMenu } from "./MobileMenuContext";
-import { navItems } from "../data/navigationData";
+import Button from "@/components/Button";
+import { FooterContent } from "@/components/layout/Footer";
+import { ChevronDownIcon, CloseIcon } from "@/components/Icons";
+import { useMobileMenu } from "@/components/layout/MobileMenuContext";
+import { navItems } from "@/data/navigationData";
 
 export default function MobileMenuOverlay() {
   const { isMenuOpen, closeMenu } = useMobileMenu();

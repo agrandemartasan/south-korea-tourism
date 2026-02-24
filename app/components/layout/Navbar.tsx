@@ -3,11 +3,11 @@
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import Button from "./Button";
-import { ChevronDownIcon, MenuIcon } from "./Icons";
-import { useMobileMenu } from "./MobileMenuContext";
-import { useScrolled } from "../hooks/useScrolled";
-import { navItems } from "../data/navigationData";
+import Button from "@/components/Button";
+import { ChevronDownIcon, MenuIcon } from "@/components/Icons";
+import { useMobileMenu } from "@/components/layout/MobileMenuContext";
+import { useScrolled } from "@/hooks/useScrolled";
+import { navItems } from "@/data/navigationData";
 
 export default function Navbar() {
   const { isMenuOpen, openMenu } = useMobileMenu();

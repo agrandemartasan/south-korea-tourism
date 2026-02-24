@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { FeaturedProduct } from "../data/shopProductsData";
+import { FeaturedProduct } from "@/data/shopProductsData";
 
 interface ProductCardProps {
   product: FeaturedProduct;

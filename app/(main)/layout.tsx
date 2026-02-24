@@ -1,7 +1,7 @@
-import { MobileMenuProvider } from "../components/MobileMenuContext";
-import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
-import MobileMenuOverlay from "../components/MobileMenuOverlay";
+import { MobileMenuProvider } from "@/components/layout/MobileMenuContext";
+import Navbar from "@/components/layout/Navbar";
+import Footer from "@/components/layout/Footer";
+import MobileMenuOverlay from "@/components/layout/MobileMenuOverlay";
 
 export default function MainLayout({
   children,

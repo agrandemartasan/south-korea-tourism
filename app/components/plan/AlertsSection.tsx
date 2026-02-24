@@ -1,6 +1,6 @@
-import SectionHeader from "./SectionHeader";
-import Button from "./Button";
-import { alertItems, AlertItem } from "../data/alertsData";
+import SectionHeader from "@/components/SectionHeader";
+import Button from "@/components/Button";
+import { alertItems, AlertItem } from "@/data/alertsData";
 
 function formatContent(content: string) {
   // Convert **text** to bold spans

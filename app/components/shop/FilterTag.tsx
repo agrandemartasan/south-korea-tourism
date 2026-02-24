@@ -1,4 +1,4 @@
-import { CloseSmallIcon } from "../Icons";
+import { CloseSmallIcon } from "@/components/Icons";
 
 interface FilterTagProps {
   label: string;

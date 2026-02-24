@@ -1,5 +1,5 @@
-import { proverbs } from "../data/proverbsData";
-import SectionHeader from "./SectionHeader";
+import { proverbs } from "@/data/proverbsData";
+import SectionHeader from "@/components/SectionHeader";
 
 export default function ProverbsSection() {
   return (

@@ -1,8 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ChevronRightIcon } from "./Icons";
-import { articles, Article } from "../data/inspirationData";
-import SectionHeader from "./SectionHeader";
+import { ChevronRightIcon } from "@/components/Icons";
+import { articles, Article } from "@/data/inspirationData";
+import SectionHeader from "@/components/SectionHeader";
 
 interface ArticleCardProps {
   article: Article;

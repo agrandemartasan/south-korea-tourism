@@ -1,9 +1,9 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ChevronRightIcon } from "./Icons";
-import Button from "./Button";
-import SectionHeader from "./SectionHeader";
-import { itineraries, Itinerary } from "../data/itinerariesData";
+import { ChevronRightIcon } from "@/components/Icons";
+import Button from "@/components/Button";
+import SectionHeader from "@/components/SectionHeader";
+import { itineraries, Itinerary } from "@/data/itinerariesData";
 
 interface ItineraryCardProps {
   itinerary: Itinerary;

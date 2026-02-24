@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect } from "react";
-import { CloseIcon } from "../Icons";
+import { CloseIcon } from "@/components/Icons";
 import ShopFilters from "./ShopFilters";
 
 interface MobileFilterDrawerProps {

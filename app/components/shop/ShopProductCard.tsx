@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ShopProduct } from "../../data/shopAllProductsData";
+import { ShopProduct } from "@/data/shopAllProductsData";
 
 interface ShopProductCardProps {
   product: ShopProduct;

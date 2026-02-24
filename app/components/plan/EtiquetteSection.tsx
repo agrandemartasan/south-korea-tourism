@@ -1,7 +1,7 @@
 import Image from "next/image";
-import Button from "./Button";
-import { ChevronRightIcon } from "./Icons";
-import { etiquetteTips, EtiquetteTip } from "../data/etiquetteData";
+import Button from "@/components/Button";
+import { ChevronRightIcon } from "@/components/Icons";
+import { etiquetteTips, EtiquetteTip } from "@/data/etiquetteData";
 
 interface EtiquetteTipItemProps {
   tip: EtiquetteTip;

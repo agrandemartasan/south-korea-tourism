@@ -1,4 +1,4 @@
-import { ArrowLeftIcon, ArrowRightIcon } from "../Icons";
+import { ArrowLeftIcon, ArrowRightIcon } from "@/components/Icons";
 
 interface ShopPaginationProps {
   currentPage: number;

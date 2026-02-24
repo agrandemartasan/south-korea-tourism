@@ -1,11 +1,11 @@
-import HeroSection from "../components/HeroSection";
-import IconGridSection from "../components/IconGridSection";
-import EventsSection from "../components/EventsSection";
-import InspirationSection from "../components/InspirationSection";
-import ProverbsSection from "../components/ProverbsSection";
-import SafetySection from "../components/SafetySection";
-import ShopCtaSection from "../components/ShopCtaSection";
-import { highlights } from "../data/highlightsData";
+import HeroSection from "@/components/main/HeroSection";
+import IconGridSection from "@/components/IconGridSection";
+import EventsSection from "@/components/main/EventsSection";
+import InspirationSection from "@/components/main/InspirationSection";
+import ProverbsSection from "@/components/main/ProverbsSection";
+import SafetySection from "@/components/main/SafetySection";
+import ShopCtaSection from "@/components/main/ShopCtaSection";
+import { highlights } from "@/data/highlightsData";
 
 export default function Home() {
   return (

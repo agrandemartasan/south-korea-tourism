@@ -1,6 +1,6 @@
-import Button from "./Button";
+import Button from "@/components/Button";
 import ProductCard from "./ProductCard";
-import { featuredProducts } from "../data/shopProductsData";
+import { featuredProducts } from "@/data/shopProductsData";
 
 export default function ShopFeaturedSection() {
   return (

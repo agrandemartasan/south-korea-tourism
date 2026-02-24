@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useId } from "react";
-import { ChevronDownIcon, ChevronUpIcon, SearchIcon } from "../Icons";
+import { ChevronDownIcon, ChevronUpIcon, SearchIcon } from "@/components/Icons";
 import {
   mainCategories,
   subcategories,
@@ -11,7 +11,7 @@ import {
   availabilityOptions,
   maisVendidosTags,
   novidadesTags
-} from "../../data/shopFiltersData";
+} from "@/data/shopFiltersData";
 
 interface ShopFiltersProps {
   selectedCategory: string;

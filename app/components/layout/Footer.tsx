@@ -5,7 +5,7 @@ import {
   InstagramIcon,
   XIcon,
   YoutubeIcon
-} from "./Icons";
+} from "@/components/Icons";
 import {
   brandInfo,
   explorarLinks,
@@ -13,8 +13,8 @@ import {
   socialLinks,
   legalLinks,
   SocialIconType
-} from "../data/footerData";
-import { shopCategoryLinks, shopQuickLinks } from "../data/shopFooterData";
+} from "@/data/footerData";
+import { shopCategoryLinks, shopQuickLinks } from "@/data/shopFooterData";
 
 const socialIcons: Record<SocialIconType, React.FC> = {
   facebook: FacebookIcon,

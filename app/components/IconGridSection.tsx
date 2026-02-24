@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { Highlight } from "../data/highlightsData";
+import { Highlight } from "@/data/highlightsData";
 
 interface IconGridSectionProps {
   heading: string;

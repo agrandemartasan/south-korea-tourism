@@ -3,8 +3,8 @@
 import { useRef, useState, useEffect, useCallback } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowLeftIcon, ArrowRightIcon, ChevronRightIcon } from "./Icons";
-import { events, Event } from "../data/eventsData";
+import { ArrowLeftIcon, ArrowRightIcon, ChevronRightIcon } from "@/components/Icons";
+import { events, Event } from "@/data/eventsData";
 
 interface EventCardProps {
   event: Event;

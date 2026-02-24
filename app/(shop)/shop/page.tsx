@@ -1,17 +1,17 @@
 "use client";
 
 import { useState, useMemo, useRef, useEffect } from "react";
-import { FilterIcon, ChevronDownIcon } from "../../components/Icons";
-import ShopFeaturedSection from "../../components/ShopFeaturedSection";
-import ShopFilters from "../../components/shop/ShopFilters";
-import ShopProductCard from "../../components/shop/ShopProductCard";
-import ShopPagination from "../../components/shop/ShopPagination";
-import FilterTag from "../../components/shop/FilterTag";
-import MobileFilterDrawer from "../../components/shop/MobileFilterDrawer";
+import { FilterIcon, ChevronDownIcon } from "@/components/Icons";
+import ShopFeaturedSection from "@/components/shop/ShopFeaturedSection";
+import ShopFilters from "@/components/shop/ShopFilters";
+import ShopProductCard from "@/components/shop/ShopProductCard";
+import ShopPagination from "@/components/shop/ShopPagination";
+import FilterTag from "@/components/shop/FilterTag";
+import MobileFilterDrawer from "@/components/shop/MobileFilterDrawer";
 import {
   allProducts,
   PRODUCTS_PER_PAGE,
-} from "../../data/shopAllProductsData";
+} from "@/data/shopAllProductsData";
 import {
   mainCategories,
   subcategories,
@@ -22,7 +22,7 @@ import {
   maisVendidosTags,
   novidadesTags,
   sortOptions,
-} from "../../data/shopFiltersData";
+} from "@/data/shopFiltersData";
 
 export default function ShopPage() {
   // Filter state

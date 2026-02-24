@@ -2,13 +2,13 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { ChevronDownIcon, ChevronUpIcon } from "./Icons";
-import Button from "./Button";
+import { ChevronDownIcon, ChevronUpIcon } from "@/components/Icons";
+import Button from "@/components/Button";
 import {
   downloadCategories,
   DownloadCategory,
   DownloadItem,
-} from "../data/downloadsData";
+} from "@/data/downloadsData";
 
 interface DownloadItemRowProps {
   item: DownloadItem;

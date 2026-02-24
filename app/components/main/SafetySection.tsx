@@ -1,7 +1,7 @@
 import Link from "next/link";
-import { ChevronRightIcon } from "./Icons";
-import { safetyTopics, SafetyTopic } from "../data/safetyData";
-import SectionHeader from "./SectionHeader";
+import { ChevronRightIcon } from "@/components/Icons";
+import { safetyTopics, SafetyTopic } from "@/data/safetyData";
+import SectionHeader from "@/components/SectionHeader";
 
 interface SafetyCardProps {
   topic: SafetyTopic;

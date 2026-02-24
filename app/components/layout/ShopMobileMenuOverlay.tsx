@@ -2,8 +2,8 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import Button from "./Button";
-import ProductCard from "./ProductCard";
+import Button from "@/components/Button";
+import ProductCard from "@/components/shop/ProductCard";
 import {
   CartIcon,
   ChevronDownIcon,
@@ -12,12 +12,12 @@ import {
   InstagramIcon,
   XIcon,
   YoutubeIcon
-} from "./Icons";
-import { useMobileMenu } from "./MobileMenuContext";
-import { shopNavItems } from "../data/shopNavigationData";
-import { shopCategoryLinks, shopQuickLinks } from "../data/shopFooterData";
-import { featuredProducts } from "../data/shopProductsData";
-import { brandInfo, socialLinks, legalLinks } from "../data/footerData";
+} from "@/components/Icons";
+import { useMobileMenu } from "@/components/layout/MobileMenuContext";
+import { shopNavItems } from "@/data/shopNavigationData";
+import { shopCategoryLinks, shopQuickLinks } from "@/data/shopFooterData";
+import { featuredProducts } from "@/data/shopProductsData";
+import { brandInfo, socialLinks, legalLinks } from "@/data/footerData";
 
 export default function ShopMobileMenuOverlay() {
   const { isMenuOpen, closeMenu } = useMobileMenu();
