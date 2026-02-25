@@ -3,30 +3,50 @@
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import Button from "@/components/Button";
 import { ChevronDownIcon, MenuIcon } from "@/components/Icons";
 import { useMobileMenu } from "@/components/layout/MobileMenuContext";
 import { useScrolled } from "@/hooks/useScrolled";
-import { navItems } from "@/data/navigationData";
+import { NavItem } from "@/data/navigationData";
 
-export default function Navbar() {
+interface NavbarProps {
+  theme: "dark" | "light";
+  logoSrc: string;
+  logoHref: string;
+  logoAriaLabel: string;
+  navItems: NavItem[];
+  actionButtons: React.ReactNode;
+}
+
+const themeStyles = {
+  dark: {
+    scrolledBg: "bg-inkstone",
+    navText: "text-porcelain",
+    activeText: "text-harvest underline underline-offset-4",
+    hamburger: "text-porcelain focus:ring-porcelain focus:ring-offset-inkstone",
+  },
+  light: {
+    scrolledBg: "bg-porcelain",
+    navText: "text-inkstone",
+    activeText: "text-inkstone",
+    hamburger: "text-inkstone focus:ring-inkstone focus:ring-offset-porcelain",
+  },
+} as const;
+
+export default function Navbar({ theme, logoSrc, logoHref, logoAriaLabel, navItems, actionButtons }: NavbarProps) {
   const { isMenuOpen, openMenu } = useMobileMenu();
   const scrolled = useScrolled();
   const pathname = usePathname();
+  const styles = themeStyles[theme];
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-colors duration-300 ${scrolled ? "bg-inkstone" : "bg-transparent"}`}
+      className={`fixed top-0 left-0 right-0 z-50 transition-colors duration-300 ${scrolled ? styles.scrolledBg : "bg-transparent"}`}
     >
       <div className="flex items-center justify-between px-6 lg:px-[3%] py-4">
         {/* Logo */}
-        <Link
-          href="/"
-          className="shrink-0"
-          aria-label="Discover South Korea - Home"
-        >
+        <Link href={logoHref} className="shrink-0" aria-label={logoAriaLabel}>
           <Image
-            src="/media/images/logo-white.png"
+            src={logoSrc}
             alt="Discover South Korea"
             width={200}
             height={60}
@@ -42,7 +62,9 @@ export default function Navbar() {
               <Link
                 key={item.label}
                 href={item.href}
-                className={`flex items-center gap-1 font-body text-body-md whitespace-nowrap ${pathname === item.href ? "text-harvest underline underline-offset-4" : "text-porcelain"}`}
+                className={`flex items-center gap-1 font-body text-body-md whitespace-nowrap ${
+                  pathname === item.href ? styles.activeText : styles.navText
+                }`}
               >
                 {item.label}
               </Link>
@@ -50,7 +72,7 @@ export default function Navbar() {
               <button
                 key={item.label}
                 type="button"
-                className="flex items-center gap-1 text-porcelain font-body text-body-md cursor-pointer whitespace-nowrap"
+                className={`flex items-center gap-1 ${styles.navText} font-body text-body-md cursor-pointer whitespace-nowrap`}
               >
                 {item.label}
                 {item.hasDropdown && <ChevronDownIcon />}
@@ -59,18 +81,14 @@ export default function Navbar() {
           )}
         </div>
 
-        {/* Buttons and Hamburger Menu */}
+        {/* Action Buttons and Hamburger Menu */}
         <div className="flex items-center gap-4">
-          <div className="hidden sm:block">
-            <Button variant="accent" href="/shop" className="whitespace-nowrap">
-              Loja Cultural
-            </Button>
-          </div>
+          {actionButtons}
 
           {/* Hamburger Menu Button */}
           <button
             type="button"
-            className="xl:hidden flex items-center justify-center h-12 w-12 text-porcelain transition-opacity hover:opacity-80 focus:outline-none focus:ring-2 focus:ring-porcelain focus:ring-offset-2 focus:ring-offset-inkstone"
+            className={`xl:hidden flex items-center justify-center h-12 w-12 transition-opacity hover:opacity-80 focus:outline-none focus:ring-2 focus:ring-offset-2 ${styles.hamburger}`}
             aria-label="Open menu"
             aria-expanded={isMenuOpen}
             onClick={openMenu}

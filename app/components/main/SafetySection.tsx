@@ -2,6 +2,7 @@ import Link from "next/link";
 import { ChevronRightIcon } from "@/components/Icons";
 import { safetyTopics, SafetyTopic } from "@/data/safetyData";
 import SectionHeader from "@/components/SectionHeader";
+import AccentCard from "@/components/AccentCard";
 
 interface SafetyCardProps {
   topic: SafetyTopic;
@@ -9,7 +10,7 @@ interface SafetyCardProps {
 
 function SafetyCard({ topic }: SafetyCardProps) {
   return (
-    <article className="bg-celestial/20 border-l-2 border-harvest rounded-lg p-6 lg:p-8">
+    <AccentCard>
       <h3 className="font-body text-heading-sm font-semibold text-harvest mb-3">
         {topic.title}
       </h3>
@@ -23,7 +24,7 @@ function SafetyCard({ topic }: SafetyCardProps) {
         Ler mais
         <ChevronRightIcon />
       </Link>
-    </article>
+    </AccentCard>
   );
 }
 

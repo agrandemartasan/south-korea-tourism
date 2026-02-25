@@ -5,6 +5,7 @@ import Image from "next/image";
 import { ChevronDownIcon, ChevronUpIcon } from "@/components/Icons";
 import SectionHeader from "@/components/SectionHeader";
 import { essentialItems, EssentialItem } from "@/data/essentialsData";
+import { formatContent } from "@/utils/formatContent";
 
 interface AccordionItemProps {
   item: EssentialItem;
@@ -12,20 +13,6 @@ interface AccordionItemProps {
   onToggle: () => void;
 }
 
-function formatContent(content: string) {
-  // Convert **text** to bold spans
-  const parts = content.split(/(\*\*[^*]+\*\*)/g);
-  return parts.map((part, index) => {
-    if (part.startsWith("**") && part.endsWith("**")) {
-      return (
-        <strong key={index} className="font-semibold text-porcelain">
-          {part.slice(2, -2)}
-        </strong>
-      );
-    }
-    return part;
-  });
-}
 
 function AccordionItem({ item, isOpen, onToggle }: AccordionItemProps) {
   return (

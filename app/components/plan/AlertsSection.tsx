@@ -1,21 +1,8 @@
 import SectionHeader from "@/components/SectionHeader";
 import Button from "@/components/Button";
+import AccentCard from "@/components/AccentCard";
 import { alertItems, AlertItem } from "@/data/alertsData";
-
-function formatContent(content: string) {
-  // Convert **text** to bold spans
-  const parts = content.split(/(\*\*[^*]+\*\*)/g);
-  return parts.map((part, index) => {
-    if (part.startsWith("**") && part.endsWith("**")) {
-      return (
-        <strong key={index} className="font-semibold text-porcelain">
-          {part.slice(2, -2)}
-        </strong>
-      );
-    }
-    return part;
-  });
-}
+import { formatContent } from "@/utils/formatContent";
 
 interface AlertCardProps {
   item: AlertItem;
@@ -23,7 +10,7 @@ interface AlertCardProps {
 
 function AlertCard({ item }: AlertCardProps) {
   return (
-    <article className="border border-celestial p-6">
+    <AccentCard>
       <h3 className="font-body text-body-lg font-semibold text-harvest mb-4">
         {item.title}
       </h3>
@@ -38,7 +25,7 @@ function AlertCard({ item }: AlertCardProps) {
           </li>
         ))}
       </ul>
-    </article>
+    </AccentCard>
   );
 }
 
