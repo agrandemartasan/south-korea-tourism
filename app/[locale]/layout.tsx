@@ -4,6 +4,7 @@ import { routing, type Locale } from "@/i18n/routing";
 import { notFound } from "next/navigation";
 import { Merriweather } from "next/font/google";
 import localFont from "next/font/local";
+import { Analytics } from "@vercel/analytics/next";
 
 const korean = localFont({
   src: "../../public/fonts/Korean.ttf",
@@ -45,6 +46,7 @@ export default async function LocaleLayout({
         <NextIntlClientProvider messages={messages}>
           {children}
         </NextIntlClientProvider>
+        <Analytics />
       </body>
     </html>
   );
