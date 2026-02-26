@@ -6,15 +6,19 @@ import ProverbsSection from "@/components/main/ProverbsSection";
 import SafetySection from "@/components/main/SafetySection";
 import ShopCtaSection from "@/components/main/ShopCtaSection";
 import { highlights } from "@/data/highlightsData";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 
-export default function Home() {
+export default async function Home({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
+  setRequestLocale(locale);
+  const t = await getTranslations('home.highlights');
   return (
     <main>
       <HeroSection />
       <IconGridSection
         id="explorar"
-        heading="Explora o melhor da Coreia do Sul"
-        description="Escolhe o que queres descobrir a seguir — cultura, sabores, paisagens ou planeamento."
+        heading={t('heading')}
+        description={t('description')}
         items={highlights}
       />
       <EventsSection />

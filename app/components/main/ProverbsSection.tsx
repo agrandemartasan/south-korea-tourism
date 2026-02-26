@@ -1,7 +1,12 @@
 import { proverbs } from "@/data/proverbsData";
 import SectionHeader from "@/components/SectionHeader";
+import { getTranslations, getLocale } from "next-intl/server";
+import { localize } from "@/utils/localize";
+import type { Locale } from "@/i18n/routing";
 
-export default function ProverbsSection() {
+export default async function ProverbsSection() {
+  const t = await getTranslations('home.proverbs');
+  const locale = await getLocale() as Locale;
   return (
     <section className="relative bg-inkstone overflow-hidden">
       {/* Background Pattern - Diamond arrangement via two offset layers */}
@@ -20,8 +25,8 @@ export default function ProverbsSection() {
       {/* Content */}
       <div className="relative z-10 px-6 lg:px-[3%] py-16 lg:py-24">
         <SectionHeader
-          title="Sabedoria que atravessa gerações"
-          description="Pequenos fragmentos da cultura coreana que refletem valores, respeito e tradição."
+          title={t('heading')}
+          description={t('description')}
         />
 
         {/* Quotes */}
@@ -32,10 +37,10 @@ export default function ProverbsSection() {
               className="border-t border-harvest/20 py-8 lg:py-10"
             >
               <blockquote className="font-body text-body-xl italic text-porcelain mb-2">
-                &ldquo;{proverb.quote}&rdquo;
+                &ldquo;{localize(proverb.quote, locale)}&rdquo;
               </blockquote>
               <p className="font-body text-body-sm text-porcelain">
-                — {proverb.attribution}
+                — {localize(proverb.attribution, locale)}
               </p>
             </div>
           ))}

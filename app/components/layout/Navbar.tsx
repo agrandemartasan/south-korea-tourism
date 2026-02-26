@@ -1,11 +1,11 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname, Link } from "@/i18n/navigation";
 import { ChevronDownIcon, MenuIcon } from "@/components/Icons";
 import { useMobileMenu } from "@/components/layout/MobileMenuContext";
 import { useScrolled } from "@/hooks/useScrolled";
+import { useTranslations } from "next-intl";
 import { NavItem } from "@/data/navigationData";
 
 interface NavbarProps {
@@ -37,6 +37,7 @@ export default function Navbar({ theme, logoSrc, logoHref, logoAriaLabel, navIte
   const scrolled = useScrolled();
   const pathname = usePathname();
   const styles = themeStyles[theme];
+  const t = useTranslations('nav');
 
   return (
     <nav
@@ -57,28 +58,29 @@ export default function Navbar({ theme, logoSrc, logoHref, logoAriaLabel, navIte
 
         {/* Desktop Navigation Menu */}
         <div className="hidden xl:flex items-center gap-8">
-          {navItems.map((item) =>
-            item.href ? (
+          {navItems.map((item) => {
+            const label = t(item.labelKey as Parameters<typeof t>[0]);
+            return item.href ? (
               <Link
-                key={item.label}
+                key={item.labelKey}
                 href={item.href}
                 className={`flex items-center gap-1 font-body text-body-md whitespace-nowrap ${
                   pathname === item.href ? styles.activeText : styles.navText
                 }`}
               >
-                {item.label}
+                {label}
               </Link>
             ) : (
               <button
-                key={item.label}
+                key={item.labelKey}
                 type="button"
                 className={`flex items-center gap-1 ${styles.navText} font-body text-body-md cursor-pointer whitespace-nowrap`}
               >
-                {item.label}
+                {label}
                 {item.hasDropdown && <ChevronDownIcon />}
               </button>
-            )
-          )}
+            );
+          })}
         </div>
 
         {/* Action Buttons and Hamburger Menu */}

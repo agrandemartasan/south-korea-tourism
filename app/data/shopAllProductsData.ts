@@ -1,6 +1,8 @@
+import { type LocalizedString } from "@/utils/localize";
+
 export interface ShopProduct {
   id: string;
-  title: string;
+  title: LocalizedString;
   price: number;
   priceFormatted: string;
   image: string;
@@ -17,7 +19,7 @@ export interface ShopProduct {
 const baseProducts: ShopProduct[] = [
   {
     id: "garrafa-termica-lotus",
-    title: "Garrafa térmica (Lótus)",
+    title: { pt: "Garrafa térmica (Lótus)", en: "Thermal Bottle (Lotus)" },
     price: 55,
     priceFormatted: "€55",
     image: "/media/images/lotus.webp",
@@ -31,7 +33,7 @@ const baseProducts: ShopProduct[] = [
   },
   {
     id: "set-traditional-garrafas",
-    title: "Set traditional de garrafas",
+    title: { pt: "Set traditional de garrafas", en: "Traditional Bottle Set" },
     price: 55,
     priceFormatted: "€55",
     image: "/media/images/tea_set.webp",
@@ -45,7 +47,7 @@ const baseProducts: ShopProduct[] = [
   },
   {
     id: "set-molheiras-sorriso-silla",
-    title: "Set de molheiras (Sorriso de Silla)",
+    title: { pt: "Set de molheiras (Sorriso de Silla)", en: "Sauce Set (Silla Smile)" },
     price: 55,
     priceFormatted: "€55",
     image: "/media/images/set_smile.webp",
@@ -59,7 +61,7 @@ const baseProducts: ShopProduct[] = [
   },
   {
     id: "copo-soju-moon-jar",
-    title: "Copo para soju e chá Moon Jar",
+    title: { pt: "Copo para soju e chá Moon Jar", en: "Moon Jar Soju & Tea Cup" },
     price: 55,
     priceFormatted: "€55",
     image: "/media/images/moon_jar.webp",
@@ -73,7 +75,7 @@ const baseProducts: ShopProduct[] = [
   },
   {
     id: "set-canecas-ilwolobongdo",
-    title: "Set de canecas Ilwolobongdo",
+    title: { pt: "Set de canecas Ilwolobongdo", en: "Ilwolobongdo Mug Set" },
     price: 55,
     priceFormatted: "€55",
     image: "/media/images/Ilwolobongdo.webp",
@@ -87,7 +89,7 @@ const baseProducts: ShopProduct[] = [
   },
   {
     id: "set-copos-gonryongpo",
-    title: "Set de copos Gonryongpo",
+    title: { pt: "Set de copos Gonryongpo", en: "Gonryongpo Cup Set" },
     price: 55,
     priceFormatted: "€55",
     image: "/media/images/Gonryongpo.webp",
@@ -101,7 +103,7 @@ const baseProducts: ShopProduct[] = [
   },
   {
     id: "set-colher-pauzinhos",
-    title: "Set de colher e pauzinhos",
+    title: { pt: "Set de colher e pauzinhos", en: "Spoon and Chopsticks Set" },
     price: 55,
     priceFormatted: "€55",
     image: "/media/images/set_spoon.webp",
@@ -115,7 +117,7 @@ const baseProducts: ShopProduct[] = [
   },
   {
     id: "base-copos-madreperola",
-    title: "Base para copos em madrepérola",
+    title: { pt: "Base para copos em madrepérola", en: "Mother-of-Pearl Cup Coaster" },
     price: 55,
     priceFormatted: "€55",
     image: "/media/images/coaster.webp",

@@ -1,13 +1,13 @@
 export interface NavItem {
-  label: string;
+  labelKey: string;
   hasDropdown: boolean;
   href?: string;
 }
 
 export const navItems: NavItem[] = [
-  { label: "Raízes da Coreia", hasDropdown: true },
-  { label: "Cultura & Tradições", hasDropdown: true },
-  { label: "Atrações", hasDropdown: true },
-  { label: "Sabores da Coreia", hasDropdown: true },
-  { label: "Planear", hasDropdown: false, href: "/plan" }
+  { labelKey: "roots", hasDropdown: true },
+  { labelKey: "culture", hasDropdown: true },
+  { labelKey: "attractions", hasDropdown: true },
+  { labelKey: "flavours", hasDropdown: true },
+  { labelKey: "plan", hasDropdown: false, href: "/plan" }
 ];

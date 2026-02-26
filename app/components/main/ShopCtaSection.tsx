@@ -1,7 +1,9 @@
 import Image from "next/image";
 import Button from "@/components/Button";
+import { getTranslations } from "next-intl/server";
 
-export default function ShopCtaSection() {
+export default async function ShopCtaSection() {
+  const t = await getTranslations('home.shopCta');
   return (
     <section className="relative overflow-hidden">
       {/* Background Image */}
@@ -21,21 +23,19 @@ export default function ShopCtaSection() {
         {/* Title */}
         <div className="lg:flex-1">
           <h2 className="font-heading text-heading-lg text-harvest">
-            Leva a Coreia
+            {t('headingLine1')}
             <br />
-            Contigo
+            {t('headingLine2')}
           </h2>
         </div>
 
         {/* Description + CTA */}
         <div className="lg:flex-1">
           <p className="font-body text-body-lg text-porcelain mb-6">
-            Descobre peças autênticas, artesanato tradicional, livros,
-            gastronomia e objetos inspirados na cultura coreana —
-            cuidadosamente selecionados para quem ama explorar.
+            {t('description')}
           </p>
           <Button variant="accent" href="/shop">
-            Explorar Loja Cultural
+            {t('button')}
           </Button>
         </div>
       </div>

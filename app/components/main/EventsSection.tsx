@@ -2,15 +2,20 @@
 
 import { useRef, useState, useEffect, useCallback } from "react";
 import Image from "next/image";
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
 import { ArrowLeftIcon, ArrowRightIcon, ChevronRightIcon } from "@/components/Icons";
 import { events, Event } from "@/data/eventsData";
+import { useTranslations, useLocale } from "next-intl";
+import { localize } from "@/utils/localize";
+import type { Locale } from "@/i18n/routing";
 
 interface EventCardProps {
   event: Event;
 }
 
 function EventCard({ event }: EventCardProps) {
+  const commonT = useTranslations('common');
+  const locale = useLocale() as Locale;
   return (
     <article className="shrink-0 w-70 sm:w-[320px] lg:w-85 h-full flex flex-col bg-inkstone/80 rounded-lg overflow-hidden">
       {/* Card Image - Hidden on mobile */}
@@ -27,19 +32,19 @@ function EventCard({ event }: EventCardProps) {
       {/* Card Content */}
       <div className="p-6 flex flex-col flex-1">
         <p className="font-body text-body-md text-porcelain uppercase tracking-wide mb-2">
-          {event.location}
+          {localize(event.location, locale)}
         </p>
         <h3 className="font-body text-heading-sm font-semibold text-crimson mb-3">
           {event.title}
         </h3>
         <p className="font-body text-body-md text-porcelain mb-4 flex-1">
-          {event.description}
+          {localize(event.description, locale)}
         </p>
         <Link
           href={event.href}
           className="inline-flex items-center gap-1 font-body text-body-md text-porcelain hover:text-harvest transition-colors"
         >
-          Ver mais
+          {commonT('viewMore')}
           <ChevronRightIcon />
         </Link>
       </div>
@@ -57,6 +62,7 @@ function getStep(container: HTMLDivElement): number {
 }
 
 export default function EventsSection() {
+  const t = useTranslations('home');
   const scrollContainerRef = useRef<HTMLDivElement>(null);
   const [activeIndex, setActiveIndex] = useState(0);
   const [dotCount, setDotCount] = useState(totalCards);
@@ -143,11 +149,10 @@ export default function EventsSection() {
         {/* Header */}
         <div className="text-center mb-12">
           <h2 className="font-heading text-heading-lg text-harvest mb-4">
-            O que está a acontecer na Coreia agora
+            {t('events.heading')}
           </h2>
           <p className="font-body text-body-lg text-porcelain">
-            Festas, celebrações sazonais e eventos culturais que mostram o
-            espírito vivo do país.
+            {t('events.description')}
           </p>
         </div>
 
@@ -158,7 +163,7 @@ export default function EventsSection() {
             type="button"
             onClick={() => scroll("left")}
             className="hidden lg:flex self-center shrink-0 items-center justify-center w-12 h-12 rounded-full bg-celestial text-porcelain hover:bg-celestial/80 cursor-pointer focus:outline-none focus:ring-2 focus:ring-porcelain focus:ring-offset-2 focus:ring-offset-inkstone"
-            aria-label="Ver eventos anteriores"
+            aria-label={t('events.prevButton')}
           >
             <ArrowLeftIcon />
           </button>
@@ -184,7 +189,7 @@ export default function EventsSection() {
             type="button"
             onClick={() => scroll("right")}
             className="hidden lg:flex self-center shrink-0 items-center justify-center w-12 h-12 rounded-full bg-celestial text-porcelain hover:bg-celestial/80 cursor-pointer focus:outline-none focus:ring-2 focus:ring-porcelain focus:ring-offset-2 focus:ring-offset-inkstone"
-            aria-label="Ver mais eventos"
+            aria-label={t('events.nextButton')}
           >
             <ArrowRightIcon />
           </button>
@@ -194,7 +199,7 @@ export default function EventsSection() {
         <div
           className="flex justify-center gap-2 mt-8 lg:hidden"
           role="tablist"
-          aria-label="Navegação de eventos"
+          aria-label={t('events.navigation')}
         >
           {Array.from({ length: dotCount }, (_, index) => (
             <button
@@ -208,7 +213,7 @@ export default function EventsSection() {
               }`}
               role="tab"
               aria-selected={index === activeIndex}
-              aria-label={`Ver evento ${index + 1}`}
+              aria-label={t('events.eventDot', { number: index + 1 })}
             />
           ))}
         </div>

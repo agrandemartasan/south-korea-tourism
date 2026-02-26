@@ -1,5 +1,7 @@
+"use client";
+
 import Image from "next/image";
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
 import {
   FacebookIcon,
   InstagramIcon,
@@ -15,6 +17,9 @@ import {
   SocialIconType
 } from "@/data/footerData";
 import { shopCategoryLinks, shopQuickLinks } from "@/data/shopFooterData";
+import { useTranslations, useLocale } from "next-intl";
+import { localize } from "@/utils/localize";
+import type { Locale } from "@/i18n/routing";
 
 const socialIcons: Record<SocialIconType, React.FC> = {
   facebook: FacebookIcon,
@@ -35,6 +40,8 @@ export function FooterContent({ variant = "desktop", theme = "dark", shopColumns
   const isMobile = variant === "mobile";
   const textColor = theme === "dark" ? "text-porcelain" : "text-inkstone";
   const logo = theme === "dark" ? "/media/images/logo-white.png" : "/media/images/logo-main.png";
+  const t = useTranslations('footer');
+  const locale = useLocale() as Locale;
 
   return (
     <div className={isMobile ? "px-8 pt-12 pb-8" : ""}>
@@ -59,12 +66,12 @@ export function FooterContent({ variant = "desktop", theme = "dark", shopColumns
             <h3
               className={`font-body font-semibold ${textColor} ${isMobile ? "text-body-sm mb-1" : "text-body-md mb-2"}`}
             >
-              {brandInfo.title}
+              {localize(brandInfo.title, locale)}
             </h3>
             <p
               className={`font-body text-body-sm ${textColor} ${isMobile ? "mb-4" : "mb-6"}`}
             >
-              {brandInfo.description}
+              {localize(brandInfo.description, locale)}
             </p>
             <p className={`font-body text-body-sm font-semibold ${textColor} mb-1`}>
               {brandInfo.office}
@@ -93,13 +100,13 @@ export function FooterContent({ variant = "desktop", theme = "dark", shopColumns
                   <h4
                     className={`font-body font-semibold text-crimson text-body-lg ${isMobile ? "mb-3" : "mb-4"}`}
                   >
-                    Categorias
+                    {t('categorias')}
                   </h4>
                   <ul className={isMobile ? "space-y-2" : "space-y-3"}>
                     {shopCategoryLinks.map((link) => (
-                      <li key={link}>
+                      <li key={link.pt}>
                         <span className={`font-body text-body-sm ${textColor} cursor-pointer`}>
-                          {link}
+                          {localize(link, locale)}
                         </span>
                       </li>
                     ))}
@@ -111,13 +118,13 @@ export function FooterContent({ variant = "desktop", theme = "dark", shopColumns
                   <h4
                     className={`font-body font-semibold text-harvest text-body-lg ${isMobile ? "mb-3" : "mb-4"}`}
                   >
-                    Acesso Rápido
+                    {t('acessoRapido')}
                   </h4>
                   <ul className={isMobile ? "space-y-2" : "space-y-3"}>
                     {shopQuickLinks.map((link) => (
-                      <li key={link}>
+                      <li key={link.pt}>
                         <span className={`font-body text-body-sm ${textColor} cursor-pointer`}>
-                          {link}
+                          {localize(link, locale)}
                         </span>
                       </li>
                     ))}
@@ -131,21 +138,21 @@ export function FooterContent({ variant = "desktop", theme = "dark", shopColumns
                   <h4
                     className={`font-body font-semibold text-harvest text-body-lg ${isMobile ? "mb-3" : "mb-4"}`}
                   >
-                    Explorar
+                    {t('explorar')}
                   </h4>
                   <ul className={isMobile ? "space-y-2" : "space-y-3"}>
                     {explorarLinks.map((link) => (
-                      <li key={link.label}>
+                      <li key={link.label.pt}>
                         {link.href ? (
                           <Link
                             href={link.href}
                             className={`font-body text-body-sm ${textColor} cursor-pointer`}
                           >
-                            {link.label}
+                            {localize(link.label, locale)}
                           </Link>
                         ) : (
                           <span className={`font-body text-body-sm ${textColor} cursor-pointer`}>
-                            {link.label}
+                            {localize(link.label, locale)}
                           </span>
                         )}
                       </li>
@@ -158,13 +165,13 @@ export function FooterContent({ variant = "desktop", theme = "dark", shopColumns
                   <h4
                     className={`font-body font-semibold text-crimson text-body-lg ${isMobile ? "mb-3" : "mb-4"}`}
                   >
-                    Informação útil
+                    {t('infoUtil')}
                   </h4>
                   <ul className={isMobile ? "space-y-2" : "space-y-3"}>
                     {infoLinks.map((link) => (
-                      <li key={link}>
+                      <li key={link.pt}>
                         <span className={`font-body text-body-sm ${textColor} cursor-pointer`}>
-                          {link}
+                          {localize(link, locale)}
                         </span>
                       </li>
                     ))}
@@ -178,7 +185,7 @@ export function FooterContent({ variant = "desktop", theme = "dark", shopColumns
               <h4
                 className={`font-body font-semibold text-celestial text-body-lg ${isMobile ? "mb-3" : "mb-4"}`}
               >
-                Segue-nos
+                {t('seguenos')}
               </h4>
               <ul className={isMobile ? "space-y-2" : "space-y-3"}>
                 {socialLinks.map((social) => {
@@ -217,29 +224,29 @@ export function FooterContent({ variant = "desktop", theme = "dark", shopColumns
             <>
               <ul className="space-y-2 mb-4">
                 {legalLinks.map((link) => (
-                  <li key={link}>
+                  <li key={link.pt}>
                     <span className={`font-body text-body-sm ${textColor} underline cursor-pointer`}>
-                      {link}
+                      {localize(link, locale)}
                     </span>
                   </li>
                 ))}
               </ul>
               <p className={`font-body text-body-sm ${textColor}`}>
-                © 2025 Discover South Korea. Todos os direitos reservados.
+                {t('copyright')}
               </p>
             </>
           ) : (
             <>
               <p className={`font-body text-body-sm ${textColor}`}>
-                © 2025 Discover South Korea. Todos os direitos reservados.
+                {t('copyright')}
               </p>
               <div className="flex flex-col gap-2 lg:flex-row lg:gap-6">
                 {legalLinks.map((link) => (
                   <span
-                    key={link}
+                    key={link.pt}
                     className={`font-body text-body-sm ${textColor} underline cursor-pointer`}
                   >
-                    {link}
+                    {localize(link, locale)}
                   </span>
                 ))}
               </div>

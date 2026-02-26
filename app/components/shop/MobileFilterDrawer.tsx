@@ -3,6 +3,7 @@
 import { useEffect } from "react";
 import { CloseIcon } from "@/components/Icons";
 import ShopFilters from "./ShopFilters";
+import { useTranslations } from "next-intl";
 
 interface MobileFilterDrawerProps {
   isOpen: boolean;
@@ -35,6 +36,7 @@ export default function MobileFilterDrawer({
   onClose,
   ...filterProps
 }: MobileFilterDrawerProps) {
+  const t = useTranslations('shop.filterPanel');
   // Prevent body scroll when drawer is open
   useEffect(() => {
     if (isOpen) {
@@ -67,13 +69,13 @@ export default function MobileFilterDrawer({
         {/* Header */}
         <div className="flex items-center justify-between p-4 border-b border-inkstone/10">
           <h2 className="font-body text-body-lg font-semibold text-inkstone">
-            Filtros
+            {t('heading')}
           </h2>
           <button
             type="button"
             onClick={onClose}
             className="p-1 text-inkstone hover:text-inkstone/70 cursor-pointer"
-            aria-label="Fechar filtros"
+            aria-label={t('closeFilters')}
           >
             <CloseIcon />
           </button>

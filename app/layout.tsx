@@ -27,10 +27,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body
-        className={`${korean.variable} ${merriweather.variable} antialiased`}
-      >
+    <html>
+      <body className={`${korean.variable} ${merriweather.variable} antialiased`}>
         {children}
       </body>
     </html>

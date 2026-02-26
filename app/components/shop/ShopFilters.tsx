@@ -12,6 +12,9 @@ import {
   maisVendidosTags,
   novidadesTags
 } from "@/data/shopFiltersData";
+import { useLocale, useTranslations } from "next-intl";
+import { localize } from "@/utils/localize";
+import type { Locale } from "@/i18n/routing";
 
 interface ShopFiltersProps {
   selectedCategory: string;
@@ -94,6 +97,8 @@ export default function ShopFilters({
   totalProducts
 }: ShopFiltersProps) {
   const id = useId();
+  const locale = useLocale() as Locale;
+  const t = useTranslations('shop.filterPanel');
 
   // Collapsible sections state
   const [openSections, setOpenSections] = useState<Set<string>>(
@@ -137,19 +142,19 @@ export default function ShopFilters({
     <div className="font-body">
       {/* Header */}
       <div className="flex items-center justify-between mb-2">
-        <h2 className="text-body-lg font-semibold text-inkstone">Filtros</h2>
+        <h2 className="text-body-lg font-semibold text-inkstone">{t('heading')}</h2>
         <button
           type="button"
           onClick={onClearAll}
           className="text-body-sm text-inkstone/70 hover:text-inkstone cursor-pointer"
         >
-          Limpar tudo
+          {t('clearAll')}
         </button>
       </div>
 
       {/* Results count */}
       <p className="text-body-sm text-inkstone/70 mb-6">
-        A mostrar {totalResults} de {totalProducts}
+        {t('showing', { count: totalResults, total: totalProducts })}
       </p>
 
       {/* Main Categories */}
@@ -165,14 +170,14 @@ export default function ShopFilters({
                 : "text-inkstone/70 hover:text-inkstone"
             }`}
           >
-            {cat.label}
+            {localize(cat.label, locale)}
           </button>
         ))}
       </div>
 
       {/* Subcategorias */}
       <CollapsibleSection
-        title="Subcategorias"
+        title={t('subcategories')}
         isOpen={openSections.has("subcategorias")}
         onToggle={() => toggleSection("subcategorias")}
       >
@@ -194,7 +199,7 @@ export default function ShopFilters({
                 }
                 className="w-4 h-4 rounded border border-inkstone/30 focus:ring-celestial"
               />
-              <span className="text-body-sm text-inkstone">{sub.label}</span>
+              <span className="text-body-sm text-inkstone">{localize(sub.label, locale)}</span>
             </label>
           ))}
         </div>
@@ -202,7 +207,7 @@ export default function ShopFilters({
 
       {/* Pesquisa */}
       <CollapsibleSection
-        title="Pesquisa"
+        title={t('search')}
         isOpen={openSections.has("pesquisa")}
         onToggle={() => toggleSection("pesquisa")}
       >
@@ -222,7 +227,7 @@ export default function ShopFilters({
 
       {/* Mais Vendidos */}
       <CollapsibleSection
-        title="Mais Vendidos"
+        title={t('bestSellers')}
         isOpen={openSections.has("maisvendidos")}
         onToggle={() => toggleSection("maisvendidos")}
       >
@@ -244,7 +249,7 @@ export default function ShopFilters({
                   : "border-inkstone/30 text-inkstone hover:border-inkstone"
               }`}
             >
-              {tag.label}
+              {localize(tag.label, locale)}
             </button>
           ))}
         </div>
@@ -252,7 +257,7 @@ export default function ShopFilters({
 
       {/* Novidades */}
       <CollapsibleSection
-        title="Novidades"
+        title={t('newArrivals')}
         isOpen={openSections.has("novidades")}
         onToggle={() => toggleSection("novidades")}
       >
@@ -274,7 +279,7 @@ export default function ShopFilters({
                   : "border-inkstone/30 text-inkstone hover:border-inkstone"
               }`}
             >
-              {tag.label}
+              {localize(tag.label, locale)}
             </button>
           ))}
         </div>
@@ -282,7 +287,7 @@ export default function ShopFilters({
 
       {/* Preço */}
       <CollapsibleSection
-        title="Preço"
+        title={t('price')}
         isOpen={openSections.has("preco")}
         onToggle={() => toggleSection("preco")}
       >
@@ -307,7 +312,7 @@ export default function ShopFilters({
 
       {/* Região */}
       <CollapsibleSection
-        title="Região"
+        title={t('region')}
         isOpen={openSections.has("regiao")}
         onToggle={() => toggleSection("regiao")}
       >
@@ -337,7 +342,7 @@ export default function ShopFilters({
 
       {/* Material */}
       <CollapsibleSection
-        title="Material"
+        title={t('material')}
         isOpen={openSections.has("material")}
         onToggle={() => toggleSection("material")}
       >
@@ -348,7 +353,7 @@ export default function ShopFilters({
         >
           {materials.map((mat) => (
             <option key={mat.id} value={mat.id}>
-              {mat.label}
+              {localize(mat.label, locale)}
             </option>
           ))}
         </select>
@@ -356,7 +361,7 @@ export default function ShopFilters({
 
       {/* Disponibilidade */}
       <CollapsibleSection
-        title="Disponibilidade"
+        title={t('availability')}
         isOpen={openSections.has("disponibilidade")}
         onToggle={() => toggleSection("disponibilidade")}
       >
@@ -373,7 +378,7 @@ export default function ShopFilters({
                 onChange={() => setSelectedAvailability(option.id)}
                 className="w-4 h-4 rounded-full border border-inkstone/30 focus:ring-celestial"
               />
-              <span className="text-body-sm text-inkstone">{option.label}</span>
+              <span className="text-body-sm text-inkstone">{localize(option.label, locale)}</span>
             </label>
           ))}
         </div>

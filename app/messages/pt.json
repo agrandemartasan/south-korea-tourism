@@ -1,0 +1,137 @@
+{
+  "nav": {
+    "roots": "Raízes da Coreia",
+    "culture": "Cultura & Tradições",
+    "attractions": "Atrações",
+    "flavours": "Sabores da Coreia",
+    "plan": "Planear",
+    "shopButton": "Loja Cultural",
+    "shopNavArtes": "Artes & Artesanato",
+    "shopNavPapel": "Papel & Caligrafia",
+    "shopNavLembrancas": "Lembranças",
+    "shopNavCozinha": "Cozinha & Utensílios",
+    "discoverButton": "Discover South Korea",
+    "cartButton": "Carrinho",
+    "backButton": "Voltar para Discover South Korea"
+  },
+  "common": {
+    "readMore": "Ler mais",
+    "viewMore": "Ver mais",
+    "explore": "Explorar",
+    "download": "Download"
+  },
+  "home": {
+    "hero": {
+      "heading": "Descobre a Coreia do Sul: onde tradição e futuro se encontram",
+      "subheading": "Do esplendor dos templos antigos às luzes vibrantes de Seul — vive uma viagem que combina história, natureza, tecnologia e cultura viva.",
+      "ctaPlan": "Planear Viagem",
+      "ctaExplore": "Explorar Coreia"
+    },
+    "highlights": {
+      "heading": "Explora o melhor da Coreia do Sul",
+      "description": "Escolhe o que queres descobrir a seguir — cultura, sabores, paisagens ou planeamento."
+    },
+    "events": {
+      "heading": "O que está a acontecer na Coreia agora",
+      "description": "Festas, celebrações sazonais e eventos culturais que mostram o espírito vivo do país.",
+      "prevButton": "Ver eventos anteriores",
+      "nextButton": "Ver mais eventos",
+      "navigation": "Navegação de eventos",
+      "eventDot": "Ver evento {number}"
+    },
+    "inspiration": {
+      "heading": "Inspira a tua próxima aventura",
+      "description": "Histórias, guias e ideias para te ajudares a planear experiências inesquecíveis."
+    },
+    "proverbs": {
+      "heading": "Sabedoria que atravessa gerações",
+      "description": "Pequenos fragmentos da cultura coreana que refletem valores, respeito e tradição."
+    },
+    "safety": {
+      "heading": "Viaja com confiança e segurança",
+      "description": "Tudo o que precisas para uma viagem tranquila e bem preparada."
+    },
+    "shopCta": {
+      "headingLine1": "Leva a Coreia",
+      "headingLine2": "Contigo",
+      "description": "Descobre peças autênticas, artesanato tradicional, livros, gastronomia e objetos inspirados na cultura coreana — cuidadosamente selecionados para quem ama explorar.",
+      "button": "Explorar Loja Cultural"
+    }
+  },
+  "plan": {
+    "hero": {
+      "heading": "Planeia a Tua Viagem à Coreia do Sul",
+      "subheading": "Tudo o que precisas para preparar a tua viagem num só lugar — roteiros, regras de etiqueta, dicas essenciais, alertas e ferramentas práticas.",
+      "ctaCreate": "Criar o meu roteiro",
+      "ctaEtiquette": "Guia rápido de etiqueta"
+    },
+    "travelKit": {
+      "heading": "Kit do Viajante"
+    },
+    "itineraries": {
+      "heading": "Roteiros para Todos",
+      "description": "Começa com um roteiro recomendado ou explora itinerários temáticos pensados para diferentes interesses.",
+      "exploreLink": "Explorar",
+      "moreButton": "Ver mais Roteiros"
+    },
+    "etiquette": {
+      "headingLine1": "Guia de Etiqueta",
+      "headingLine2": "e Costumes Básicos",
+      "headingMobile": "Guia de Etiqueta e Costumes Básicos",
+      "description": "Entender a cultura coreana torna a tua viagem mais tranquila e respeitosa. Aprende os gestos mais importantes, cumprimentos, regras básicas à mesa e normas sociais.",
+      "button": "Ler guia completo"
+    },
+    "essentials": {
+      "heading": "O Essencial para a Tua Viagem",
+      "description": "Da moeda ao clima, tudo reunido num só lugar para simplificar o teu planeamento."
+    },
+    "alerts": {
+      "heading": "Alertas de Segurança e Recomendações Oficiais",
+      "button": "Ver todos os alertas ativos"
+    },
+    "downloads": {
+      "heading": "Downloads Úteis",
+      "button": "Ver a lista completa de downloads"
+    }
+  },
+  "shop": {
+    "featured": {
+      "heading": "Favoritos dos Viajantes",
+      "description": "Os artigos mais procurados que captam a essência da Coreia do Sul.",
+      "viewAll": "Ver Tudo"
+    },
+    "pageHeading": "Loja Cultural",
+    "filters": "Filtros",
+    "sortBy": "Ordenar por",
+    "buyNow": "Comprar já",
+    "noResults": "Nenhum produto encontrado com os filtros selecionados.",
+    "filterPanel": {
+      "heading": "Filtros",
+      "clearAll": "Limpar tudo",
+      "showing": "A mostrar {count} de {total}",
+      "closeFilters": "Fechar filtros",
+      "subcategories": "Subcategorias",
+      "search": "Pesquisa",
+      "bestSellers": "Mais Vendidos",
+      "newArrivals": "Novidades",
+      "price": "Preço",
+      "region": "Região",
+      "material": "Material",
+      "availability": "Disponibilidade"
+    },
+    "removeFilter": "Remover filtro {label}",
+    "pagination": {
+      "previous": "Página anterior",
+      "page": "Página {number}",
+      "next": "Próxima página"
+    }
+  },
+  "footer": {
+    "copyright": "© 2025 Discover South Korea. Todos os direitos reservados.",
+    "explorar": "Explorar",
+    "infoUtil": "Informação útil",
+    "seguenos": "Segue-nos",
+    "categorias": "Categorias",
+    "acessoRapido": "Acesso Rápido"
+  }
+}

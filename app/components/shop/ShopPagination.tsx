@@ -1,4 +1,7 @@
+"use client";
+
 import { ArrowLeftIcon, ArrowRightIcon } from "@/components/Icons";
+import { useTranslations } from "next-intl";
 
 interface ShopPaginationProps {
   currentPage: number;
@@ -11,6 +14,7 @@ export default function ShopPagination({
   totalPages,
   onPageChange,
 }: ShopPaginationProps) {
+  const t = useTranslations('shop.pagination');
   const goToPrevious = () => {
     if (currentPage > 0) {
       onPageChange(currentPage - 1);
@@ -34,7 +38,7 @@ export default function ShopPagination({
         type="button"
         onClick={goToPrevious}
         className="flex items-center justify-center w-10 h-10 rounded-full border border-inkstone/30 text-inkstone hover:bg-inkstone/5 cursor-pointer transition-colors"
-        aria-label="Página anterior"
+        aria-label={t('previous')}
       >
         <ArrowLeftIcon />
       </button>
@@ -53,7 +57,7 @@ export default function ShopPagination({
             }`}
             role="tab"
             aria-selected={index === currentPage}
-            aria-label={`Página ${index + 1}`}
+            aria-label={t('page', { number: index + 1 })}
           />
         ))}
       </div>
@@ -63,7 +67,7 @@ export default function ShopPagination({
         type="button"
         onClick={goToNext}
         className="flex items-center justify-center w-10 h-10 rounded-full border border-inkstone/30 text-inkstone hover:bg-inkstone/5 cursor-pointer transition-colors"
-        aria-label="Próxima página"
+        aria-label={t('next')}
       >
         <ArrowRightIcon />
       </button>

@@ -1,6 +1,11 @@
+"use client";
+
 import Image from "next/image";
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
 import { Highlight } from "@/data/highlightsData";
+import { useLocale } from "next-intl";
+import { localize } from "@/utils/localize";
+import type { Locale } from "@/i18n/routing";
 
 interface IconGridSectionProps {
   heading: string;
@@ -10,6 +15,7 @@ interface IconGridSectionProps {
 }
 
 export default function IconGridSection({ heading, description, items, id }: IconGridSectionProps) {
+  const locale = useLocale() as Locale;
   return (
     <section id={id} className="relative bg-inkstone overflow-hidden scroll-mt-24">
       {/* Background Pattern */}
@@ -51,24 +57,24 @@ export default function IconGridSection({ heading, description, items, id }: Ico
                   className="w-16 h-16 mb-4"
                 />
                 <h3 className="font-body text-xl font-semibold text-harvest mb-2">
-                  {item.title}
+                  {localize(item.title, locale)}
                 </h3>
                 <p className="font-body text-body-md text-porcelain">
-                  {item.description}
+                  {localize(item.description, locale)}
                 </p>
               </>
             );
 
             return item.href ? (
               <Link
-                key={item.title}
+                key={item.icon}
                 href={item.href}
                 className={cardClassName}
               >
                 {cardContent}
               </Link>
             ) : (
-              <article key={item.title} className={cardClassName}>
+              <article key={item.icon} className={cardClassName}>
                 {cardContent}
               </article>
             );

@@ -6,15 +6,19 @@ import { ChevronDownIcon, ChevronUpIcon } from "@/components/Icons";
 import SectionHeader from "@/components/SectionHeader";
 import { essentialItems, EssentialItem } from "@/data/essentialsData";
 import { formatContent } from "@/utils/formatContent";
+import { useTranslations, useLocale } from "next-intl";
+import { localize } from "@/utils/localize";
+import type { Locale } from "@/i18n/routing";
 
 interface AccordionItemProps {
   item: EssentialItem;
   isOpen: boolean;
   onToggle: () => void;
+  locale: Locale;
 }
 
 
-function AccordionItem({ item, isOpen, onToggle }: AccordionItemProps) {
+function AccordionItem({ item, isOpen, onToggle, locale }: AccordionItemProps) {
   return (
     <div className="border-y border-porcelain/30">
       {/* Header */}
@@ -25,7 +29,7 @@ function AccordionItem({ item, isOpen, onToggle }: AccordionItemProps) {
         aria-expanded={isOpen}
       >
         <h3 className="font-body text-body-lg font-semibold text-harvest">
-          {item.title}
+          {localize(item.title, locale)}
         </h3>
         <span className="text-crimson ml-4 shrink-0">
           {isOpen ? <ChevronUpIcon /> : <ChevronDownIcon />}
@@ -36,9 +40,9 @@ function AccordionItem({ item, isOpen, onToggle }: AccordionItemProps) {
       {isOpen && (
         <div className="pb-6">
           {/* Regular content with line breaks */}
-          {item.content && (
+          {item.content && localize(item.content, locale) && (
             <div className="font-body text-body-sm text-porcelain">
-              {item.content.split("\n").map((paragraph, idx) => (
+              {localize(item.content, locale).split("\n").map((paragraph, idx) => (
                 <p key={idx} className={idx > 0 ? "mt-3" : ""}>
                   {formatContent(paragraph)}
                 </p>
@@ -55,7 +59,7 @@ function AccordionItem({ item, isOpen, onToggle }: AccordionItemProps) {
                   className="font-body text-body-sm text-porcelain flex items-start gap-2"
                 >
                   <span className="mt-1.5">•</span>
-                  {listItem}
+                  {formatContent(localize(listItem, locale))}
                 </li>
               ))}
             </ul>
@@ -75,10 +79,10 @@ function AccordionItem({ item, isOpen, onToggle }: AccordionItemProps) {
                   />
                   <div>
                     <h4 className="font-body text-body-sm font-semibold text-porcelain">
-                      {season.title}
+                      {localize(season.title, locale)}
                     </h4>
                     <p className="font-body text-xs text-porcelain/80">
-                      {season.description}
+                      {localize(season.description, locale)}
                     </p>
                   </div>
                 </div>
@@ -92,6 +96,8 @@ function AccordionItem({ item, isOpen, onToggle }: AccordionItemProps) {
 }
 
 export default function EssentialsSection() {
+  const t = useTranslations('plan.essentials');
+  const locale = useLocale() as Locale;
   // All items start collapsed
   const [openItems, setOpenItems] = useState<Set<number>>(new Set());
 
@@ -127,8 +133,8 @@ export default function EssentialsSection() {
       {/* Content */}
       <div className="relative z-10 px-6 lg:px-[3%] py-16 lg:py-24">
         <SectionHeader
-          title="O Essencial para a Tua Viagem"
-          description="Da moeda ao clima, tudo reunido num só lugar para simplificar o teu planeamento."
+          title={t('heading')}
+          description={t('description')}
         />
 
         {/* Desktop 2-column layout */}
@@ -141,6 +147,7 @@ export default function EssentialsSection() {
                 item={item}
                 isOpen={openItems.has(item.id)}
                 onToggle={() => toggleItem(item.id)}
+                locale={locale}
               />
             ))}
           </div>
@@ -153,6 +160,7 @@ export default function EssentialsSection() {
                 item={item}
                 isOpen={openItems.has(item.id)}
                 onToggle={() => toggleItem(item.id)}
+                locale={locale}
               />
             ))}
           </div>
@@ -166,6 +174,7 @@ export default function EssentialsSection() {
               item={item}
               isOpen={openItems.has(item.id)}
               onToggle={() => toggleItem(item.id)}
+              locale={locale}
             />
           ))}
         </div>

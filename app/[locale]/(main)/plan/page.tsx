@@ -6,13 +6,17 @@ import EssentialsSection from "@/components/plan/EssentialsSection";
 import AlertsSection from "@/components/plan/AlertsSection";
 import DownloadsSection from "@/components/plan/DownloadsSection";
 import { travelKitItems } from "@/data/travelKitData";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 
-export default function PlanPage() {
+export default async function PlanPage({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
+  setRequestLocale(locale);
+  const t = await getTranslations('plan.travelKit');
   return (
     <main>
       <PlanHeroSection />
       <IconGridSection
-        heading="Kit do Viajante"
+        heading={t('heading')}
         items={travelKitItems}
       />
       <ItinerariesSection />

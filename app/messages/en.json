@@ -1,0 +1,137 @@
+{
+  "nav": {
+    "roots": "Korean Roots",
+    "culture": "Culture & Traditions",
+    "attractions": "Attractions",
+    "flavours": "Flavours of Korea",
+    "plan": "Plan",
+    "shopButton": "Cultural Shop",
+    "shopNavArtes": "Arts & Crafts",
+    "shopNavPapel": "Paper & Calligraphy",
+    "shopNavLembrancas": "Souvenirs",
+    "shopNavCozinha": "Kitchen & Utensils",
+    "discoverButton": "Discover South Korea",
+    "cartButton": "Cart",
+    "backButton": "Back to Discover South Korea"
+  },
+  "common": {
+    "readMore": "Read more",
+    "viewMore": "View more",
+    "explore": "Explore",
+    "download": "Download"
+  },
+  "home": {
+    "hero": {
+      "heading": "Discover South Korea: where tradition meets the future",
+      "subheading": "From the splendour of ancient temples to the vibrant lights of Seoul — experience a journey that blends history, nature, technology, and living culture.",
+      "ctaPlan": "Plan Your Trip",
+      "ctaExplore": "Explore Korea"
+    },
+    "highlights": {
+      "heading": "Explore the best of South Korea",
+      "description": "Choose what you want to discover next — culture, flavours, landscapes, or trip planning."
+    },
+    "events": {
+      "heading": "What's happening in Korea right now",
+      "description": "Festivals, seasonal celebrations, and cultural events that showcase the country's vibrant spirit.",
+      "prevButton": "Previous events",
+      "nextButton": "Next events",
+      "navigation": "Events navigation",
+      "eventDot": "View event {number}"
+    },
+    "inspiration": {
+      "heading": "Inspire your next adventure",
+      "description": "Stories, guides, and ideas to help you plan unforgettable experiences."
+    },
+    "proverbs": {
+      "heading": "Wisdom that spans generations",
+      "description": "Small fragments of Korean culture that reflect values, respect, and tradition."
+    },
+    "safety": {
+      "heading": "Travel with confidence and safety",
+      "description": "Everything you need for a smooth and well-prepared journey."
+    },
+    "shopCta": {
+      "headingLine1": "Bring Korea",
+      "headingLine2": "With You",
+      "description": "Discover authentic pieces, traditional crafts, books, food, and objects inspired by Korean culture — carefully selected for those who love to explore.",
+      "button": "Explore Cultural Shop"
+    }
+  },
+  "plan": {
+    "hero": {
+      "heading": "Plan Your Trip to South Korea",
+      "subheading": "Everything you need to prepare your trip in one place — itineraries, etiquette rules, essential tips, alerts, and practical tools.",
+      "ctaCreate": "Create my itinerary",
+      "ctaEtiquette": "Quick etiquette guide"
+    },
+    "travelKit": {
+      "heading": "Traveller's Kit"
+    },
+    "itineraries": {
+      "heading": "Itineraries for Everyone",
+      "description": "Start with a recommended itinerary or explore thematic routes designed for different interests.",
+      "exploreLink": "Explore",
+      "moreButton": "View more Itineraries"
+    },
+    "etiquette": {
+      "headingLine1": "Etiquette Guide",
+      "headingLine2": "and Basic Customs",
+      "headingMobile": "Etiquette Guide and Basic Customs",
+      "description": "Understanding Korean culture makes your trip smoother and more respectful. Learn the most important gestures, greetings, basic table manners, and social norms.",
+      "button": "Read the full guide"
+    },
+    "essentials": {
+      "heading": "Essentials for Your Trip",
+      "description": "From currency to weather, everything in one place to simplify your planning."
+    },
+    "alerts": {
+      "heading": "Safety Alerts and Official Recommendations",
+      "button": "View all active alerts"
+    },
+    "downloads": {
+      "heading": "Useful Downloads",
+      "button": "View the full downloads list"
+    }
+  },
+  "shop": {
+    "featured": {
+      "heading": "Travellers' Favourites",
+      "description": "The most sought-after items that capture the essence of South Korea.",
+      "viewAll": "View All"
+    },
+    "pageHeading": "Cultural Shop",
+    "filters": "Filters",
+    "sortBy": "Sort by",
+    "buyNow": "Buy now",
+    "noResults": "No products found with the selected filters.",
+    "filterPanel": {
+      "heading": "Filters",
+      "clearAll": "Clear all",
+      "showing": "Showing {count} of {total}",
+      "closeFilters": "Close filters",
+      "subcategories": "Subcategories",
+      "search": "Search",
+      "bestSellers": "Best Sellers",
+      "newArrivals": "New Arrivals",
+      "price": "Price",
+      "region": "Region",
+      "material": "Material",
+      "availability": "Availability"
+    },
+    "removeFilter": "Remove filter {label}",
+    "pagination": {
+      "previous": "Previous page",
+      "page": "Page {number}",
+      "next": "Next page"
+    }
+  },
+  "footer": {
+    "copyright": "© 2025 Discover South Korea. All rights reserved.",
+    "explorar": "Explore",
+    "infoUtil": "Useful Information",
+    "seguenos": "Follow us",
+    "categorias": "Categories",
+    "acessoRapido": "Quick Access"
+  }
+}

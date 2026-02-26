@@ -2,13 +2,17 @@ import Image from "next/image";
 import Button from "@/components/Button";
 import { ChevronRightIcon } from "@/components/Icons";
 import { etiquetteTips, EtiquetteTip } from "@/data/etiquetteData";
+import { getTranslations, getLocale } from "next-intl/server";
+import { localize } from "@/utils/localize";
+import type { Locale } from "@/i18n/routing";
 
 interface EtiquetteTipItemProps {
   tip: EtiquetteTip;
   isLast?: boolean;
+  locale: Locale;
 }
 
-function EtiquetteTipItem({ tip, isLast = false }: EtiquetteTipItemProps) {
+function EtiquetteTipItem({ tip, isLast = false, locale }: EtiquetteTipItemProps) {
   return (
     <div
       className={`flex gap-4 py-4 ${!isLast ? "border-b border-porcelain/30" : ""}`}
@@ -24,15 +28,17 @@ function EtiquetteTipItem({ tip, isLast = false }: EtiquetteTipItemProps) {
       </div>
       <div className="flex-1">
         <h3 className="font-body text-body-lg font-semibold text-harvest mb-1">
-          {tip.title}
+          {localize(tip.title, locale)}
         </h3>
-        <p className="font-body text-body-sm text-porcelain">{tip.description}</p>
+        <p className="font-body text-body-sm text-porcelain">{localize(tip.description, locale)}</p>
       </div>
     </div>
   );
 }
 
-export default function EtiquetteSection() {
+export default async function EtiquetteSection() {
+  const t = await getTranslations('plan.etiquette');
+  const locale = await getLocale() as Locale;
   return (
     <section id="etiqueta" className="bg-inkstone scroll-mt-24">
       <div className="px-6 lg:px-[3%] py-12 lg:py-16">
@@ -54,13 +60,11 @@ export default function EtiquetteSection() {
           {/* Right - Content */}
           <div className="flex-1 flex flex-col">
             <h2 className="font-heading text-heading-lg text-harvest mb-4">
-              Guia de Etiqueta
-              <span className="block">e Costumes Básicos</span>
+              {t('headingLine1')}
+              <span className="block">{t('headingLine2')}</span>
             </h2>
             <p className="font-body text-body-md text-porcelain mb-8 max-w-xl">
-              Entender a cultura coreana torna a tua viagem mais tranquila e
-              respeitosa. Aprende os gestos mais importantes, cumprimentos,
-              regras básicas à mesa e normas sociais.
+              {t('description')}
             </p>
 
             {/* Etiquette Tips */}
@@ -70,6 +74,7 @@ export default function EtiquetteSection() {
                   key={tip.id}
                   tip={tip}
                   isLast={index === etiquetteTips.length - 1}
+                  locale={locale}
                 />
               ))}
             </div>
@@ -77,7 +82,7 @@ export default function EtiquetteSection() {
             {/* Button */}
             <div>
               <Button variant="primary" href="#">
-                Ler guia completo
+                {t('button')}
               </Button>
             </div>
           </div>
@@ -87,12 +92,10 @@ export default function EtiquetteSection() {
         <div className="lg:hidden">
           {/* Title & Description */}
           <h2 className="font-heading text-heading-lg text-harvest mb-4">
-            Guia de Etiqueta e Costumes Básicos
+            {t('headingMobile')}
           </h2>
           <p className="font-body text-body-md text-porcelain mb-8">
-            Entender a cultura coreana torna a tua viagem mais tranquila e
-            respeitosa. Aprende os gestos mais importantes, cumprimentos, regras
-            básicas à mesa e normas sociais.
+            {t('description')}
           </p>
 
           {/* Image - Square on mobile */}
@@ -113,6 +116,7 @@ export default function EtiquetteSection() {
                 key={tip.id}
                 tip={tip}
                 isLast={index === etiquetteTips.length - 1}
+                locale={locale}
               />
             ))}
           </div>
@@ -120,7 +124,7 @@ export default function EtiquetteSection() {
           {/* Button */}
           <div>
             <Button variant="primary" href="#">
-              Ler guia completo
+              {t('button')}
               <ChevronRightIcon />
             </Button>
           </div>
