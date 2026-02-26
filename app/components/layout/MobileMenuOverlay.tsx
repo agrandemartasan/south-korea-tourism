@@ -13,17 +13,19 @@ import { navItems } from "@/data/navigationData";
 export default function MobileMenuOverlay() {
   const { isMenuOpen, closeMenu } = useMobileMenu();
   const pathname = usePathname();
-  const t = useTranslations('nav');
+  const t = useTranslations("nav");
 
   return (
     <div
       className={`fixed inset-0 z-60 bg-inkstone transition-opacity duration-300 ease-in-out xl:hidden flex flex-col ${
-        isMenuOpen ? "opacity-100 visible" : "opacity-0 invisible pointer-events-none"
+        isMenuOpen
+          ? "opacity-100 visible"
+          : "opacity-0 invisible pointer-events-none"
       }`}
       aria-hidden={!isMenuOpen}
     >
       {/* Mobile Menu Header */}
-      <div className="flex items-center justify-between px-8 lg:px-[3%] py-4">
+      <div className="flex items-center justify-between px-6 lg:px-[3%] py-4">
         {/* Logo */}
         <Link
           href="/"
@@ -46,8 +48,12 @@ export default function MobileMenuOverlay() {
           <LanguageSwitcher theme="dark" />
 
           <div className="hidden sm:block">
-            <Button variant="accent" href="/shop" tabIndex={isMenuOpen ? 0 : -1}>
-              {t('shopButton')}
+            <Button
+              variant="accent"
+              href="/shop"
+              tabIndex={isMenuOpen ? 0 : -1}
+            >
+              {t("shopButton")}
             </Button>
           </div>
 
@@ -96,12 +102,8 @@ export default function MobileMenuOverlay() {
 
         {/* Shop button - only on small phones where it's hidden in the header */}
         <div className="flex justify-center pt-6 sm:hidden">
-          <Button
-            variant="accent"
-            href="/shop"
-            tabIndex={isMenuOpen ? 0 : -1}
-          >
-            {t('shopButton')}
+          <Button variant="accent" href="/shop" tabIndex={isMenuOpen ? 0 : -1}>
+            {t("shopButton")}
           </Button>
         </div>
 

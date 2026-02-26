@@ -28,7 +28,7 @@ export default function LanguageSwitcher({ theme = "dark" }: LanguageSwitcherPro
       <button
         type="button"
         onClick={() => switchLocale("pt")}
-        className={`px-1 transition-colors ${locale === "pt" ? activeText : "opacity-60 hover:opacity-100"}`}
+        className={`px-1 transition-colors cursor-pointer ${locale === "pt" ? activeText : "opacity-60 hover:opacity-100"}`}
         aria-label="Português"
       >
         PT

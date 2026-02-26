@@ -71,19 +71,28 @@ export default function MobileFilterDrawer({
           <h2 className="font-body text-body-lg font-semibold text-inkstone">
             {t('heading')}
           </h2>
-          <button
-            type="button"
-            onClick={onClose}
-            className="p-1 text-inkstone hover:text-inkstone/70 cursor-pointer"
-            aria-label={t('closeFilters')}
-          >
-            <CloseIcon />
-          </button>
+          <div className="flex items-center gap-3">
+            <button
+              type="button"
+              onClick={filterProps.onClearAll}
+              className="font-body text-body-sm text-inkstone/70 hover:text-inkstone cursor-pointer"
+            >
+              {t('clearAll')}
+            </button>
+            <button
+              type="button"
+              onClick={onClose}
+              className="p-1 text-inkstone hover:text-inkstone/70 cursor-pointer"
+              aria-label={t('closeFilters')}
+            >
+              <CloseIcon />
+            </button>
+          </div>
         </div>
 
         {/* Filters Content */}
         <div className="p-4 overflow-y-auto h-[calc(100%-60px)]">
-          <ShopFilters {...filterProps} />
+          <ShopFilters {...filterProps} showHeader={false} />
         </div>
       </div>
     </>

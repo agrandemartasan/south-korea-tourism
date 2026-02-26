@@ -38,6 +38,7 @@ interface ShopFiltersProps {
   onClearAll: () => void;
   totalResults: number;
   totalProducts: number;
+  showHeader?: boolean;
 }
 
 interface CollapsibleSectionProps {
@@ -94,7 +95,8 @@ export default function ShopFilters({
   setSelectedAvailability,
   onClearAll,
   totalResults,
-  totalProducts
+  totalProducts,
+  showHeader = true,
 }: ShopFiltersProps) {
   const id = useId();
   const locale = useLocale() as Locale;
@@ -141,16 +143,18 @@ export default function ShopFilters({
   return (
     <div className="font-body">
       {/* Header */}
-      <div className="flex items-center justify-between mb-2">
-        <h2 className="text-body-lg font-semibold text-inkstone">{t('heading')}</h2>
-        <button
-          type="button"
-          onClick={onClearAll}
-          className="text-body-sm text-inkstone/70 hover:text-inkstone cursor-pointer"
-        >
-          {t('clearAll')}
-        </button>
-      </div>
+      {showHeader && (
+        <div className="flex items-center justify-between mb-2">
+          <h2 className="text-body-lg font-semibold text-inkstone">{t('heading')}</h2>
+          <button
+            type="button"
+            onClick={onClearAll}
+            className="text-body-sm text-inkstone/70 hover:text-inkstone cursor-pointer"
+          >
+            {t('clearAll')}
+          </button>
+        </div>
+      )}
 
       {/* Results count */}
       <p className="text-body-sm text-inkstone/70 mb-6">

@@ -45,7 +45,7 @@ export default function ShopMobileMenuOverlay() {
       aria-hidden={!isMenuOpen}
     >
       {/* Mobile Menu Header */}
-      <div className="flex items-center justify-between px-8 lg:px-[3%] py-4">
+      <div className="flex items-center justify-between px-6 lg:px-[3%] py-4">
         {/* Logo */}
         <Link
           href="/shop"
