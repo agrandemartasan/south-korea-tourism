@@ -4,7 +4,7 @@
 
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/agrandemartasan/south-korea-tourism)
 
-**Live demo:** [https://your-project.vercel.app](https://your-project.vercel.app) _(update after deploying)_
+**Live demo:** [https://sk-tourism.vercel.app](https://sk-tourism.vercel.app)
 
 ---
 
