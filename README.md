@@ -1,6 +1,6 @@
 # Discover South Korea
 
-> A multilingual travel and e-commerce site built from original Figma wireframes designed during a UX/UI course.
+> A multilingual travel and e-commerce site built from original Figma wireframes designed during a UX/UI course at IEFP.
 
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/agrandemartasan/south-korea-tourism)
 
@@ -18,6 +18,14 @@ The site has two main areas:
 - **Shop** — A cultural e-commerce experience featuring arts & crafts, paper goods, kitchen utensils, and souvenirs, with filtering, search, sorting, and pagination.
 
 Both areas are fully bilingual (Portuguese and English) with locale-based URL routing.
+
+---
+
+## Design
+
+This project was the final work of a UX/UI course at **[IEFP](https://www.iefp.pt)** (Instituto do Emprego e Formação Profissional), Portugal. The full design — including wireframes, components, and interactive prototype — was created in Figma before any code was written.
+
+**[View Figma Project →](https://www.figma.com/design/SNeJGjAqrFxggtFu3tNGLF/Turismo-na-Coreia-do-Sul?node-id=0-1&t=c57SLqOFNOCpS9li-1)**
 
 ---
 
