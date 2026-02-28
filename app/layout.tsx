@@ -17,13 +17,13 @@ const merriweather = Merriweather({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://sk-tourism.vercel.app"),
+  metadataBase: new URL("https://south-korea-tourism.vercel.app"),
   title: "Discover South Korea | Where Tradition Meets Future",
   description:
     "Experience the beauty of South Korea - from ancient temples to vibrant Seoul. Explore history, nature, technology, and living culture.",
   openGraph: {
     type: "website",
-    url: "https://sk-tourism.vercel.app",
+    url: "https://south-korea-tourism.vercel.app",
     siteName: "Discover South Korea",
     title: "Discover South Korea | Where Tradition Meets Future",
     description:

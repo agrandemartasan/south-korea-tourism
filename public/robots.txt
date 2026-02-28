@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://sk-tourism.vercel.app/sitemap.xml
+Sitemap: https://south-korea-tourism.vercel.app/sitemap.xml
