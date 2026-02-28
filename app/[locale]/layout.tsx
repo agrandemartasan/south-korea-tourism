@@ -2,22 +2,8 @@ import { NextIntlClientProvider } from "next-intl";
 import { getMessages, setRequestLocale } from "next-intl/server";
 import { routing, type Locale } from "@/i18n/routing";
 import { notFound } from "next/navigation";
-import { Merriweather } from "next/font/google";
-import localFont from "next/font/local";
 import { Analytics } from "@vercel/analytics/next";
-
-const korean = localFont({
-  src: "../../public/fonts/Korean.ttf",
-  variable: "--font-korean",
-  display: "swap",
-});
-
-const merriweather = Merriweather({
-  weight: ["300", "400", "700"],
-  subsets: ["latin"],
-  variable: "--font-merriweather",
-  display: "swap",
-});
+import HtmlLang from "@/components/HtmlLang";
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
@@ -41,13 +27,10 @@ export default async function LocaleLayout({
   const messages = await getMessages();
 
   return (
-    <html lang={locale}>
-      <body className={`${korean.variable} ${merriweather.variable} antialiased`}>
-        <NextIntlClientProvider messages={messages}>
-          {children}
-        </NextIntlClientProvider>
-        <Analytics />
-      </body>
-    </html>
+    <NextIntlClientProvider messages={messages}>
+      <HtmlLang locale={locale} />
+      {children}
+      <Analytics />
+    </NextIntlClientProvider>
   );
 }
